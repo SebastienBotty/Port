@@ -1,0 +1,22 @@
+@import "./placeholders";
+@import "./mixins";
+
+.me {
+  @extend %flex-center;
+
+  .img-container {
+    border-radius: 50%;
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border: 1px solid white;
+    transition: transform 0.3s ease;
+  }
+}
+
+.big-title-name {
+  font-size: 4rem;
+}
+
+.big-title {
+  font-size: 6rem;
+}

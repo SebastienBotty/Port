@@ -1,0 +1,23 @@
+.me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me .img-container {
+  border-radius: 50%;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border: 1px solid white;
+  transition: transform 0.3s ease;
+}
+
+.big-title-name {
+  font-size: 4rem;
+}
+
+.big-title {
+  font-size: 6rem;
+}
+
+/*# sourceMappingURL=personnalInfos.css.map */

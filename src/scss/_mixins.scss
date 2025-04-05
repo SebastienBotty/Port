@@ -1,0 +1,17 @@
+@use "sass:math";
+
+@mixin text-glow($color, $intensity: 1) {
+  text-shadow: 0 0 (5px * $intensity) $color, 0 0 (10px * $intensity) $color,
+    0 0 (20px * $intensity) $color;
+}
+
+@function random-rotate-seed() {
+  $seed: unique-id(); // Génère une seed unique
+  $random: math.floor(math.sin(str-length($seed)) * 121 - 61);
+  @return #{$random}deg;
+}
+
+@mixin rotate-random() {
+  $random: random-rotate-seed();
+  transform: rotate(#{$random});
+}
