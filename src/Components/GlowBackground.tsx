@@ -1,5 +1,5 @@
 import React, { CSSProperties, useEffect, useState } from "react";
-
+import "../scss/glowBackground.scss";
 type LightSource = {
   id: string;
   color: string;
@@ -11,8 +11,8 @@ type LightSource = {
 };
 
 const GlowBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
-  // Configuration des lumières
-  const lights: LightSource[] = [
+  const [lights, setLights] = useState<LightSource[]>([]);
+  const lightsContainer: LightSource[] = [
     // Gros halo rose en haut à gauche
     {
       id: "light-1",
@@ -80,34 +80,36 @@ const GlowBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) 
   // Style du contenu
   const contentStyle: CSSProperties = {
     position: "relative",
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     color: "white",
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (lights.length < lightsContainer.length) {
+        setLights((prevLights) => [...prevLights, lightsContainer[prevLights.length]]);
+      } else {
+        clearInterval(interval);
+      }
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [lights, lightsContainer]);
+
   return (
     <div style={containerStyle}>
       {/* Lumières fixes */}
       {lights.map((light) => (
-        <div key={light.id} style={lightStyle(light)} />
+        <div className="light" key={light.id} style={lightStyle(light)} />
       ))}
 
       {/* Contenu superposé */}
       <div style={contentStyle}>
-        <div
-          style={{
-            padding: "3rem",
-            background: "rgba(10, 10, 20, 0.8)",
-            borderRadius: "24px",
-            backdropFilter: "blur(10px)",
-            maxWidth: "800px",
-          }}
-        >
-          {children}
-        </div>
+        <div>{children}</div>
       </div>
     </div>
   );

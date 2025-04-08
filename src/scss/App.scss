@@ -4,7 +4,64 @@ li {
 }
 
 body {
-  background-color: white;
   width: 100vw;
   height: 100vh;
+  position: relative; // Nécessaire pour le positionnement absolu des lumières
+}
+
+.glow-background {
+  background-color: #0a0a12; // Couleur de fond
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light {
+  position: absolute; // Positionnement absolu pour permettre le déplacement
+  border-radius: 50%; // Forme circulaire
+  opacity: 0; // Commence invisible
+  animation: fadeIn 1s ease forwards, move 2s ease infinite; // Applique les animations
+}
+
+// Styles spécifiques pour chaque lumière avec un délai d'animation
+.light-1 {
+  width: 300px; // Taille de la lumière
+  height: 300px; // Taille de la lumière
+  background-color: rgb(190, 52, 52); // Couleur rouge
+  filter: blur(200px); // Flou
+  top: 20%; // Position Y
+  left: 15%; // Position X
+  animation-delay: 0.5s; // Pas de délai pour la première lumière
+}
+
+.light-2 {
+  width: 250px; // Taille de la lumière
+  height: 250px; // Taille de la lumière
+  background-color: hsla(180, 80%, 85%, 0.6); // Couleur cyan
+  filter: blur(180px); // Flou
+  top: 70%; // Position Y
+  left: 80%; // Position X
+  animation-delay: 1s; // Délai de 1s pour la troisième lumière
+}
+
+.light-3 {
+  width: 150px; // Taille de la lumière
+  height: 150px; // Taille de la lumière
+  background-color: hsla(50, 100%, 80%, 0.8); // Couleur jaune
+  filter: blur(150px); // Flou
+  top: 50%; // Position Y
+  left: 50%; // Position X
+  animation-delay: 1.5s; // Délai de 1.5s pour la quatrième lumière
+}
+
+.light-4 {
+  width: 200px; // Taille de la lumière
+  height: 200px; // Taille de la lumière
+  background-color: hsla(270, 70%, 80%, 0.5); // Couleur violet
+  filter: blur(160px); // Flou
+  top: 60%; // Position Y
+  left: 30%; // Position X
+  animation-delay: 2s; // Délai de 1.5s pour la quatrième lumière
 }
