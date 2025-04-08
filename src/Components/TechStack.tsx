@@ -76,6 +76,7 @@ function TechStack() {
               <TechIcon icon={tech.icon} /> {tech.name}{" "}
             </div>
           ))}
+        <div className="tech-container">RESTAPI</div>
       </div>
       <div className="smaller-title">{techStackText.workedWith[language]}</div>
       <div className="dev-stack-container">
