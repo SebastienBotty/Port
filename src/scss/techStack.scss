@@ -1,0 +1,29 @@
+@use "./placeholders";
+@use "./mixins";
+
+.tech-stack {
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 50vw;
+
+  .title {
+    font-size: x-large;
+  }
+  .smaller-title {
+    font-size: large;
+    margin: 0.5rem;
+  }
+
+  .dev-stack-container {
+    @extend %flex-center;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    .tech-container {
+      @extend %flex-center;
+      gap: 0.25rem;
+    }
+  }
+}

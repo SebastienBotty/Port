@@ -9,7 +9,7 @@ export const navBarText = {
   },
   projects: {
     EN: "Projects",
-    FR: "Projet",
+    FR: "Projets",
   },
   contacts: {
     EN: "Contacts",

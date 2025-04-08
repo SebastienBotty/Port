@@ -13,6 +13,7 @@
   top: 0;
   left: 0;
   opacity: 0;
+  opacity: 0;
   animation: fadeIn 1s ease forwards;
   animation-delay: 0.5s;
 }
@@ -32,8 +33,7 @@
   font-size: large;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
-  background-color: rgba(10, 10, 18, 0.5);
-  backdrop-filter: blur(100px);
+  background-color: #0a0a12;
   border: 1px inset white;
 }
 .nav-bar .routes-container .title {

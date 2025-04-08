@@ -1,59 +1,27 @@
 @import "./placeholders";
 @import "./mixins";
 
+.personal-infos {
+  width: 100vw;
+  @extend %flex-center;
+  min-height: 100vh;
+}
 .me {
   @extend %flex-center;
-
-  .img-container {
-    border-radius: 50%;
-    width: 4rem;
-    aspect-ratio: 1/1;
-    border: 1px solid white;
-    transition: transform 0.3s ease;
-    position: relative;
-    overflow: hidden;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 40%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: skewX(-20deg);
-      transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
-      opacity: 0;
-    }
-
-    &:hover {
-      transform: scale(1.05);
-
-      &::after {
-        left: 120%;
-        opacity: 1;
-      }
-    }
-  }
+  opacity: 0;
+  @include fadeIn(1s, 1s);
 
   .text-container {
     @extend %flex-center;
     flex-direction: column;
 
-    * {
-      opacity: 0;
-      @include fadeIn(1s, 1s);
+    .me-flag {
+      width: 100%;
     }
   }
 }
 
 .big-title-name {
-  opacity: 0;
   font-size: 3rem;
 }
 
@@ -61,12 +29,54 @@
   font-size: 6rem;
   @extend %flex-center;
   text-align: center;
-}
-.title-1 {
-  opacity: 0;
+  font-weight: bold;
+  line-height: 0.9;
   @include fadeIn(1s, 1.5s);
 }
-.title-2 {
+
+.contacts {
+  @extend %flex-center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+
   opacity: 0;
   @include fadeIn(1s, 2s);
+}
+
+.img-container {
+  @extend %flex-center;
+  border-radius: 50%;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border: 1px inset white;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    &::after {
+      left: 120%;
+      opacity: 1;
+    }
+  }
 }

@@ -1,8 +1,11 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import "../scss/personnalInfos.scss";
+import { siGithub, siFiles, siMailboxdotorg } from "simple-icons";
+
 import { Flag } from "./Flag";
 import { personalInfosText } from "../translations/personalInfos";
 import { useLanguageContext } from "../Contexts/useLanguage";
+import TechIcon from "./TechIcon";
 
 function PersonnalInfos() {
   const { language, setLanguage } = useLanguageContext();
@@ -16,7 +19,7 @@ function PersonnalInfos() {
     setRotation(0);
   };
   return (
-    <div>
+    <div className="personal-infos">
       <div className="main-container">
         <div className="me">
           <div
@@ -29,36 +32,27 @@ function PersonnalInfos() {
           </div>
           <div className="text-container">
             <div className="big-title-name">Sébastien Botty</div>
-            <div>
+            <div className="me-flag">
               {personalInfosText.based[language]} <Flag countryCode="BE" />
             </div>
           </div>
         </div>
-        <span className="big-title title-1">FULL STACK</span>
-        <span className="big-title title-2">DEVELOPPER</span>{" "}
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
-        <span className="big-title title-2">DEVELOPPER</span>
+        <div className="big-title title-1">FULL STACK</div>
+        <div className="big-title title-2">DEVELOPPER</div>{" "}
+        <div className="contacts">
+          <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
+            <div className="img-container">
+              <TechIcon icon={siGithub} size={32} />
+            </div>
+          </a>
+
+          <div className="img-container">
+            <TechIcon icon={siFiles} size={32} />
+          </div>
+          <div className="img-container">
+            <TechIcon icon={siMailboxdotorg} size={32} />
+          </div>
+        </div>
       </div>
     </div>
   );

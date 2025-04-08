@@ -1,3 +1,9 @@
+.glow-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 ul,
 li {
   list-style-type: none;
@@ -7,14 +13,13 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 .glow-background {
   background-color: #0a0a12;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .light {
