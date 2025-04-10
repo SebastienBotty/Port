@@ -20,10 +20,5 @@
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 2rem;
-
-    .tech-container {
-      @extend %flex-center;
-      gap: 0.25rem;
-    }
   }
 }

@@ -1,0 +1,6 @@
+@use "./placeholders";
+
+.tech-container {
+  @extend %flex-center;
+  gap: 0.25rem;
+}

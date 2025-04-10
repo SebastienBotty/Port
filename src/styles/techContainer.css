@@ -1,0 +1,11 @@
+.tech-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech-container {
+  gap: 0.25rem;
+}
+
+/*# sourceMappingURL=techContainer.css.map */

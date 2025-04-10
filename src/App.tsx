@@ -7,6 +7,7 @@ import { getBrowserLanguage } from "./Functions/language";
 import { LanguageContext } from "./Contexts/useLanguage";
 import PersonalInfos from "./Components/PersonalInfos";
 import TechStack from "./Components/TechStack";
+import ProjectsContainer from "./Components/ProjectsContainer";
 
 function App() {
   const [language, setLanguage] = useState<LanguageType>(getBrowserLanguage());
@@ -27,6 +28,7 @@ function App() {
         <Navbar />
         <PersonalInfos />
         <TechStack />
+        <ProjectsContainer />
         {lights.map((light) => (
           <div
             key={light.id}
