@@ -20,6 +20,27 @@ export type TechnologyType = {
   mostUsed: boolean;
 };
 
+export type ExperienceType = {
+  name: {
+    [key in LanguageType]: string;
+  };
+  secondTitle: {
+    [key in LanguageType]: string;
+  };
+  description: {
+    [key in LanguageType]: string;
+  };
+  image: string;
+  dates: {
+    start: {
+      [key in LanguageType]: string;
+    };
+    end: {
+      [key in LanguageType]: string;
+    };
+  };
+};
+
 export type LanguageContextType = {
   language: LanguageType;
   setLanguage: React.Dispatch<React.SetStateAction<LanguageType>>;

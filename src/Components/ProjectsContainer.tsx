@@ -1,17 +1,20 @@
 import React from "react";
-import { projectsArr } from "../translations/projectsContainer";
+import { projectsArr, projectsContainerText } from "../translations/projectsContainer";
 import Project from "./Project";
 
 import "../scss/projectsContainer.scss";
+import { useLanguageContext } from "../Contexts/useLanguage";
 
 function ProjectsContainer() {
-  console.log("ICICICICICICICICICICICI");
-  console.log(projectsArr);
+  const { language } = useLanguageContext();
   return (
     <div className="projects-container">
-      {projectsArr.map((project) => (
-        <Project projectData={project} />
-      ))}
+      <div className="title">{projectsContainerText.title[language]}</div>
+      <div className="projects-wrapper">
+        {projectsArr.map((project) => (
+          <Project projectData={project} />
+        ))}
+      </div>{" "}
     </div>
   );
 }

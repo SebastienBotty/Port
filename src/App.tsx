@@ -8,6 +8,7 @@ import { LanguageContext } from "./Contexts/useLanguage";
 import PersonalInfos from "./Components/PersonalInfos";
 import TechStack from "./Components/TechStack";
 import ProjectsContainer from "./Components/ProjectsContainer";
+import ExperiencesContainer from "./Components/ExperiencesContainer";
 
 function App() {
   const [language, setLanguage] = useState<LanguageType>(getBrowserLanguage());
@@ -27,6 +28,7 @@ function App() {
       <div className="App glow-background">
         <Navbar />
         <PersonalInfos />
+        <ExperiencesContainer />
         <TechStack />
         <ProjectsContainer />
         {lights.map((light) => (

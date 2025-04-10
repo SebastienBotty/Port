@@ -1,9 +1,14 @@
 .projects-container {
-  display: flex;
-  justify-content: space-around;
-  width: 50vw;
-  flex-wrap: wrap;
-  gap: 2rem;
-  row-gap: 2rem;
-  padding: 2rem 0;
+  .title {
+    font-size: x-large;
+  }
+  .projects-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+    flex-wrap: wrap;
+    gap: 2rem;
+    row-gap: 2rem;
+    padding: 2rem 0;
+  }
 }

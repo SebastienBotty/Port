@@ -1,4 +1,7 @@
-.projects-container {
+.projects-container .title {
+  font-size: x-large;
+}
+.projects-container .projects-wrapper {
   display: flex;
   justify-content: space-around;
   width: 50vw;

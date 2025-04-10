@@ -7,7 +7,7 @@ export const tOu: ProjectType = {
   },
   description: {
     EN: "Private mobile application to easily find my friend when we go out",
-    FR: "Application mobile pivée permettant d'avoir la position de mes amis quand on sort.",
+    FR: "Application mobile privée permettant d'avoir la position de mes amis quand on sort.",
   },
   stack: [
     "TypeScript",
@@ -48,6 +48,13 @@ export const portfolio: ProjectType = {
   stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
   link: "",
   image: "",
+};
+
+export const projectsContainerText = {
+  title: {
+    EN: "Projects",
+    FR: "Projets",
+  },
 };
 
 export const projectsArr: ProjectType[] = [tOu, notMessenger, portfolio];

@@ -1,0 +1,33 @@
+@use "./placeholders";
+
+.experience {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+
+  .left-side-img {
+    width: 10%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+    color: lightgray;
+    font-size: small;
+    flex: 1;
+
+    * {
+      padding: 0.25rem;
+    }
+
+    .title {
+      color: white;
+      font-size: medium;
+    }
+    .description {
+      word-wrap: break-word;
+    }
+  }
+}

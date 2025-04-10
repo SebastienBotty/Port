@@ -1,0 +1,30 @@
+.experience {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+}
+.experience .left-side-img {
+  width: 10%;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.experience .text {
+  color: lightgray;
+  font-size: small;
+  flex: 1;
+}
+.experience .text * {
+  padding: 0.25rem;
+}
+.experience .text .title {
+  color: white;
+  font-size: medium;
+}
+.experience .text .description {
+  word-wrap: break-word;
+}
+
+/*# sourceMappingURL=experiences.css.map */
