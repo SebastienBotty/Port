@@ -7,7 +7,16 @@ import { Flag } from "./Flag";
 import { ALL_LANGUAGES } from "../Constants/Languages";
 import { LanguageType } from "../Typescript/Types";
 
-function Navbar() {
+interface NavbarProps {
+  personalInfosRef: React.RefObject<HTMLDivElement | null>;
+  projectsRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ personalInfosRef, projectsRef, contactRef }) => {
+  const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const { language, setLanguage } = useLanguageContext();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
@@ -24,9 +33,15 @@ function Navbar() {
     <div className="nav-bar">
       <div className="routes-container">
         <div className="title">{navBarText.home[language]}</div>
-        <div className="title">{navBarText.about[language]}</div>
-        <div className="title">{navBarText.projects[language]}</div>
-        <div className="title">{navBarText.contacts[language]}</div>
+        <div className="title" onClick={() => scrollToRef(personalInfosRef)}>
+          {navBarText.about[language]}
+        </div>
+        <div className="title" onClick={() => scrollToRef(projectsRef)}>
+          {navBarText.projects[language]}
+        </div>
+        <div className="title" onClick={() => scrollToRef(contactRef)}>
+          {navBarText.contacts[language]}
+        </div>
       </div>
 
       <div className="select-language selected-language">
@@ -49,6 +64,6 @@ function Navbar() {
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
