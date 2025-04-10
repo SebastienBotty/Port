@@ -13,6 +13,7 @@
 }
 .experiences .titles-container {
   display: flex;
+  margin-top: 1rem;
 }
 .experiences .titles-container .title {
   flex: 1;

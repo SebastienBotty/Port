@@ -1,0 +1,10 @@
+.contact-container {
+  height: 100vh;
+  width: 50vw;
+  padding: 2.5rem 0;
+}
+.contact-container .title {
+  font-size: x-large;
+}
+
+/*# sourceMappingURL=contactContainer.css.map */

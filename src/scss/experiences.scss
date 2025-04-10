@@ -2,7 +2,6 @@
 
 .experience {
   display: flex;
-  gap: 0.5rem;
   width: 100%;
   padding: 0.5rem 0.25rem;
 
@@ -26,7 +25,10 @@
       color: white;
       font-size: medium;
     }
-    .description {
+
+    .description,
+    .second-title {
+      margin-left: 0.25rem;
       word-wrap: break-word;
     }
   }
