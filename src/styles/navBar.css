@@ -13,6 +13,7 @@
   top: 0;
   left: 0;
   opacity: 0;
+  pointer-events: none;
   opacity: 0;
   animation: fadeIn 1s ease forwards;
   animation-delay: 0.5s;
@@ -35,6 +36,7 @@
   border-radius: 25px;
   background-color: #0a0a12;
   border: 1px inset white;
+  pointer-events: all;
 }
 .nav-bar .routes-container .title {
   cursor: pointer;
@@ -60,6 +62,7 @@
   flex-direction: column;
   gap: 0.25rem;
   cursor: pointer;
+  pointer-events: all;
 }
 .select-language .dropdown-menu {
   position: absolute;
