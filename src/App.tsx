@@ -9,6 +9,7 @@ import TechStack from "./Components/TechStack";
 import ProjectsContainer from "./Components/ProjectsContainer";
 import ExperiencesContainer from "./Components/ExperiencesContainer";
 import ContactContainer from "./Components/ContactContainer";
+import Footer from "./Components/Footer";
 
 interface LightPosition {
   id: string;
@@ -69,6 +70,8 @@ function App() {
   };
 
   const [language, setLanguage] = useState<LanguageType>(getBrowserLanguage());
+
+  const homeRef = useRef<HTMLDivElement>(null);
   const personnalInfosRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -135,12 +138,15 @@ function App() {
     <LanguageContext.Provider value={{ language, setLanguage }}>
       <div className="App glow-background">
         <Navbar
+          homeRef={homeRef}
           personalInfosRef={personnalInfosRef}
           projectsRef={projectsRef}
           contactRef={contactRef}
         />
-
-        <PersonalInfos />
+        <div ref={homeRef}>
+          {" "}
+          <PersonalInfos />
+        </div>
 
         <div ref={personnalInfosRef}>
           <ExperiencesContainer />
@@ -155,6 +161,12 @@ function App() {
         <div ref={contactRef}>
           <ContactContainer />
         </div>
+        <Footer
+          homeRef={homeRef}
+          personalInfosRef={personnalInfosRef}
+          projectsRef={projectsRef}
+          contactRef={contactRef}
+        />
 
         {lights.map((light) => (
           <div

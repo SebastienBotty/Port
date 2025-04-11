@@ -1,6 +1,10 @@
 @use "./placeholders";
 @use "variables" as *; // Importe toutes les variables
 
+a {
+  text-decoration: none;
+  color: unset;
+}
 ul,
 li {
   list-style-type: none;

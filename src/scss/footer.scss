@@ -1,0 +1,47 @@
+.footer {
+  width: 50vw;
+  height: 10rem;
+  border: 1px inset white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem 0;
+
+  .title {
+    font-size: x-large;
+  }
+
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 1.5rem;
+    color: lightgray;
+
+    ul {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+
+      li {
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .my-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-right: 1.5rem;
+
+    div {
+      width: auto;
+      font-size: xx-large;
+      line-height: 0.9;
+    }
+  }
+}

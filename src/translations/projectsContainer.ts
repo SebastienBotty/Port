@@ -29,7 +29,7 @@ export const notMessenger: ProjectType = {
   },
   description: {
     EN: "Messenger clone (web) with most of its features.",
-    FR: "Close de Messenger (web) avec la plupart de ses fonctionnalités",
+    FR: "Clone de Messenger (web) avec la plupart de ses fonctionnalités",
   },
   stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
   link: "",

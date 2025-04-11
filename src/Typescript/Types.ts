@@ -41,6 +41,13 @@ export type ExperienceType = {
   };
 };
 
+export type RefProps = {
+  homeRef: React.RefObject<HTMLDivElement | null>;
+  personalInfosRef: React.RefObject<HTMLDivElement | null>;
+  projectsRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
+};
+
 export type LanguageContextType = {
   language: LanguageType;
   setLanguage: React.Dispatch<React.SetStateAction<LanguageType>>;

@@ -5,18 +5,10 @@ import { navBarText } from "../translations/navBarText";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { Flag } from "./Flag";
 import { ALL_LANGUAGES } from "../Constants/Languages";
-import { LanguageType } from "../Typescript/Types";
+import { LanguageType, RefProps } from "../Typescript/Types";
+import { scrollToRef } from "../Functions/Utils";
 
-interface NavbarProps {
-  personalInfosRef: React.RefObject<HTMLDivElement | null>;
-  projectsRef: React.RefObject<HTMLDivElement | null>;
-  contactRef: React.RefObject<HTMLDivElement | null>;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ personalInfosRef, projectsRef, contactRef }) => {
-  const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
+const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps) => {
   const { language, setLanguage } = useLanguageContext();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
@@ -32,7 +24,9 @@ const Navbar: React.FC<NavbarProps> = ({ personalInfosRef, projectsRef, contactR
   return (
     <div className="nav-bar">
       <div className="routes-container">
-        <div className="title">{navBarText.home[language]}</div>
+        <div className="title" onClick={() => scrollToRef(homeRef)}>
+          {navBarText.home[language]}
+        </div>
         <div className="title" onClick={() => scrollToRef(personalInfosRef)}>
           {navBarText.about[language]}
         </div>
