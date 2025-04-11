@@ -23,7 +23,7 @@ body {
 }
 
 .light {
-  position: absolute;
+  position: fixed;
   border-radius: 50%;
   opacity: 0;
   animation: fadeIn 1s ease forwards, move 2s ease infinite;
@@ -52,7 +52,7 @@ body {
 .light-3 {
   width: 150px;
   height: 150px;
-  background-color: hsla(216, 85%, 39%, 0.8);
+  background-color: rgb(214, 115, 193);
   filter: blur(150px);
   top: 50%;
   left: 50%;

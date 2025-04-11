@@ -19,7 +19,7 @@ export const tOu: ProjectType = {
     "Socket.io",
   ],
   link: "",
-  image: "",
+  image: "/images/Tou-image.png",
 };
 
 export const notMessenger: ProjectType = {
@@ -33,7 +33,7 @@ export const notMessenger: ProjectType = {
   },
   stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
   link: "",
-  image: "",
+  image: "/images/notMessenger-image.png",
 };
 
 export const portfolio: ProjectType = {

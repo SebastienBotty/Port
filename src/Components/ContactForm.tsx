@@ -25,7 +25,7 @@ function ContactForm() {
           placeholder={contactFormText.mail[language]}
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <textarea id="message" name="message" className="form-textarea" />
+        <textarea id="message" name="message" className="form-textarea" placeholder="Aa" />
         <ValidationError prefix="Message" field="message" errors={state.errors} />
         <button type="submit" disabled={state.submitting} className="form-button">
           {contactFormText.submit[language]}

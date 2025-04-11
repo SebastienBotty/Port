@@ -29,8 +29,8 @@
 
 .form-button {
   padding: 10px;
-  background-color: rgb(89, 18, 122);
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
