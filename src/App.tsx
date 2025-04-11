@@ -148,25 +148,31 @@ function App() {
           <PersonalInfos />
         </div>
 
-        <div ref={personnalInfosRef}>
+        <div ref={personnalInfosRef} className="class-container">
           <ExperiencesContainer />
         </div>
 
-        <TechStack />
+        <div className="class-container">
+          {" "}
+          <TechStack />
+        </div>
 
-        <div ref={projectsRef}>
+        <div ref={projectsRef} className="class-container">
           <ProjectsContainer />
         </div>
 
-        <div ref={contactRef}>
+        <div ref={contactRef} className="class-container">
           <ContactContainer />
         </div>
-        <Footer
-          homeRef={homeRef}
-          personalInfosRef={personnalInfosRef}
-          projectsRef={projectsRef}
-          contactRef={contactRef}
-        />
+        <div className="class-container">
+          {" "}
+          <Footer
+            homeRef={homeRef}
+            personalInfosRef={personnalInfosRef}
+            projectsRef={projectsRef}
+            contactRef={contactRef}
+          />
+        </div>
 
         {lights.map((light) => (
           <div
@@ -175,7 +181,6 @@ function App() {
             style={{
               top: light.top,
               left: light.left,
-              transition: "top 0.5s ease-out, left 0.5s ease-out",
             }}
           />
         ))}

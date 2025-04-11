@@ -1,5 +1,6 @@
 @use "./placeholders";
 @use "variables" as *; // Importe toutes les variables
+@import "./mixins";
 
 a {
   text-decoration: none;
@@ -29,6 +30,7 @@ body {
   border-radius: 50%; // Forme circulaire
   opacity: 0; // Commence invisible
   animation: fadeIn 1s ease forwards, move 2s ease infinite; // Applique les animations
+  z-index: 0;
 }
 
 // Styles spécifiques pour chaque lumière avec un délai d'animation
@@ -70,4 +72,8 @@ body {
   top: 60%; // Position Y
   left: 30%; // Position X
   animation-delay: 2s; // Délai de 1.5s pour la quatrième lumière
+}
+
+.class-container {
+  @include fadeIn(1s, 2.5s);
 }
