@@ -9,6 +9,9 @@ a {
 ul,
 li {
   list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
 }
 
 body {
@@ -32,6 +35,7 @@ body {
   opacity: 0; // Commence invisible
   animation: fadeIn 1s ease forwards, move 2s ease infinite; // Applique les animations
   z-index: 0;
+  pointer-events: none;
 }
 
 // Styles spécifiques pour chaque lumière avec un délai d'animation
@@ -77,4 +81,5 @@ body {
 
 .class-container {
   @include fadeIn(1s, 2.5s);
+  z-index: 1;
 }

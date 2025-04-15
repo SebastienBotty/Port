@@ -1,4 +1,4 @@
-.project-page {
+.project-page, .project-page .container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,8 +6,79 @@
 
 .project-page {
   background-color: #0a0a12;
+  width: 100vw;
+  color: white;
+  flex-direction: column;
+}
+.project-page .container {
   height: 100vh;
   width: 100vw;
+  display: flex;
+}
+.project-page .container .content {
+  display: flex;
+  width: 80%;
+  height: 50%;
+}
+.project-page .container .content > div,
+.project-page .container .content > ul {
+  border: 1px white inset;
+}
+.project-page .container .content .features-list {
+  height: 100%;
+  overflow-y: auto;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.project-page .container .content .features-list li {
+  filter: brightness(0.7);
+  width: auto;
+  cursor: pointer;
+  opacity: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: var(--delay);
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-page .container .content .features-list li:hover {
+  filter: brightness(1);
+}
+.project-page .container .content .details {
+  width: 75%;
+  padding: 0.5rem 1rem;
+}
+.project-page .container .content .details .description {
+  width: 100%;
+  opacity: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-page .container .content .details .image {
+  width: 100%;
 }
 
 /*# sourceMappingURL=projectPage.css.map */

@@ -5,7 +5,7 @@ import { LanguageContext } from "./Contexts/useLanguage";
 import "./scss/App.scss";
 
 import HomePage from "./Pages/HomePage";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ProjectPage from "./Pages/ProjectPage";
 import PageNotFound from "./Pages/PageNotFound";
 

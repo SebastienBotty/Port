@@ -11,6 +11,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
+  z-index: 2;
 
   &:hover {
     transform: scale(1.01) translateY(-2px);
