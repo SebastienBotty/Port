@@ -7,6 +7,7 @@ import "./scss/App.scss";
 import HomePage from "./Pages/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProjectPage from "./Pages/ProjectPage";
+import PageNotFound from "./Pages/PageNotFound";
 
 interface LightPosition {
   id: string;
@@ -130,6 +131,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/project/:projectName" element={<ProjectPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </LanguageContext.Provider>
       {lights.map((light) => (

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem; /* Taille de la police pour le code d'erreur */
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem; /* Taille de la police pour le message */
+  margin: 20px 0;
+}
+
+.home-link {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #007bff; /* Couleur du lien */
+  font-size: 1.2rem; /* Taille de la police pour le lien */
+}
+
+.home-link:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+/*# sourceMappingURL=pageNotFound.css.map */
