@@ -4,9 +4,18 @@ import { navBarText } from "../translations/navBarText";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { RefProps } from "../Typescript/Types";
 import { scrollToRef } from "../Functions/Utils";
+import { useNavigate } from "react-router-dom";
 
 function Footer({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps) {
   const { language } = useLanguageContext();
+  const navigate = useNavigate();
+
+  const handleClick = (ref?: React.RefObject<HTMLDivElement | null>) => {
+    if (ref) scrollToRef(ref);
+    else {
+      navigate("/");
+    }
+  };
   return (
     <div className="footer-container">
       <div className="footer">
@@ -22,10 +31,10 @@ function Footer({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
             <li></li>
           </ul>{" "}
           <ul>
-            <li onClick={() => scrollToRef(homeRef)}>{navBarText.home[language]}</li>
-            <li onClick={() => scrollToRef(personalInfosRef)}>{navBarText.about[language]}</li>
-            <li onClick={() => scrollToRef(projectsRef)}>{navBarText.projects[language]}</li>
-            <li onClick={() => scrollToRef(contactRef)}>{navBarText.contacts[language]}</li>
+            <li onClick={() => handleClick(homeRef)}>{navBarText.home[language]}</li>
+            <li onClick={() => handleClick(personalInfosRef)}>{navBarText.about[language]}</li>
+            <li onClick={() => handleClick(projectsRef)}>{navBarText.projects[language]}</li>
+            <li onClick={() => handleClick(contactRef)}>{navBarText.contacts[language]}</li>
           </ul>
         </div>
         <div className="my-name">

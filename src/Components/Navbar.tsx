@@ -7,9 +7,11 @@ import { Flag } from "./Flag";
 import { ALL_LANGUAGES } from "../Constants/Languages";
 import { LanguageType, RefProps } from "../Typescript/Types";
 import { scrollToRef } from "../Functions/Utils";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps) => {
   const { language, setLanguage } = useLanguageContext();
+  const navigate = useNavigate();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -21,19 +23,26 @@ const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
     setLanguage(lang);
   };
 
+  const handleClick = (ref?: React.RefObject<HTMLDivElement | null>) => {
+    if (ref) scrollToRef(ref);
+    else {
+      navigate("/");
+    }
+  };
+
   return (
     <div className="nav-bar">
       <div className="routes-container">
-        <div className="title" onClick={() => scrollToRef(homeRef)}>
+        <div className="title" onClick={() => handleClick(homeRef)}>
           {navBarText.home[language]}
         </div>
-        <div className="title" onClick={() => scrollToRef(personalInfosRef)}>
+        <div className="title" onClick={() => handleClick(personalInfosRef)}>
           {navBarText.about[language]}
         </div>
-        <div className="title" onClick={() => scrollToRef(projectsRef)}>
+        <div className="title" onClick={() => handleClick(projectsRef)}>
           {navBarText.projects[language]}
         </div>
-        <div className="title" onClick={() => scrollToRef(contactRef)}>
+        <div className="title" onClick={() => handleClick(contactRef)}>
           {navBarText.contacts[language]}
         </div>
       </div>

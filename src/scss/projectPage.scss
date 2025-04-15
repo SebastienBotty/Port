@@ -1,0 +1,9 @@
+@use "./placeholders";
+@use "variables" as *; // Importe toutes les variables
+
+.project-page {
+  @extend %flex-center;
+  background-color: $background-color;
+  height: 100vh;
+  width: 100vw;
+}

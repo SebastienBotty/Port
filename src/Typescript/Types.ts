@@ -1,7 +1,15 @@
 import { siJavascript } from "simple-icons";
 
 export type LanguageType = "FR" | "EN";
-
+export type FeatureType = {
+  title: {
+    [key in LanguageType]: string;
+  };
+  description: {
+    [key in LanguageType]: string;
+  };
+  image?: string;
+};
 export type ProjectType = {
   projectName: {
     [key in LanguageType]: string;
@@ -9,6 +17,7 @@ export type ProjectType = {
   description: {
     [key in LanguageType]: string;
   };
+  features: FeatureType[];
   stack: string[];
   link: string;
   image: string;
@@ -42,10 +51,10 @@ export type ExperienceType = {
 };
 
 export type RefProps = {
-  homeRef: React.RefObject<HTMLDivElement | null>;
-  personalInfosRef: React.RefObject<HTMLDivElement | null>;
-  projectsRef: React.RefObject<HTMLDivElement | null>;
-  contactRef: React.RefObject<HTMLDivElement | null>;
+  homeRef?: React.RefObject<HTMLDivElement | null>;
+  personalInfosRef?: React.RefObject<HTMLDivElement | null>;
+  projectsRef?: React.RefObject<HTMLDivElement | null>;
+  contactRef?: React.RefObject<HTMLDivElement | null>;
 };
 
 export type LanguageContextType = {

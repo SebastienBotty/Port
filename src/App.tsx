@@ -1,15 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./scss/App.scss";
-import Navbar from "./Components/Navbar";
 import { LanguageType } from "./Typescript/Types";
 import { getBrowserLanguage } from "./Functions/language";
 import { LanguageContext } from "./Contexts/useLanguage";
-import PersonalInfos from "./Components/PersonalInfos";
-import TechStack from "./Components/TechStack";
-import ProjectsContainer from "./Components/ProjectsContainer";
-import ExperiencesContainer from "./Components/ExperiencesContainer";
-import ContactContainer from "./Components/ContactContainer";
-import Footer from "./Components/Footer";
+import "./scss/App.scss";
+
+import HomePage from "./Pages/HomePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProjectPage from "./Pages/ProjectPage";
 
 interface LightPosition {
   id: string;
@@ -38,6 +35,8 @@ type LightTrajectories = {
 // Définissez les trajectoires en utilisant le type
 
 function App() {
+  const [language, setLanguage] = useState<LanguageType>(getBrowserLanguage());
+
   function getRandomNumber(): number {
     return Math.floor(Math.random() * 101);
   }
@@ -69,14 +68,6 @@ function App() {
     ],
   };
 
-  const [language, setLanguage] = useState<LanguageType>(getBrowserLanguage());
-
-  const homeRef = useRef<HTMLDivElement>(null);
-  const personnalInfosRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  // Positions initiales et finales pour chaque lumière
   const [lights, setLights] = useState<LightPosition[]>(
     LIGHT_IDS.map((id) => ({
       id,
@@ -133,59 +124,25 @@ function App() {
     window.addEventListener("scroll", debouncedScroll);
     return () => window.removeEventListener("scroll", debouncedScroll);
   }, []);
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
-      <div className="App glow-background">
-        <Navbar
-          homeRef={homeRef}
-          personalInfosRef={personnalInfosRef}
-          projectsRef={projectsRef}
-          contactRef={contactRef}
+    <BrowserRouter>
+      <LanguageContext.Provider value={{ language, setLanguage }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:projectName" element={<ProjectPage />} />
+        </Routes>
+      </LanguageContext.Provider>
+      {lights.map((light) => (
+        <div
+          key={light.id}
+          className={`light ${light.id}`}
+          style={{
+            top: light.top,
+            left: light.left,
+          }}
         />
-        <div ref={homeRef}>
-          {" "}
-          <PersonalInfos />
-        </div>
-
-        <div ref={personnalInfosRef} className="class-container">
-          <ExperiencesContainer />
-        </div>
-
-        <div className="class-container">
-          {" "}
-          <TechStack />
-        </div>
-
-        <div ref={projectsRef} className="class-container">
-          <ProjectsContainer />
-        </div>
-
-        <div ref={contactRef} className="class-container">
-          <ContactContainer />
-        </div>
-        <div className="class-container">
-          {" "}
-          <Footer
-            homeRef={homeRef}
-            personalInfosRef={personnalInfosRef}
-            projectsRef={projectsRef}
-            contactRef={contactRef}
-          />
-        </div>
-
-        {lights.map((light) => (
-          <div
-            key={light.id}
-            className={`light ${light.id}`}
-            style={{
-              top: light.top,
-              left: light.left,
-            }}
-          />
-        ))}
-      </div>
-    </LanguageContext.Provider>
+      ))}
+    </BrowserRouter>
   );
 }
 

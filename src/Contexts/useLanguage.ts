@@ -6,7 +6,7 @@ export const LanguageContext = createContext<LanguageContextType | undefined>(un
 export const useLanguageContext = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useMLanguageContext doit être utilisé dans un MessagesRefProvider");
+    throw new Error("useLanguageContext doit être utilisé dans un Language Provider");
   }
   return context;
 };

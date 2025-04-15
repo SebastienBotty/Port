@@ -2,8 +2,8 @@ import { ProjectType } from "../Typescript/Types";
 
 export const tOu: ProjectType = {
   projectName: {
-    EN: "Tou (WhereUat)",
-    FR: "Tou (T'es où)",
+    EN: "Tou",
+    FR: "Tou",
   },
   description: {
     EN: "Private mobile application to easily find my friend when we go out",
@@ -20,6 +20,7 @@ export const tOu: ProjectType = {
   ],
   link: "",
   image: "/images/Tou-image.png",
+  features: [],
 };
 
 export const notMessenger: ProjectType = {
@@ -34,6 +35,7 @@ export const notMessenger: ProjectType = {
   stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
   link: "",
   image: "/images/notMessenger-image.png",
+  features: [],
 };
 
 export const portfolio: ProjectType = {
@@ -48,6 +50,7 @@ export const portfolio: ProjectType = {
   stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
   link: "",
   image: "",
+  features: [],
 };
 
 export const projectsContainerText = {
