@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
 import "../scss/projectPage.scss";
@@ -8,6 +8,7 @@ import { projectsArr } from "../translations/projectsContainer";
 import PageNotFound from "./PageNotFound";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { FeatureType, ProjectType } from "../Typescript/Types";
+import { projectPageText } from "../translations/projectPage";
 
 function ProjectPage() {
   const { projectName } = useParams();
@@ -32,6 +33,7 @@ function ProjectPage() {
     <div className="project-page">
       <Navbar />
       <div className="container">
+        <div className="title">{projectName}</div>
         <div className="content">
           <ul className="features-list">
             {project?.features.map((feat, index) => (
@@ -55,7 +57,21 @@ function ProjectPage() {
             <div className="image">{activeFeat?.image}</div>
           </div>
         </div>
+        <div className="other-projects">
+          <div className="title"> {projectPageText.otherProjects[language]}</div>
+          <div className="other-projects-container">
+            {" "}
+            {projectsArr
+              .filter((proj) => proj.projectName.EN !== project.projectName.EN)
+              .map((proj) => (
+                <Link to={"/project/" + proj.projectName.EN} className="proj-name">
+                  {proj.projectName[language]}
+                </Link>
+              ))}
+          </div>
+        </div>
       </div>
+
       <Footer />
     </div>
   );

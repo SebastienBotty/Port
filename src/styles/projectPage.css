@@ -14,6 +14,12 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.project-page .container .title {
+  width: 80%;
+  font-size: x-large;
 }
 .project-page .container .content {
   display: flex;
@@ -80,6 +86,26 @@
 }
 .project-page .container .content .details .image {
   width: 100%;
+}
+.project-page .container .other-projects {
+  width: 80%;
+  height: 5rem;
+}
+.project-page .container .other-projects .title {
+  font-size: x-large;
+}
+.project-page .container .other-projects .other-projects-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  gap: 2rem;
+}
+.project-page .container .other-projects .other-projects-container .proj-name {
+  cursor: pointer;
+}
+.project-page .container .other-projects .other-projects-container .proj-name:hover {
+  text-shadow: 0 0 5.5px white, 0 0 11px white, 0 0 22px white;
 }
 
 /*# sourceMappingURL=projectPage.css.map */

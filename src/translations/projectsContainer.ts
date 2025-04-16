@@ -134,7 +134,7 @@ export const tOu: ProjectType = {
     {
       title: {
         EN: "Hsitory",
-        FR: "Historic",
+        FR: "Historique",
       },
       description: {
         EN: "A history of all events up to 48 hours ago is available.",
@@ -162,8 +162,8 @@ export const notMessenger: ProjectType = {
 
 export const portfolio: ProjectType = {
   projectName: {
-    EN: "This portfolio",
-    FR: "Ce portfolio",
+    EN: "Portfolio",
+    FR: "Portfolio",
   },
   description: {
     EN: "The portfolio you're currently viewing - a showcase of my projects",
