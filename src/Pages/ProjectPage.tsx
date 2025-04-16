@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 
@@ -12,19 +12,21 @@ import { FeatureType, ProjectType } from "../Typescript/Types";
 function ProjectPage() {
   const { projectName } = useParams();
   const { language } = useLanguageContext();
-  const navigate = useNavigate();
   const [activeFeat, setActiveFeat] = useState<FeatureType | undefined>(undefined);
   const [project, setProject] = useState<ProjectType | undefined>(undefined);
 
   useEffect(() => {
     const project = projectsArr.find((proj) => proj.projectName.EN === projectName);
     if (!project) {
-      navigate("undefined");
       return;
     }
     setProject(project);
     setActiveFeat(project.features[0]);
   }, [projectName]);
+
+  if (!project) {
+    return <PageNotFound />;
+  }
 
   return (
     <div className="project-page">

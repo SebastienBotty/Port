@@ -20,19 +20,17 @@
   width: 80%;
   height: 50%;
 }
-.project-page .container .content > div,
-.project-page .container .content > ul {
-  border: 1px white inset;
-}
 .project-page .container .content .features-list {
   height: 100%;
   overflow-y: auto;
   width: 25%;
   display: flex;
   flex-direction: column;
+  border: 1px white inset;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 .project-page .container .content .features-list li {
-  filter: brightness(0.7);
+  filter: brightness(0.6);
   width: auto;
   cursor: pointer;
   opacity: 0;
@@ -59,6 +57,8 @@
 .project-page .container .content .details {
   width: 75%;
   padding: 0.5rem 1rem;
+  border: 1px white inset;
+  border-radius: 0.25rem 0.25rem 0;
 }
 .project-page .container .content .details .description {
   width: 100%;
@@ -66,6 +66,7 @@
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
   animation-delay: 0;
+  font-size: large;
 }
 @keyframes fadeIn {
   0% {

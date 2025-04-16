@@ -78,6 +78,7 @@ function App() {
   );
 
   useEffect(() => {
+    document.title = "Sébastien Botty";
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
