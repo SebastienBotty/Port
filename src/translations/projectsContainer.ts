@@ -169,7 +169,7 @@ export const portfolio: ProjectType = {
     EN: "The portfolio you're currently viewing - a showcase of my projects",
     FR: "Le portfolio que vous regardez actuellement - vitrine de mes projets",
   },
-  stack: ["TypeScript", "React", "MongoDB", "Express", "AWS: S3", "Firebase: Auth", "Socket.io"],
+  stack: ["TypeScript", "React", "Sass"],
   link: "",
   image: "/images/portfolio-image.png",
   features: [],

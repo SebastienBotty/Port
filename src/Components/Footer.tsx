@@ -10,10 +10,10 @@ function Footer({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
   const { language } = useLanguageContext();
   const navigate = useNavigate();
 
-  const handleClick = (ref?: React.RefObject<HTMLDivElement | null>) => {
+  const handleClick = (refName: string, ref?: React.RefObject<HTMLDivElement | null>) => {
     if (ref) scrollToRef(ref);
     else {
-      navigate("/");
+      navigate("/", { state: refName });
     }
   };
   return (
@@ -31,10 +31,16 @@ function Footer({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
             <li></li>
           </ul>{" "}
           <ul>
-            <li onClick={() => handleClick(homeRef)}>{navBarText.home[language]}</li>
-            <li onClick={() => handleClick(personalInfosRef)}>{navBarText.about[language]}</li>
-            <li onClick={() => handleClick(projectsRef)}>{navBarText.projects[language]}</li>
-            <li onClick={() => handleClick(contactRef)}>{navBarText.contacts[language]}</li>
+            <li onClick={() => handleClick("home", homeRef)}>{navBarText.home[language]}</li>
+            <li onClick={() => handleClick("perso", personalInfosRef)}>
+              {navBarText.about[language]}
+            </li>
+            <li onClick={() => handleClick("projects", projectsRef)}>
+              {navBarText.projects[language]}
+            </li>
+            <li onClick={() => handleClick("contact", contactRef)}>
+              {navBarText.contacts[language]}
+            </li>
           </ul>
         </div>
         <div className="my-name">

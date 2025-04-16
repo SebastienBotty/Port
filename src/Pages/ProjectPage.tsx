@@ -16,7 +16,9 @@ function ProjectPage() {
   const [activeFeat, setActiveFeat] = useState<FeatureType | undefined>(undefined);
   const [project, setProject] = useState<ProjectType | undefined>(undefined);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0); // Fait défiler la page vers le haut
+
     const project = projectsArr.find((proj) => proj.projectName.EN === projectName);
     if (!project) {
       return;

@@ -23,26 +23,26 @@ const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
     setLanguage(lang);
   };
 
-  const handleClick = (ref?: React.RefObject<HTMLDivElement | null>) => {
+  const handleClick = (refName: string, ref?: React.RefObject<HTMLDivElement | null>) => {
     if (ref) scrollToRef(ref);
     else {
-      navigate("/");
+      navigate("/", { state: refName });
     }
   };
 
   return (
     <div className="nav-bar">
       <div className="routes-container">
-        <div className="title" onClick={() => handleClick(homeRef)}>
+        <div className="title" onClick={() => handleClick("home", homeRef)}>
           {navBarText.home[language]}
         </div>
-        <div className="title" onClick={() => handleClick(personalInfosRef)}>
+        <div className="title" onClick={() => handleClick("perso", personalInfosRef)}>
           {navBarText.about[language]}
         </div>
-        <div className="title" onClick={() => handleClick(projectsRef)}>
+        <div className="title" onClick={() => handleClick("projects", projectsRef)}>
           {navBarText.projects[language]}
         </div>
-        <div className="title" onClick={() => handleClick(contactRef)}>
+        <div className="title" onClick={() => handleClick("contact", contactRef)}>
           {navBarText.contacts[language]}
         </div>
       </div>
