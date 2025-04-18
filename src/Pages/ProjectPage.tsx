@@ -39,25 +39,55 @@ function ProjectPage() {
         <div className="title">{projectName}</div>
         <div className="content">
           <ul className="features-list">
-            {project?.features.map((feat, index) => (
-              <li
-                onClick={() => setActiveFeat(feat)}
-                className="feat"
-                style={
-                  feat.title[language] === activeFeat?.title[language]
-                    ? { filter: "brightness(1)" }
-                    : ({ "--delay": index * 0.2 + "s" } as React.CSSProperties)
-                }
+            {project?.features.length > 0 ? (
+              project?.features.map((feat, index) => (
+                <li
+                  onClick={() => setActiveFeat(feat)}
+                  className="feat"
+                  style={
+                    feat.title[language] === activeFeat?.title[language]
+                      ? { filter: "brightness(1)" }
+                      : ({ "--delay": index * 0.2 + "s" } as React.CSSProperties)
+                  }
+                >
+                  <div className="tiret">-</div> {feat.title[language]}
+                </li>
+              ))
+            ) : (
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
-                <div className="tiret">-</div> {feat.title[language]}
-              </li>
-            ))}
+                <p style={{ fontSize: "medium" }}> {projectPageText.nothingToShow[language]}</p>
+              </div>
+            )}
           </ul>
           <div className="details">
-            <div className="description" key={activeFeat?.title[language]}>
-              <ReactMarkdown>{activeFeat?.description[language]}</ReactMarkdown>
-            </div>
-            <div className="image">{activeFeat?.image}</div>
+            {project?.features.length > 0 ? (
+              <>
+                <div className="description" key={activeFeat?.title[language]}>
+                  <ReactMarkdown>{activeFeat?.description[language]}</ReactMarkdown>
+                </div>
+                <div className="image">{activeFeat?.image}</div>
+              </>
+            ) : (
+              <div
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <p style={{ fontSize: "medium" }}> {projectPageText.nothingToShow[language]}</p>
+              </div>
+            )}{" "}
           </div>
         </div>
         <div className="other-projects">
