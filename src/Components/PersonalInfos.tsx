@@ -27,9 +27,7 @@ function PersonnalInfos() {
             style={{ transform: `rotate(${rotation}deg)` }} // Applique la rotation
             onMouseEnter={handleMouseEnter} // Gère l'événement de survol
             onMouseLeave={handleMouseLeave}
-          >
-            Yo
-          </div>
+          ></div>
           <div className="text-container">
             <div className="big-title-name">Sébastien Botty</div>
             <div className="me-flag">

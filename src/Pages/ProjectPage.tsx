@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import Navbar from "../Components/Navbar";
 
 import "../scss/projectPage.scss";
@@ -54,7 +55,7 @@ function ProjectPage() {
           </ul>
           <div className="details">
             <div className="description" key={activeFeat?.title[language]}>
-              {activeFeat?.description[language]}
+              <ReactMarkdown>{activeFeat?.description[language]}</ReactMarkdown>
             </div>
             <div className="image">{activeFeat?.image}</div>
           </div>
@@ -65,6 +66,7 @@ function ProjectPage() {
             {" "}
             {projectsArr
               .filter((proj) => proj.projectName.EN !== project.projectName.EN)
+              .sort((a, b) => a.projectName[language].localeCompare(b.projectName[language]))
               .map((proj) => (
                 <Link to={"/project/" + proj.projectName.EN} className="proj-name">
                   {proj.projectName[language]}

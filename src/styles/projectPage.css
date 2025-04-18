@@ -64,6 +64,7 @@
   width: 75%;
   padding: 0.5rem 1rem;
   border: 1px white inset;
+  overflow-y: auto;
   border-radius: 0.25rem 0.25rem 0;
 }
 .project-page .container .content .details .description {
@@ -72,7 +73,6 @@
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
   animation-delay: 0;
-  font-size: large;
 }
 @keyframes fadeIn {
   0% {
@@ -83,6 +83,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.project-page .container .content .details .description p {
+  font-size: medium;
 }
 .project-page .container .content .details .image {
   width: 100%;
