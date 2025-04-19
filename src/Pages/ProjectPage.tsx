@@ -46,7 +46,7 @@ function ProjectPage() {
                   className="feat"
                   style={
                     feat.title[language] === activeFeat?.title[language]
-                      ? { filter: "brightness(1)" }
+                      ? { filter: "brightness(1)", backdropFilter: "brightness(0.5)" }
                       : ({ "--delay": index * 0.2 + "s" } as React.CSSProperties)
                   }
                 >

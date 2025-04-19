@@ -59,7 +59,6 @@
         padding: 0.5rem 1rem;
         border: 1px white inset;
         overflow-y: auto;
-
         border-radius: 0.25rem 0.25rem 0;
 
         .description {
@@ -67,8 +66,22 @@
           opacity: 0;
           @include fadeIn(0.5s, 0);
 
-          p {
+          p,
+          li,
+          td,
+          th {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            max-width: 100%;
+            white-space: normal; // Permet le retour à la ligne naturel
             font-size: medium;
+          }
+
+          code,
+          pre {
+            max-width: 100%;
+            white-space: pre-wrap; // Permet le retour à la ligne pour  la mise en forme du code
           }
         }
         .image {

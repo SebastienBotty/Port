@@ -84,8 +84,21 @@
     transform: translateY(0);
   }
 }
-.project-page .container .content .details .description p {
+.project-page .container .content .details .description p,
+.project-page .container .content .details .description li,
+.project-page .container .content .details .description td,
+.project-page .container .content .details .description th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  white-space: normal;
   font-size: medium;
+}
+.project-page .container .content .details .description code,
+.project-page .container .content .details .description pre {
+  max-width: 100%;
+  white-space: pre-wrap;
 }
 .project-page .container .content .details .image {
   width: 100%;
