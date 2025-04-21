@@ -32,3 +32,20 @@
   animation: fadeIn $duration ease forwards; // Applique l'animation
   animation-delay: $delay; // Permet d'ajouter un délai si nécessaire
 }
+
+@mixin fadeInLeft($duration: 0.5s, $delay: 0s) {
+  opacity: 0;
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0; // Commence complètement transparent
+      transform: translateX(-40px); // Optionnel : déplace légèrement vers la gauche
+    }
+    100% {
+      opacity: 1; // Devient complètement opaque
+      transform: translateX(0); // Remet à sa position d'origine
+    }
+  }
+
+  animation: fadeInLeft $duration ease forwards; // Applique l'animation
+  animation-delay: $delay; // Permet d'ajouter un délai si nécessaire
+}

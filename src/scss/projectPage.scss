@@ -38,13 +38,14 @@
         flex-direction: column;
         border: 1px white inset;
         border-radius: 0.25rem 0 0 0.25rem;
+        overflow-x: hidden;
 
         li {
           filter: brightness(0.6);
           width: auto;
           cursor: pointer;
           opacity: 0;
-          @include fadeIn(0.5s, var(--delay));
+          @include fadeInLeft(0.5s, var(--delay));
           display: flex;
           gap: 0.25rem;
           padding: 0.75rem 1rem;

@@ -38,7 +38,7 @@ function ProjectPage() {
       <div className="container">
         <div className="title">{projectName}</div>
         <div className="content">
-          <ul className="features-list">
+          <ul className="features-list" key={projectName}>
             {project?.features.length > 0 ? (
               project?.features.map((feat, index) => (
                 <li
