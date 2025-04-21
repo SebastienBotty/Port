@@ -12,6 +12,7 @@ export const tOu: ProjectType = {
   stack: [
     `TypeScript`,
     `ReactNative`,
+    "Node.js",
     `MongoDB`,
     `Express`,
     `AWS: S3`,
@@ -282,7 +283,16 @@ export const notMessenger: ProjectType = {
     EN: `Messenger clone (web) with most of its features.`,
     FR: `Clone de Messenger (web) avec la plupart de ses fonctionnalités`,
   },
-  stack: [`TypeScript`, `React`, `MongoDB`, `Express`, `AWS: S3`, `Firebase: Auth`, `Socket.io`],
+  stack: [
+    `TypeScript`,
+    `React`,
+    "Node.js",
+    `MongoDB`,
+    `Express`,
+    `AWS: S3`,
+    `Firebase: Auth`,
+    `Socket.io`,
+  ],
   link: ``,
   image: `/images/notMessenger-image.png`,
   features: [

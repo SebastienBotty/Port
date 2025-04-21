@@ -48,6 +48,10 @@
   text-align: end;
   text-decoration: underline;
 }
+.project .infos .first-line .discover a {
+  display: flex;
+  align-items: center;
+}
 .project .infos .first-line .discover:hover svg {
   transform: translateX(10px);
 }

@@ -53,6 +53,11 @@
         text-align: end;
         text-decoration: underline;
 
+        a {
+          display: flex;
+          align-items: center;
+        }
+
         &:hover {
           svg {
             transform: translateX(10px);

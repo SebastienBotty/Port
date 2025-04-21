@@ -29,10 +29,17 @@ function Project({ projectData }: { projectData: ProjectType }) {
             {" "}
             <div className="name">{projectData.projectName[language]}</div>
             <div className="discover">
-              {projectText.discover[language]}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" />
-              </svg>
+              <a
+                href={projectData.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {projectText.discover[language]}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" />
+                </svg>
+              </a>
             </div>
           </div>
           <div className="description">{projectData.description[language]}</div>
