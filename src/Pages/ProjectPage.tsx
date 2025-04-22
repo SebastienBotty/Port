@@ -57,7 +57,7 @@ function ProjectPage() {
       }
 
       listElement.scrollTo({
-        top: elementPosition - listHeight / 2 + featElement.clientHeight / 2,
+        top: elementPosition - listHeight / 2,
         behavior: "smooth",
       });
     }
