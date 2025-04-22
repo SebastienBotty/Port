@@ -21,6 +21,12 @@ export type ProjectType = {
   stack: string[];
   link: string;
   image: string;
+  state: ProgressType;
+};
+
+export type ProgressType = {
+  EN: "Done" | "In progress";
+  FR: "Terminé" | "En cours";
 };
 
 export type TechnologyType = {

@@ -30,6 +30,7 @@
 }
 .me .text-container .me-flag {
   width: 100%;
+  text-align: end;
 }
 
 .big-title-name {

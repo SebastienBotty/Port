@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "../scss/personnalInfos.scss";
 import { siGithub, siFiles, siMailboxdotorg } from "simple-icons";
 
-import { Flag } from "./Flag";
 import { personalInfosText } from "../translations/personalInfos";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import TechIcon from "./TechIcon";
+
+import "../scss/personnalInfos.scss";
 
 function PersonnalInfos() {
   const { language, setLanguage } = useLanguageContext();
@@ -30,9 +30,7 @@ function PersonnalInfos() {
           ></div>
           <div className="text-container">
             <div className="big-title-name">Sébastien Botty</div>
-            <div className="me-flag">
-              {personalInfosText.based[language]} <Flag countryCode="BE" />
-            </div>
+            <div className="me-flag">{personalInfosText.based[language]} - FR/EN</div>
           </div>
         </div>
         <div className="big-title title-1">FULL STACK</div>

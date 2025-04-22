@@ -2,14 +2,14 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../Components/Navbar";
-
-import "../scss/projectPage.scss";
 import Footer from "../Components/Footer";
 import { projectsArr } from "../translations/projectsContainer";
 import PageNotFound from "./PageNotFound";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { FeatureType, ProjectType } from "../Typescript/Types";
 import { projectPageText } from "../translations/projectPage";
+
+import "../scss/projectPage.scss";
 
 function ProjectPage() {
   const { projectName } = useParams();
@@ -71,7 +71,13 @@ function ProjectPage() {
     <div className="project-page">
       <Navbar />
       <div className="container">
-        <div className="title">{projectName}</div>
+        <div className="title">
+          {projectName}{" "}
+          {project.state.EN === "In progress" && (
+            <span className="in-progress">({project.state[language]}...)</span>
+          )}
+        </div>
+
         <div className="content">
           <ul className="features-list" key={projectName} ref={featuresListRef}>
             {project?.features.length > 0 ? (

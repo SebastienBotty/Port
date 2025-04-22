@@ -21,6 +21,10 @@ export const tOu: ProjectType = {
   ],
   link: ``,
   image: `/images/Tou-image.png`,
+  state: {
+    EN: "Done",
+    FR: "Terminé",
+  },
   features: [
     {
       title: {
@@ -295,6 +299,10 @@ export const notMessenger: ProjectType = {
   ],
   link: ``,
   image: `/images/notMessenger-image.png`,
+  state: {
+    EN: "In progress",
+    FR: "En cours",
+  },
   features: [
     {
       title: {
@@ -992,6 +1000,10 @@ export const portfolio: ProjectType = {
   link: ``,
   image: `/images/portfolio-image.png`,
   features: [],
+  state: {
+    EN: "Done",
+    FR: "Terminé",
+  },
 };
 
 export const projectsContainerText = {

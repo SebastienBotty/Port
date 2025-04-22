@@ -26,6 +26,15 @@
       font-size: x-large;
       @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
         font-size: xx-large;
+        width: 90%;
+      }
+
+      .in-progress {
+        font-size: small;
+        color: lightgray;
+        @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+          font-size: large;
+        }
       }
     }
     .content {
@@ -109,7 +118,6 @@
     .other-projects {
       width: 80%;
       height: 5rem;
-
       .title {
         font-size: x-large;
         @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {

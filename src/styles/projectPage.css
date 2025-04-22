@@ -24,6 +24,16 @@
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .project-page .container .title {
     font-size: xx-large;
+    width: 90%;
+  }
+}
+.project-page .container .title .in-progress {
+  font-size: small;
+  color: lightgray;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .project-page .container .title .in-progress {
+    font-size: large;
   }
 }
 .project-page .container .content {
