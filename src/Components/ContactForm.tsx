@@ -15,7 +15,7 @@ function ContactForm() {
   return (
     <>
       <form onSubmit={handleSubmit} method="post" className="contact-form">
-        <div className="secondTitle">{contactFormText.secondTitle[language]}</div>
+        <div className="second-title">{contactFormText.secondTitle[language]}</div>
 
         <input
           id="email"
