@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../Components/Navbar";
@@ -16,9 +16,11 @@ function ProjectPage() {
   const { language } = useLanguageContext();
   const [activeFeat, setActiveFeat] = useState<FeatureType | undefined>(undefined);
   const [project, setProject] = useState<ProjectType | undefined>(undefined);
+  const featuresListRef = useRef<HTMLUListElement>(null);
+  const featureRefs = useRef<{ [key: string]: React.RefObject<HTMLLIElement> }>({});
 
   useLayoutEffect(() => {
-    window.scrollTo(0, 0); // Fait défiler la page vers le haut
+    window.scrollTo(0, 0);
 
     const project = projectsArr.find((proj) => proj.projectName.EN === projectName);
     if (!project) {
@@ -26,7 +28,40 @@ function ProjectPage() {
     }
     setProject(project);
     setActiveFeat(project.features[0]);
+
+    project.features.forEach((feat) => {
+      const key = feat.title.EN;
+      featureRefs.current[key] = featureRefs.current[key] || React.createRef<HTMLLIElement>();
+    });
   }, [projectName]);
+
+  const scrollToFeat = (feat: FeatureType) => {
+    setActiveFeat(feat);
+
+    const key = feat.title.EN;
+    if (featureRefs.current[key]?.current && featuresListRef.current) {
+      const featElement = featureRefs.current[key].current;
+      const listElement = featuresListRef.current;
+
+      const elementPosition = featElement.offsetTop;
+
+      const currentScrollTop = listElement.scrollTop;
+
+      const listHeight = listElement.clientHeight;
+
+      const elementTop = elementPosition - currentScrollTop;
+      const elementBottom = elementTop + featElement.clientHeight;
+
+      if (elementTop >= 0 && elementBottom <= listHeight) {
+        return;
+      }
+
+      listElement.scrollTo({
+        top: elementPosition - listHeight / 2 + featElement.clientHeight / 2,
+        behavior: "smooth",
+      });
+    }
+  };
 
   if (!project) {
     return <PageNotFound />;
@@ -38,11 +73,13 @@ function ProjectPage() {
       <div className="container">
         <div className="title">{projectName}</div>
         <div className="content">
-          <ul className="features-list" key={projectName}>
+          <ul className="features-list" key={projectName} ref={featuresListRef}>
             {project?.features.length > 0 ? (
               project?.features.map((feat, index) => (
                 <li
-                  onClick={() => setActiveFeat(feat)}
+                  key={feat.title.EN}
+                  ref={featureRefs.current[feat.title.EN]}
+                  onClick={() => scrollToFeat(feat)}
                   className="feat"
                   style={
                     feat.title[language] === activeFeat?.title[language]
