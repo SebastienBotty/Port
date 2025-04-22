@@ -59,6 +59,11 @@ function ProjectPage() {
     }
   };
 
+  useEffect(() => {
+    document.title = "Sébastien Botty - " + projectName;
+    return () => {};
+  }, []);
+
   if (!project) {
     return <PageNotFound />;
   }
