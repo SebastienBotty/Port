@@ -6,6 +6,7 @@ import { useLanguageContext } from "../Contexts/useLanguage";
 import TechIcon from "./TechIcon";
 
 import "../scss/personnalInfos.scss";
+import { Flag } from "./Flag";
 
 function PersonnalInfos() {
   const { language, setLanguage } = useLanguageContext();
@@ -27,25 +28,30 @@ function PersonnalInfos() {
             style={{ transform: `rotate(${rotation}deg)` }} // Applique la rotation
             onMouseEnter={handleMouseEnter} // Gère l'événement de survol
             onMouseLeave={handleMouseLeave}
-          ></div>
+          >
+            <div className="img-flag">
+              {" "}
+              <Flag countryCode="BE" />
+            </div>
+          </div>
           <div className="text-container">
             <div className="big-title-name">Sébastien Botty</div>
-            <div className="me-flag">{personalInfosText.based[language]} - FR/EN</div>
+            <div className="me-flag">FR/EN</div>
           </div>
         </div>
         <div className="big-title title-1">FULL STACK</div>
         <div className="big-title title-2">DEVELOPPER</div>{" "}
         <div className="contacts">
           <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
-            <div className="img-container">
+            <div className="img-container reflect">
               <TechIcon icon={siGithub} size={32} />
             </div>
           </a>
 
-          <div className="img-container">
+          <div className="img-container reflect">
             <TechIcon icon={siFiles} size={32} />
           </div>
-          <div className="img-container">
+          <div className="img-container reflect">
             <TechIcon icon={siMailboxdotorg} size={32} />
           </div>
         </div>

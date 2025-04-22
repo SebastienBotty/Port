@@ -10,6 +10,21 @@
   @extend %flex-center;
   opacity: 0;
   @include fadeIn(1s, 1s);
+  gap: 0.5rem;
+  .img-container {
+    position: relative;
+    border-radius: 50%;
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border: 1px inset white;
+    transition: transform 0.3s ease;
+    .img-flag {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
 
   .text-container {
     @extend %flex-center;
@@ -17,7 +32,6 @@
 
     .me-flag {
       width: 100%;
-      text-align: end;
     }
   }
 }
@@ -44,15 +58,15 @@
   @include fadeIn(1s, 2s);
 }
 
-.img-container {
+.reflect {
   @extend %flex-center;
   border-radius: 50%;
   width: 4rem;
   aspect-ratio: 1/1;
   border: 1px inset white;
   transition: transform 0.3s ease;
-  position: relative;
   overflow: hidden;
+  position: relative;
 
   &::after {
     content: "";
