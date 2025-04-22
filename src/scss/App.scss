@@ -82,4 +82,6 @@ body {
 .class-container {
   @include fadeIn(1s, 2.5s);
   z-index: 1;
+  width: 100vw;
+  @extend %flex-center;
 }

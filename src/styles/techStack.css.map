@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/_placeholders.scss","../scss/techStack.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACAF;EACE;EACA;EACA;EACA;;AAEA;EACE;;AAEF;EACE;EACA;;AAGF;EAEE;EACA;EACA;EACA","file":"techStack.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/_placeholders.scss","../scss/techStack.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACAF;EACE;EACA;EACA;EACA;;AAEA;EANF;IAOI;;;AAGF;EACE;;AAEA;EAHF;IAII;;;AAGJ;EACE;EACA;;AACA;EAHF;IAII;;;AAIJ;EAEE;EACA;EACA;EACA;;AAEA;EAPF;IAQI","file":"techStack.css"}

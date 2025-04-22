@@ -1,4 +1,4 @@
-.glow-background {
+.glow-background, .class-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +85,7 @@ body {
   animation: fadeIn 1s ease forwards;
   animation-delay: 2.5s;
   z-index: 1;
+  width: 100vw;
 }
 @keyframes fadeIn {
   0% {

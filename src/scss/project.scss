@@ -13,6 +13,12 @@
   transition: transform 0.3s ease;
   z-index: 2;
 
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 40vw;
+    font-size: x-large;
+    line-height: 0.8;
+  }
+
   &:hover {
     transform: scale(1.01) translateY(-2px);
   }
@@ -36,6 +42,10 @@
       font-size: medium;
       font-weight: bold;
       display: flex;
+
+      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+        font-size: x-large;
+      }
 
       .name {
         flex: 1;
@@ -82,8 +92,9 @@
       gap: 0.25rem;
       flex: 1 auto;
 
-      font-size: small;
-
+      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+        font-size: large;
+      }
       * {
         padding: 0.25rem;
         background-color: whitesmoke;

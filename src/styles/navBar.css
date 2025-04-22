@@ -29,6 +29,11 @@
     transform: translateY(0);
   }
 }
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .nav-bar {
+    height: 10rem;
+  }
+}
 .nav-bar .routes-container {
   gap: 1rem;
   flex-direction: row;
@@ -38,6 +43,13 @@
   background-color: #0a0a12;
   border: 1px inset white;
   pointer-events: all;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .nav-bar .routes-container {
+    font-size: x-large;
+    height: 5rem;
+    border-radius: 5rem;
+  }
 }
 .nav-bar .routes-container .title {
   cursor: pointer;
@@ -64,6 +76,12 @@
   gap: 0.25rem;
   cursor: pointer;
   pointer-events: all;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .select-language {
+    top: 2rem;
+    right: 2rem;
+  }
 }
 .select-language .dropdown-menu {
   position: absolute;

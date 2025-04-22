@@ -2,7 +2,14 @@
   width: 50vw;
   padding: 2.5rem 0;
 
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 90vw;
+  }
+
   .title {
     font-size: x-large;
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      font-size: xx-large;
+    }
   }
 }

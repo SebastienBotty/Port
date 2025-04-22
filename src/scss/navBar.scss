@@ -1,3 +1,4 @@
+@use "variables" as *;
 @import "./_placeholders";
 @import "./_mixins";
 
@@ -16,6 +17,10 @@
 
   @include fadeIn(1s, 0.5s);
 
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    height: 10rem;
+  }
+
   .routes-container {
     @extend %flex-center;
     gap: 1rem;
@@ -23,9 +28,15 @@
     font-size: large;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    background-color: #0a0a12; // Couleur de fond semi-transparente
+    background-color: $background-color;
     border: 1px inset white;
     pointer-events: all;
+
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      font-size: x-large; // Police plus grande
+      height: 5rem;
+      border-radius: 5rem;
+    }
 
     .title {
       @extend %flex-center;
@@ -56,6 +67,10 @@
   cursor: pointer;
   pointer-events: all;
 
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    top: 2rem;
+    right: 2rem;
+  }
   .dropdown-menu {
     position: absolute;
     top: 100%;

@@ -5,10 +5,19 @@
 }
 .experience .left-side-img {
   width: 10%;
-  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .experience .left-side-img {
+    width: 20%;
+  }
+}
+.experience .left-side-img img {
+  width: 75%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }
 .experience .text {
   color: lightgray;
