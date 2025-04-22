@@ -8,7 +8,9 @@ function Experience({ experienceData }: { experienceData: ExperienceType }) {
   return (
     <div className="experience">
       <div className="left-side-img">
-        <img className="img-container" src={experienceData.image} alt="" />
+        {experienceData.image && (
+          <img className="img-container" src={experienceData.image} alt="" />
+        )}
       </div>
       <div className="text">
         <div className="dates">
