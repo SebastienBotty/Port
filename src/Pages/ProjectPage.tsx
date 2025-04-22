@@ -52,10 +52,6 @@ function ProjectPage() {
       const elementTop = elementPosition - currentScrollTop;
       const elementBottom = elementTop + featElement.clientHeight;
 
-      if (elementTop >= 0 && elementBottom <= listHeight) {
-        return;
-      }
-
       listElement.scrollTo({
         top: elementPosition - listHeight / 2,
         behavior: "smooth",
