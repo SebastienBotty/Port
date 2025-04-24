@@ -528,7 +528,7 @@ A system message will be displayed to inform all users in the conversation of th
         FR: `Tout utilisateur peut changer l'emoji d'une conversation.
 
 L'emoji d'une conversation est une réaction rapide sur laquelle l'utilisateur peut appuyer pour directement envoyer un message contenant cet emoji.  
-Il peut choisir cet emoji parmis une liste d'ememojis.
+Il peut choisir cet emoji parmi une liste d'emojis.
 
 Un message système sera affiché pour prévenir tous les utilisateurs de la conversation de ce changement.`,
       },
@@ -543,8 +543,7 @@ Un message système sera affiché pour prévenir tous les utilisateurs de la con
         EN: `Any user can change the conversation's theme color. This only changes the color of the messages sent by that user.  
  Depending on whether the chosen color is light or dark, the text color will automatically switch between black and white.`,
         FR: `Tout utilisateur peut changer le thème couleur de la conversation. Cela change uniquement la couleur des messages envoyés par l'utilisateur.  
-En fonction de si la couleur choisie est claire ou foncée, le couleur de la police passe de blanc à noir.
-`,
+En fonction de si la couleur choisie est claire ou foncée, la couleur de la police passe de blanc à noir.`,
       },
       image: ``,
     },
@@ -557,9 +556,9 @@ En fonction de si la couleur choisie est claire ou foncée, le couleur de la pol
         EN: `Any user can change the nicknames of the members in the conversation.  
 Each time a user's name is displayed in the conversation — for example, as the author of a message or in a system message —  
 their nickname will be shown instead.`,
-        FR: `Tout utilisateur peut changer les pseudos des membres de la conversations.  
-Chaque fois que le nom d'un utilisateur sera utilisé dans la conversation. Ex: Auteur de message, message système...  
-Son pseudo sera affiché à la place.`,
+        FR: `Tout utilisateur peut changer les pseudos des membres de la conversation.  
+Chaque fois que le nom d'un utilisateur sera utilisé dans la conversation (ex: auteur de message, message système...),  
+son pseudo sera affiché à la place.`,
       },
       image: ``,
     },
@@ -633,17 +632,17 @@ It returns all messages containing that string
 If the message is already loaded, the view scrolls to it. Otherwise, the message is fetched along with around ten messages before and after.  
 
 The target message is highlighted.`,
-        FR: `L'utilisateur peut rechercher une chaine de minimum 3 caractères  dans une conversation  
-Lui retourne tous les messages contenants cette chaine  
-**Excepté**
+        FR: `L'utilisateur peut rechercher une chaîne de minimum 3 caractères dans une conversation.  
+Lui retourne tous les messages contenant cette chaîne.  
+**Excepté** :
 
-- S'il a supprimé la conversation, les messages précédents la date de suppression
-- Les messages qu'il aurait supprimé pour lui-même (mais toujours visible par les autres)
-- Les messages supprimés par l'auteur (supprimé pour tout le monde et remplacé par "Ce message a été supprimé")
-- S'il a quitté/été exclu d'une conversation, les messages suivants cette date
+- S'il a supprimé la conversation, les messages précédant la date de suppression
+- Les messages qu'il aurait supprimés pour lui-même (mais toujours visibles par les autres)
+- Les messages supprimés par l'auteur (supprimés pour tout le monde et remplacés par "Ce message a été supprimé")
+- S'il a quitté/été exclu d'une conversation, les messages suivant cette date
 
-**Cliquer sur un des messages de la liste contenant la chaine de craratère** :  
-Si le message est déja chargé, scroll jusqu'au message, autrement, charge le message en question ainsi qu'une dizaine de messages avant et après celui-ci
+**Cliquer sur un des messages de la liste contenant la chaîne de caractères** :  
+Si le message est déjà chargé, scroll jusqu'au message, autrement, charge le message en question ainsi qu'une dizaine de messages avant et après celui-ci.
 
 Le message en question est mis en évidence.`,
       },
@@ -690,7 +689,7 @@ In the modal, their 5 most recent conversations are suggested.
 They can also search among their conversations by typing a user's name or the name of a conversation.`,
         FR: `Quand l'utilisateur est dans le visualiseur d'image, il peut la transférer dans une autre conversation via un bouton.  
 Dans ce modal, ses 5 conversations les plus récentes lui sont directement proposées.  
-Il peut aussi rechercher parmis ses conversations en tapant le nom d'un utilisateur ou bien le nom d'une conversation`,
+Il peut aussi rechercher parmi ses conversations en tapant le nom d'un utilisateur ou bien le nom d'une conversation.`,
       },
       image: ``,
     },
@@ -702,9 +701,9 @@ Il peut aussi rechercher parmis ses conversations en tapant le nom d'un utilisat
       description: {
         EN: `The author of a message can edit it even after 10 minutes have passed since it was sent.  
 When a message is edited, a "Edited" label appears just above the message.  
-Clicking on it allows users to view the message’s edit history.`,
-        FR: `L'auteur d'un message peut modifier un message qu'il a envoyé en dela des 10 minutes après l'avoir envoyé.  
-Quand un message est modifié, une mention "Modifié" est affiché juste au-dessus du dit-message.  
+Clicking on it allows users to view the message's edit history.`,
+        FR: `L'auteur d'un message peut modifier un message qu'il a envoyé au-delà des 10 minutes après l'avoir envoyé.  
+Quand un message est modifié, une mention "Modifié" est affichée juste au-dessus du dit message.  
 En cliquant dessus, il est possible de voir les différentes modifications effectuées.`,
       },
       image: ``,
@@ -730,7 +729,7 @@ If the deleted message was the last one in the conversation, the preview will al
 Both actions are irreversible.`,
         FR: `**Supprimer un message pour soi**
 
-L'utilisateur peut suprpimer n'importe quel message "pour lui", il sera le seul à ne plus voir ce message, il ne pourra plus le chercher non plus.
+L'utilisateur peut supprimer n'importe quel message "pour lui", il sera le seul à ne plus voir ce message, il ne pourra plus le chercher non plus.
 Si ce message est le dernier de la conversation, dans la liste des conversations, le dernier message sera remplacé par le message précédent.
 
 **Supprimer un message pour tout le monde**
@@ -739,7 +738,7 @@ Seul l'auteur d'un message peut le faire.
 Le texte de ce message sera remplacé par "Ce message a été supprimé", plus personne ne pourra ni voir ni rechercher le texte original de ce message.  
 Si ce message est le dernier de la conversation, dans la liste des conversations, le texte sera aussi remplacé par "Ce message a été supprimé".
 
-Ces deux actions sont irréversibles`,
+Ces deux actions sont irréversibles.`,
       },
       image: ``,
     },
@@ -788,7 +787,7 @@ Il est possible de retirer sa réaction en recliquant sur l'emoji dans le menu o
 - Click directly on one of the images contained in a message.
 
 In both cases, this opens the image viewer. It consists of a carousel where the user can click on any image they want to view.  
-It’s possible to navigate through the images directly in the carousel or using the arrows on the sides.  
+It's possible to navigate through the images directly in the carousel or using the arrows on the sides.  
 The carousel only displays a limited number of images at a time; depending on whether the user scrolls toward older or newer media, more items will be loaded.`,
 
         FR: `Pour accéder à toutes les images d'une conversation, l'utilisateur peut soit :  
@@ -855,9 +854,9 @@ The user can:
 Les messages affichés ne sont donc plus les plus récents de la conversation.
 
 L'utilisateur peut donc :
-- Scroller vers le bas pour charger les messages plus récents que ceux affichés jusqu’à atteindre les derniers
+- Scroller vers le bas pour charger les messages plus récents que ceux affichés jusqu'à atteindre les derniers
 - Cliquer sur la flèche "Retourner aux messages plus récents" pour charger les derniers messages  
-        Si les messages les plus récents sont déjà chargés, ce bouton fait simplement défiler jusqu’en bas`,
+        Si les messages les plus récents sont déjà chargés, ce bouton fait simplement défiler jusqu'en bas`,
       },
       image: ``,
     },
@@ -877,18 +876,18 @@ L'utilisateur peut donc :
 
 **Login**:  
 Currently (bad practice): I'm using Firebase directly in the frontend. Once authenticated with Firebase, I send a request to the backend to get my JWT. This isn't secure because anyone could request someone else's token. (Early stage of my learning)  
-I should update this to handle Firebase auth via the backend and then send the token to the frontend once verification is confirmed (like in the Tou project), but for now I’m leaving it as is and might change it someday.`,
+I should update this to handle Firebase auth via the backend and then send the token to the frontend once verification is confirmed (like in the Tou project), but for now I'm leaving it as is and might change it someday.`,
 
         FR: `Système d'authentification avec Firebase Auth  
 
 **Inscription** :  
-- Choix d'une adresse mail, d’un pseudo et d’un mot de passe  
+- Choix d'une adresse mail, d'un pseudo et d'un mot de passe  
 - Création de l'utilisateur sur Firebase et dans la base de données  
-- Attribution d’un JWT  
+- Attribution d'un JWT  
 
 **Connexion** :  
 Actuellement (mauvaise pratique) : j'utilise Firebase directement dans le frontend. Une fois authentifié avec Firebase, j'envoie une requête au backend pour récupérer mon JWT. Ce n'est pas sécurisé, car n'importe qui peut demander le token de n'importe qui. (Début de mon apprentissage)  
-Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l’instant je laisse comme ça, je changerai peut-être un jour.`,
+Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l'instant je laisse comme ça, je changerai peut-être un jour.`,
       },
       image: ``,
     },
@@ -907,18 +906,18 @@ Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoy
 
 **Login**:  
 Currently (bad practice): I'm using Firebase directly in the frontend. Once authenticated with Firebase, I send a request to the backend to get my JWT. This isn't secure because anyone could request someone else's token. (Early stage of my learning)  
-I should update this to handle Firebase auth via the backend and then send the token to the frontend once verification is confirmed (like in the Tou project), but for now I’m leaving it as is and might change it someday.`,
+I should update this to handle Firebase auth via the backend and then send the token to the frontend once verification is confirmed (like in the Tou project), but for now I'm leaving it as is and might change it someday.`,
 
         FR: `Système d'authentification avec Firebase Auth  
 
 **Inscription** :  
-- Choix d'une adresse mail, d’un pseudo et d’un mot de passe  
+- Choix d'une adresse mail, d'un pseudo et d'un mot de passe  
 - Création de l'utilisateur sur Firebase et dans la base de données  
-- Attribution d’un JWT  
+- Attribution d'un JWT  
 
 **Connexion** :  
 Actuellement (mauvaise pratique) : j'utilise Firebase directement dans le frontend. Une fois authentifié avec Firebase, j'envoie une requête au backend pour récupérer mon JWT. Ce n'est pas sécurisé, car n'importe qui peut demander le token de n'importe qui. (Début de mon apprentissage)  
-Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l’instant je laisse comme ça, je changerai peut-être un jour.`,
+Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l'instant je laisse comme ça, je changerai peut-être un jour.`,
       },
       image: ``,
     },
@@ -962,7 +961,7 @@ S'il rejoint à nouveau la conversation par après, il aura de nouveau accès à
       description: {
         EN: `As soon as a user starts typing a message, other users who are present in the conversation and have it open will see an animation indicating that the person is typing. It stops as soon as the person is done.`,
 
-        FR: `Dès qu’un utilisateur commence à écrire un message, les autres utilisateurs présents dans la conversation et l’ayant ouverte voient une animation indiquant que la personne est en train d’écrire. Celle-ci s’arrête dès que la personne a terminé.`,
+        FR: `Dès qu'un utilisateur commence à écrire un message, les autres utilisateurs présents dans la conversation et l'ayant ouverte voient une animation indiquant que la personne est en train d'écrire. Celle-ci s'arrête dès que la personne a terminé.`,
       },
       image: ``,
     },
@@ -979,7 +978,7 @@ Hovering over the person's picture shows the date they saw the message.`,
 
         FR: `L'utilisateur peut voir si une personne a déjà vu son message ou non.
         
-Dès qu’un utilisateur voit un message, sa photo de profil s’affiche juste en dessous du dernier message qu’il a vu dans la conversation.  
+Dès qu'un utilisateur voit un message, sa photo de profil s'affiche juste en dessous du dernier message qu'il a vu dans la conversation.  
 Survoler la photo de la personne permet de voir la date à laquelle elle a vu le message.`,
       },
       image: ``,

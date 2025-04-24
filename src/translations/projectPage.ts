@@ -5,6 +5,6 @@ export const projectPageText = {
   },
   nothingToShow: {
     EN: "No feature to display",
-    FR: "Pas de fonctionnalité",
+    FR: "Aucune fonctionnalité à afficher",
   },
 };

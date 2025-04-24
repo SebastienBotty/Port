@@ -5,14 +5,14 @@ export const navBarText = {
   },
   about: {
     EN: "About",
-    FR: "A propos",
+    FR: "À propos",
   },
   projects: {
     EN: "Projects",
     FR: "Projets",
   },
   contacts: {
-    EN: "Contacts",
-    FR: "Contacts",
+    EN: "Contact",
+    FR: "Contact",
   },
 };

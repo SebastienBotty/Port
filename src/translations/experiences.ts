@@ -2,11 +2,11 @@ export const experiencesText = {
   titles: {
     experiences: {
       EN: "Experiences",
-      FR: "Experiences",
+      FR: "Expériences",
     },
     studies: {
       EN: "Studies",
-      FR: "Etudes",
+      FR: "Études",
     },
   },
   nothing: {

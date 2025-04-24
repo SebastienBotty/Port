@@ -12,7 +12,7 @@ export const studiesArr: ExperienceType[] = [
     },
     description: {
       EN: "Creating various personal projects to improve my programming skills.",
-      FR: "Création de différents projets personnels pour m'améliorer un programmation.",
+      FR: "Création de différents projets personnels pour m'améliorer en programmation.",
     },
     image: "",
     dates: {
