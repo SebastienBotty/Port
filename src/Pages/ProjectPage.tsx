@@ -59,6 +59,8 @@ function ProjectPage() {
     }
   };
 
+  const lights = [{ id: "light-1" }, { id: "light-2" }, { id: "light-3" }, { id: "light-4" }];
+
   useEffect(() => {
     document.title = "Sébastien Botty - " + projectName;
     return () => {};
@@ -107,7 +109,7 @@ function ProjectPage() {
                   alignItems: "center",
                 }}
               >
-                <p style={{ fontSize: "medium" }}> {projectPageText.nothingToShow[language]}</p>
+                <p className="nothing-to-show"> {projectPageText.nothingToShow[language]}</p>
               </div>
             )}
           </ul>
@@ -129,7 +131,7 @@ function ProjectPage() {
                   alignItems: "center",
                 }}
               >
-                <p style={{ fontSize: "medium" }}> {projectPageText.nothingToShow[language]}</p>
+                <p className="nothing-to-show"> {projectPageText.nothingToShow[language]}</p>
               </div>
             )}{" "}
           </div>
@@ -149,7 +151,9 @@ function ProjectPage() {
           </div>
         </div>
       </div>
-
+      {lights.map((light) => (
+        <div key={light.id} className={`light ${light.id}`} />
+      ))}
       <Footer />
     </div>
   );

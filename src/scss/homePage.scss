@@ -7,54 +7,72 @@
   color: white;
   @extend %flex-center;
   flex-direction: column;
-}
+  border: 1px solid red;
+  width: 100%;
 
-.light {
-  position: fixed; // Positionnement absolu pour permettre le déplacement
-  border-radius: 50%; // Forme circulaire
-  opacity: 0; // Commence invisible
-  animation: fadeIn 1s ease forwards, move 2s ease infinite; // Applique les animations
-  z-index: 0;
-  pointer-events: none;
-}
+  .light {
+    position: fixed; // Positionnement absolu pour permettre le déplacement
+    border-radius: 50%; // Forme circulaire
+    opacity: 0; // Commence invisible
+    animation: fadeIn 1s ease forwards, move 2s ease infinite; // Applique les animations
+    z-index: 0;
+    pointer-events: none;
+  }
 
-// Styles spécifiques pour chaque lumière avec un délai d'animation
-.light-1 {
-  width: 300px; // Taille de la lumière
-  height: 300px; // Taille de la lumière
-  background-color: rgb(89, 18, 122); // Couleur rouge
-  filter: blur(200px); // Flou
-  top: 20%; // Position Y
-  left: 15%; // Position X
-  animation-delay: 0.5s; // Pas de délai pour la première lumière
-}
+  // Styles spécifiques pour chaque lumière avec un délai d'animation
+  .light-1 {
+    width: 18.75rem; // 300px
+    height: 18.75rem; // 300px
+    background-color: rgb(89, 18, 122); // Couleur rouge
+    filter: blur(12.5rem); // 200px
+    top: 20%; // Position Y
+    left: 15%; // Position X
+    animation-delay: 0.5s; // Pas de délai pour la première lumière
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      width: 12.5rem;
+      background-color: blue;
+    }
+  }
 
-.light-2 {
-  width: 250px; // Taille de la lumière
-  height: 250px; // Taille de la lumière
-  background-color: hsla(180, 80%, 85%, 0.6); // Couleur cyan
-  filter: blur(180px); // Flou
-  top: 70%; // Position Y
-  left: 80%; // Position X
-  animation-delay: 1s; // Délai de 1s pour la troisième lumière
-}
+  .light-2 {
+    width: 15.625rem; // 250px
+    height: 15.625rem; // 250px
+    background-color: hsla(180, 80%, 85%, 0.6); // Couleur cyan
+    filter: blur(11.25rem); // 180px
+    top: 70%; // Position Y
+    left: 80%; // Position X
+    animation-delay: 1s; // Délai de 1s pour la troisième lumière
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      width: 11rem;
+      background-color: green;
+    }
+  }
 
-.light-3 {
-  width: 150px; // Taille de la lumière
-  height: 150px; // Taille de la lumière
-  background-color: rgb(214, 115, 193);
-  filter: blur(150px); // Flou
-  top: 50%; // Position Y
-  left: 50%; // Position X
-  animation-delay: 1.5s; // Délai de 1.5s pour la quatrième lumière
-}
+  .light-3 {
+    width: 9.375rem; // 150px
+    height: 9.375rem; // 150px
+    background-color: rgb(214, 115, 193);
+    filter: blur(9.375rem); // 150px
+    top: 50%; // Position Y
+    left: 50%; // Position X
+    animation-delay: 1.5s; // Délai de 1.5s pour la quatrième lumière
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      width: 10rem;
+      background-color: white;
+    }
+  }
 
-.light-4 {
-  width: 200px; // Taille de la lumière
-  height: 200px; // Taille de la lumière
-  background-color: hsla(270, 70%, 80%, 0.5); // Couleur violet
-  filter: blur(160px); // Flou
-  top: 60%; // Position Y
-  left: 30%; // Position X
-  animation-delay: 2s; // Délai de 1.5s pour la quatrième lumière
+  .light-4 {
+    width: 12.5rem; // 200px
+    height: 12.5rem; // 200px
+    background-color: hsla(270, 70%, 80%, 0.5); // Couleur violet
+    filter: blur(10rem); // 160px
+    top: 60%; // Position Y
+    left: 30%; // Position X
+    animation-delay: 2s; // Délai de 1.5s pour la quatrième lumière
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      width: 8rem;
+      background-color: red;
+    }
+  }
 }

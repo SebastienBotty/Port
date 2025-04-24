@@ -17,10 +17,10 @@
 
   @include fadeIn(1s, 0.5s);
 
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  /*  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
     height: 10rem;
   }
-
+ */
   .routes-container {
     @extend %flex-center;
     gap: 1rem;
@@ -32,17 +32,19 @@
     border: 1px inset white;
     pointer-events: all;
 
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-      font-size: x-large; // Police plus grande
-      height: 5rem;
-      border-radius: 5rem;
+    @media screen and (max-width: 768px) {
+      width: 80vw;
+      font-size: medium;
+      gap: 0.25rem;
+      padding: 0;
+      justify-content: space-around;
+      padding: 0.5rem 0;
     }
 
     .title {
       @extend %flex-center;
       cursor: pointer;
       height: 100%;
-      border-radius: 75%;
       transition: transform 0.3s ease;
 
       &:hover {
@@ -68,8 +70,8 @@
   pointer-events: all;
 
   @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-    top: 2rem;
-    right: 2rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
   .dropdown-menu {
     position: absolute;

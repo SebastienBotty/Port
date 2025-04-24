@@ -17,24 +17,23 @@
   flex-direction: column;
   gap: 5rem;
 }
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .project-page .container {
+    gap: 2.5rem;
+  }
+}
 .project-page .container .title {
   width: 80%;
   font-size: x-large;
 }
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .project-page .container .title {
-    font-size: xx-large;
     width: 90%;
   }
 }
 .project-page .container .title .in-progress {
   font-size: small;
   color: lightgray;
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project-page .container .title .in-progress {
-    font-size: large;
-  }
 }
 .project-page .container .content {
   display: flex;
@@ -43,7 +42,7 @@
 }
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .project-page .container .content {
-    width: 90vw;
+    width: 100vw;
   }
 }
 .project-page .container .content .features-list {
@@ -57,7 +56,7 @@
   overflow-x: hidden;
 }
 .project-page .container .content .features-list li {
-  filter: brightness(0.6);
+  filter: brightness(0.5);
   width: auto;
   cursor: pointer;
   opacity: 0;
@@ -67,6 +66,11 @@
   display: flex;
   gap: 0.25rem;
   padding: 0.75rem 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  white-space: normal;
 }
 @keyframes fadeInLeft {
   0% {
@@ -80,7 +84,7 @@
 }
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .project-page .container .content .features-list li {
-    font-size: x-large;
+    font-size: small;
   }
 }
 .project-page .container .content .features-list li:hover {
@@ -126,7 +130,7 @@
   .project-page .container .content .details .description li,
   .project-page .container .content .details .description td,
   .project-page .container .content .details .description th {
-    font-size: x-large;
+    font-size: small;
   }
 }
 .project-page .container .content .details .description code,
@@ -139,15 +143,20 @@
 }
 .project-page .container .other-projects {
   width: 80%;
+  background-color: 0;
   height: 5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .project-page .container .other-projects {
+    width: 90%;
+  }
 }
 .project-page .container .other-projects .title {
   font-size: x-large;
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project-page .container .other-projects .title {
-    font-size: xx-large;
-  }
+  width: 100%;
 }
 .project-page .container .other-projects .other-projects-container {
   display: flex;
@@ -159,13 +168,90 @@
 .project-page .container .other-projects .other-projects-container .proj-name {
   cursor: pointer;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project-page .container .other-projects .other-projects-container .proj-name {
-    font-size: x-large;
-  }
-}
 .project-page .container .other-projects .other-projects-container .proj-name:hover {
   text-shadow: 0 0 5.5px white, 0 0 11px white, 0 0 22px white;
+}
+
+.nothing-to-show {
+  font-size: medium;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .nothing-to-show {
+    font-size: small;
+  }
+}
+
+.light {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.light-1 {
+  width: 18.75rem;
+  height: 18.75rem;
+  background-color: rgb(89, 18, 122);
+  filter: blur(12.5rem);
+  top: 10%;
+  left: 10%;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .light-1 {
+    width: 12.5rem;
+    background-color: blue;
+  }
+}
+
+.light-2 {
+  width: 15.625rem;
+  height: 15.625rem;
+  background-color: hsla(180, 80%, 85%, 0.6);
+  filter: blur(11.25rem);
+  top: 80%;
+  left: 70%;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .light-2 {
+    width: 11rem;
+    background-color: green;
+  }
+}
+
+.light-3 {
+  width: 9.375rem;
+  height: 9.375rem;
+  background-color: rgb(214, 115, 193);
+  filter: blur(9.375rem);
+  top: 10%;
+  left: 90%;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .light-3 {
+    width: 10rem;
+    background-color: white;
+  }
+}
+
+.light-4 {
+  width: 12.5rem;
+  height: 12.5rem;
+  background-color: hsla(270, 70%, 80%, 0.5);
+  filter: blur(10rem);
+  top: 60%;
+  left: 30%;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .light-4 {
+    width: 8rem;
+    background-color: red;
+  }
 }
 
 /*# sourceMappingURL=projectPage.css.map */

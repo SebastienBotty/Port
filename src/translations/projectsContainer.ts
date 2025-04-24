@@ -306,7 +306,7 @@ export const notMessenger: ProjectType = {
   features: [
     {
       title: {
-        EN: `Send/reeive a message`,
+        EN: `Send/receive a message`,
         FR: `Envoyer/recevoir un message`,
       },
       description: {

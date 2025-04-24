@@ -1,7 +1,7 @@
-.class-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -18,11 +18,9 @@ li {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   position: relative;
-  overflow-x: hidden;
   background-color: #0a0a12;
+  overflow-x: hidden;
 }
 
 .class-container {
@@ -30,7 +28,6 @@ body {
   animation: fadeIn 1s ease forwards;
   animation-delay: 2.5s;
   z-index: 1;
-  width: 100vw;
 }
 @keyframes fadeIn {
   0% {

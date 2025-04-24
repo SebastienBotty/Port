@@ -48,7 +48,12 @@
 }
 
 .big-title-name {
-  font-size: 3rem;
+  font-size: x-large;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .big-title-name {
+    font-size: x-large;
+  }
 }
 
 .big-title {
@@ -68,6 +73,11 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .big-title {
+    font-size: xx-large;
   }
 }
 
@@ -98,6 +108,11 @@
   transition: transform 0.3s ease;
   overflow: hidden;
   position: relative;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .reflect {
+    width: 3rem;
+  }
 }
 .reflect::after {
   content: "";

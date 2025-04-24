@@ -9,6 +9,11 @@
   justify-content: space-between;
   margin: 2.5rem 0;
 }
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .footer {
+    width: 90vw;
+  }
+}
 .footer .links {
   display: flex;
   gap: 1.5rem;
@@ -19,11 +24,6 @@
   margin-block-start: 0;
   margin-block-end: 0;
   padding-inline-start: 0;
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .footer .links ul {
-    font-size: large;
-  }
 }
 .footer .links ul li:hover {
   text-decoration: underline;
@@ -39,6 +39,11 @@
   width: auto;
   font-size: xx-large;
   line-height: 0.9;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .footer .my-name div {
+    font-size: x-large;
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */

@@ -8,9 +8,10 @@
   background-color: #0a0a12;
   color: white;
   flex-direction: column;
+  border: 1px solid red;
+  width: 100%;
 }
-
-.light {
+.glow-background .light {
   position: fixed;
   border-radius: 50%;
   opacity: 0;
@@ -18,45 +19,65 @@
   z-index: 0;
   pointer-events: none;
 }
-
-.light-1 {
-  width: 300px;
-  height: 300px;
+.glow-background .light-1 {
+  width: 18.75rem;
+  height: 18.75rem;
   background-color: rgb(89, 18, 122);
-  filter: blur(200px);
+  filter: blur(12.5rem);
   top: 20%;
   left: 15%;
   animation-delay: 0.5s;
 }
-
-.light-2 {
-  width: 250px;
-  height: 250px;
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .glow-background .light-1 {
+    width: 12.5rem;
+    background-color: blue;
+  }
+}
+.glow-background .light-2 {
+  width: 15.625rem;
+  height: 15.625rem;
   background-color: hsla(180, 80%, 85%, 0.6);
-  filter: blur(180px);
+  filter: blur(11.25rem);
   top: 70%;
   left: 80%;
   animation-delay: 1s;
 }
-
-.light-3 {
-  width: 150px;
-  height: 150px;
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .glow-background .light-2 {
+    width: 11rem;
+    background-color: green;
+  }
+}
+.glow-background .light-3 {
+  width: 9.375rem;
+  height: 9.375rem;
   background-color: rgb(214, 115, 193);
-  filter: blur(150px);
+  filter: blur(9.375rem);
   top: 50%;
   left: 50%;
   animation-delay: 1.5s;
 }
-
-.light-4 {
-  width: 200px;
-  height: 200px;
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .glow-background .light-3 {
+    width: 10rem;
+    background-color: white;
+  }
+}
+.glow-background .light-4 {
+  width: 12.5rem;
+  height: 12.5rem;
   background-color: hsla(270, 70%, 80%, 0.5);
-  filter: blur(160px);
+  filter: blur(10rem);
   top: 60%;
   left: 30%;
   animation-delay: 2s;
+}
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  .glow-background .light-4 {
+    width: 8rem;
+    background-color: red;
+  }
 }
 
 /*# sourceMappingURL=homePage.css.map */

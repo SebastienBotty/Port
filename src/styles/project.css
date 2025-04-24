@@ -9,13 +9,6 @@
   transition: transform 0.3s ease;
   z-index: 2;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project {
-    width: 40vw;
-    font-size: x-large;
-    line-height: 0.8;
-  }
-}
 .project:hover {
   transform: scale(1.01) translateY(-2px);
 }
@@ -38,11 +31,6 @@
   font-size: medium;
   font-weight: bold;
   display: flex;
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project .infos .first-line {
-    font-size: x-large;
-  }
 }
 .project .infos .first-line .name {
   flex: 1;
@@ -81,11 +69,6 @@
   flex-wrap: wrap;
   gap: 0.25rem;
   flex: 1 auto;
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .project .infos .stack {
-    font-size: large;
-  }
 }
 .project .infos .stack * {
   padding: 0.25rem;

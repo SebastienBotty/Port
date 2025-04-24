@@ -18,6 +18,10 @@
   opacity: 0;
   animation: fadeIn 1s ease forwards;
   animation-delay: 0.5s;
+  /*  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+     height: 10rem;
+   }
+  */
 }
 @keyframes fadeIn {
   0% {
@@ -27,11 +31,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .nav-bar {
-    height: 10rem;
   }
 }
 .nav-bar .routes-container {
@@ -44,17 +43,19 @@
   border: 1px inset white;
   pointer-events: all;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media screen and (max-width: 768px) {
   .nav-bar .routes-container {
-    font-size: x-large;
-    height: 5rem;
-    border-radius: 5rem;
+    width: 80vw;
+    font-size: medium;
+    gap: 0.25rem;
+    padding: 0;
+    justify-content: space-around;
+    padding: 0.5rem 0;
   }
 }
 .nav-bar .routes-container .title {
   cursor: pointer;
   height: 100%;
-  border-radius: 75%;
   transition: transform 0.3s ease;
 }
 .nav-bar .routes-container .title:hover {
@@ -79,8 +80,8 @@
 }
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .select-language {
-    top: 2rem;
-    right: 2rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
 .select-language .dropdown-menu {

@@ -21,20 +21,20 @@
     @extend %flex-center;
     gap: 5rem;
 
+    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      gap: 2.5rem;
+    }
+
     .title {
       width: 80%;
       font-size: x-large;
       @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-        font-size: xx-large;
         width: 90%;
       }
 
       .in-progress {
         font-size: small;
         color: lightgray;
-        @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-          font-size: large;
-        }
       }
     }
     .content {
@@ -43,7 +43,7 @@
       height: 50%;
 
       @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-        width: 90vw;
+        width: 100vw;
       }
 
       .features-list {
@@ -57,7 +57,7 @@
         overflow-x: hidden;
 
         li {
-          filter: brightness(0.6);
+          filter: brightness(0.5);
           width: auto;
           cursor: pointer;
           opacity: 0;
@@ -65,9 +65,13 @@
           display: flex;
           gap: 0.25rem;
           padding: 0.75rem 1rem;
-
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          word-break: break-word;
+          max-width: 100%;
+          white-space: normal;
           @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-            font-size: x-large;
+            font-size: small;
           }
 
           &:hover {
@@ -97,9 +101,8 @@
             max-width: 100%;
             white-space: normal; // Permet le retour à la ligne naturel
             font-size: medium;
-
             @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-              font-size: x-large;
+              font-size: small;
             }
           }
 
@@ -117,12 +120,19 @@
 
     .other-projects {
       width: 80%;
+      background-color: green($color: #000000);
       height: 5rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+        width: 90%;
+      }
+
       .title {
         font-size: x-large;
-        @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-          font-size: xx-large;
-        }
+        width: 100%;
       }
       .other-projects-container {
         display: flex;
@@ -134,14 +144,84 @@
         .proj-name {
           cursor: pointer;
 
-          @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-            font-size: x-large;
-          }
           &:hover {
             @include text-glow(white, 1.1);
           }
         }
       }
     }
+  }
+}
+
+.nothing-to-show {
+  font-size: medium;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    font-size: small;
+  }
+}
+
+.light {
+  position: absolute; // Positionnement absolu pour permettre le déplacement
+  border-radius: 50%; // Forme circulaire
+  z-index: 0;
+  pointer-events: none;
+}
+
+// Styles spécifiques pour chaque lumière avec un délai d'animation
+.light-1 {
+  width: 18.75rem; // 300px
+  height: 18.75rem; // 300px
+  background-color: rgb(89, 18, 122); // Couleur rouge
+  filter: blur(12.5rem); // 200px
+  top: 10%; // Position Y
+  left: 10%; // Position X
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 12.5rem;
+    background-color: blue;
+  }
+}
+
+.light-2 {
+  width: 15.625rem; // 250px
+  height: 15.625rem; // 250px
+  background-color: hsla(180, 80%, 85%, 0.6); // Couleur cyan
+  filter: blur(11.25rem); // 180px
+  top: 80%; // Position Y
+  left: 70%; // Position X
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 11rem;
+    background-color: green;
+  }
+}
+
+.light-3 {
+  width: 9.375rem; // 150px
+  height: 9.375rem; // 150px
+  background-color: rgb(214, 115, 193);
+  filter: blur(9.375rem); // 150px
+  top: 10%; // Position Y
+  left: 90%; // Position X
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 10rem;
+    background-color: white;
+  }
+}
+
+.light-4 {
+  width: 12.5rem; // 200px
+  height: 12.5rem; // 200px
+  background-color: hsla(270, 70%, 80%, 0.5); // Couleur violet
+  filter: blur(10rem); // 160px
+  top: 60%; // Position Y
+  left: 30%; // Position X
+  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    width: 8rem;
+    background-color: red;
   }
 }

@@ -44,15 +44,15 @@ function PersonnalInfos() {
         <div className="contacts">
           <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
             <div className="img-container reflect">
-              <TechIcon icon={siGithub} size={32} />
+              <TechIcon icon={siGithub} />
             </div>
           </a>
 
           <div className="img-container reflect">
-            <TechIcon icon={siFiles} size={32} />
+            <TechIcon icon={siFiles} />
           </div>
           <div className="img-container reflect">
-            <TechIcon icon={siMailboxdotorg} size={32} />
+            <TechIcon icon={siMailboxdotorg} />
           </div>
         </div>
       </div>
