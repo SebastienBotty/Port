@@ -39,9 +39,6 @@
 
 .big-title-name {
   font-size: x-large;
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-    font-size: x-large;
-  }
 }
 
 .big-title {
@@ -51,7 +48,7 @@
   font-weight: bold;
   line-height: 0.9;
   @include fadeIn(1s, 1.5s);
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
     font-size: xx-large;
   }
 }
@@ -75,7 +72,7 @@
   overflow: hidden;
   position: relative;
 
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
     width: 3rem;
   }
 

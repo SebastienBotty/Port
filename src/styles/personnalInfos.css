@@ -50,11 +50,6 @@
 .big-title-name {
   font-size: x-large;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
-  .big-title-name {
-    font-size: x-large;
-  }
-}
 
 .big-title {
   font-size: 6rem;
@@ -75,7 +70,7 @@
     transform: translateY(0);
   }
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
   .big-title {
     font-size: xx-large;
   }
@@ -109,7 +104,7 @@
   overflow: hidden;
   position: relative;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
   .reflect {
     width: 3rem;
   }

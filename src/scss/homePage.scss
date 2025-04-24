@@ -28,7 +28,7 @@
     top: 20%; // Position Y
     left: 15%; // Position X
     animation-delay: 0.5s; // Pas de délai pour la première lumière
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
       width: 12.5rem;
       background-color: blue;
     }
@@ -42,7 +42,7 @@
     top: 70%; // Position Y
     left: 80%; // Position X
     animation-delay: 1s; // Délai de 1s pour la troisième lumière
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
       width: 11rem;
       background-color: green;
     }
@@ -56,7 +56,7 @@
     top: 50%; // Position Y
     left: 50%; // Position X
     animation-delay: 1.5s; // Délai de 1.5s pour la quatrième lumière
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
       width: 10rem;
       background-color: white;
     }
@@ -70,7 +70,7 @@
     top: 60%; // Position Y
     left: 30%; // Position X
     animation-delay: 2s; // Délai de 1.5s pour la quatrième lumière
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
       width: 8rem;
       background-color: red;
     }

@@ -2,7 +2,7 @@
   color: lightgray;
   margin-bottom: 1rem;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .second-title {
     font-size: large;
   }
@@ -27,7 +27,7 @@
   background-color: transparent;
   color: lightgray;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .form-input,
   .form-textarea {
     font-size: x-large;
@@ -47,7 +47,7 @@
   cursor: pointer;
   font-size: 16px;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .form-button {
     font-size: x-large;
   }

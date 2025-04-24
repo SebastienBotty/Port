@@ -10,7 +10,7 @@
   width: 50vw;
   margin: 5rem 0;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .tech-stack {
     width: 90vw;
   }
@@ -18,7 +18,7 @@
 .tech-stack .title {
   font-size: x-large;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .tech-stack .title {
     font-size: xx-large;
   }
@@ -27,7 +27,7 @@
   font-size: large;
   margin: 0.5rem;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .tech-stack .smaller-title {
     font-size: x-large;
   }
@@ -38,7 +38,7 @@
   gap: 2rem;
   margin-bottom: 2rem;
 }
-@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+@media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
   .tech-stack .dev-stack-container {
     font-size: large;
   }

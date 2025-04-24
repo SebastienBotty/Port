@@ -21,14 +21,14 @@
     @extend %flex-center;
     gap: 5rem;
 
-    @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
       gap: 2.5rem;
     }
 
     .title {
       width: 80%;
       font-size: x-large;
-      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
         width: 90%;
       }
 
@@ -42,7 +42,7 @@
       width: 80%;
       height: 50%;
 
-      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
         width: 100vw;
       }
 
@@ -70,7 +70,7 @@
           word-break: break-word;
           max-width: 100%;
           white-space: normal;
-          @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+          @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
             font-size: small;
           }
 
@@ -101,7 +101,7 @@
             max-width: 100%;
             white-space: normal; // Permet le retour à la ligne naturel
             font-size: medium;
-            @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+            @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
               font-size: small;
             }
           }
@@ -126,7 +126,7 @@
       justify-content: center;
       flex-direction: column;
 
-      @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+      @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
         width: 90%;
       }
 
@@ -161,7 +161,7 @@
   max-width: 100%;
   white-space: normal;
   text-align: center;
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
     font-size: small;
   }
 }
@@ -181,7 +181,7 @@
   filter: blur(12.5rem); // 200px
   top: 10%; // Position Y
   left: 10%; // Position X
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
     width: 12.5rem;
     background-color: blue;
   }
@@ -194,7 +194,7 @@
   filter: blur(11.25rem); // 180px
   top: 80%; // Position Y
   left: 70%; // Position X
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
     width: 11rem;
     background-color: green;
   }
@@ -207,7 +207,7 @@
   filter: blur(9.375rem); // 150px
   top: 10%; // Position Y
   left: 90%; // Position X
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
     width: 10rem;
     background-color: white;
   }
@@ -220,7 +220,7 @@
   filter: blur(10rem); // 160px
   top: 60%; // Position Y
   left: 30%; // Position X
-  @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+  @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
     width: 8rem;
     background-color: red;
   }
