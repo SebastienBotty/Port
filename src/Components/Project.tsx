@@ -2,10 +2,16 @@ import React from "react";
 import { ProjectType, TechnologyType } from "../Typescript/Types";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { technologies } from "../Constants/techStack";
-import "../scss/project.scss";
 import TechContainer from "./TechContainer";
 import { projectText } from "../translations/project";
 import { Link } from "react-router-dom";
+import { siGithub } from "simple-icons";
+import TechIcon from "./TechIcon";
+import ClipBoardSVG from "./ClipBoardSVG";
+import GlobeSVG from "./GlobeSVG";
+
+import "../scss/project.scss";
+import Tooltip from "./Tooltip";
 
 function Project({ projectData }: { projectData: ProjectType }) {
   const { language, setLanguage } = useLanguageContext();
@@ -19,34 +25,55 @@ function Project({ projectData }: { projectData: ProjectType }) {
   };
 
   return (
-    <Link to={"/project/" + projectData.projectName.EN}>
-      <div className="project">
-        <div className="image-container">
-          <img src={projectData.image} />
+    <div className="project">
+      <div className="image-container">
+        <img src={projectData.image} />
+      </div>
+      <div className="infos">
+        <div className="first-line">
+          {" "}
+          <div className="name">{projectData.projectName[language]}</div>
         </div>
-        <div className="infos">
-          <div className="first-line">
-            {" "}
-            <div className="name">{projectData.projectName[language]}</div>
-            <div className="discover">
+        <div className="description">{projectData.description[language]}</div>
+        <div className="stack">{renderTechs()}</div>
+        <div className="icons-link">
+          {projectData.code && (
+            <>
               <a
-                href={projectData.link}
+                className="icon-container"
+                href={projectData.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
               >
-                {projectText.discover[language]}
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" />
-                </svg>
+                <Tooltip text="Code" />
+
+                <TechIcon icon={siGithub} />
               </a>
-            </div>
-          </div>
-          <div className="description">{projectData.description[language]}</div>
-          <div className="stack">{renderTechs()}</div>
+            </>
+          )}
+          {projectData.desc && (
+            <>
+              <Link className="icon-container" to={"/project/" + projectData.projectName.EN}>
+                <Tooltip text="Description" />
+
+                <ClipBoardSVG />
+              </Link>{" "}
+            </>
+          )}
+          {projectData.site && (
+            <a
+              href={projectData.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icon-container"
+            >
+              <Tooltip text="Site" />
+              <GlobeSVG />
+            </a>
+          )}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

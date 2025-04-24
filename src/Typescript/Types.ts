@@ -22,6 +22,9 @@ export type ProjectType = {
   link: string;
   image: string;
   state: ProgressType;
+  code: string;
+  site: string;
+  desc: boolean;
 };
 
 export type ProgressType = {

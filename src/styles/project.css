@@ -4,16 +4,16 @@
   background-color: #0a0a12;
   border: 1px inset white;
   border-radius: 15px;
-  overflow: hidden;
-  cursor: pointer;
   transition: transform 0.3s ease;
   z-index: 2;
 }
 .project:hover {
-  transform: scale(1.01) translateY(-2px);
+  transform: translateY(-5px);
 }
 .project .image-container {
   height: 45%;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
 }
 .project .image-container img {
   width: 100%;
@@ -76,6 +76,26 @@
   border-radius: 0.25rem;
   color: black;
   height: auto;
+}
+.project .infos .icons-link {
+  gap: 0.25rem;
+  display: flex;
+  width: fit-content;
+  align-self: end;
+  margin: 0 0.25rem 0.25rem 0;
+}
+.project .infos .icons-link:hover .icon-container {
+  filter: brightness(0.5);
+}
+.project .infos .icons-link .icon-container {
+  position: relative;
+}
+.project .infos .icons-link .icon-container:hover {
+  filter: brightness(1);
+  cursor: pointer;
+}
+.project .infos .icons-link .icon-container:hover .tooltip {
+  display: block;
 }
 
 /*# sourceMappingURL=project.css.map */

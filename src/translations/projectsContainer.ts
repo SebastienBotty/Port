@@ -25,6 +25,9 @@ export const tOu: ProjectType = {
     EN: "Done",
     FR: "Terminé",
   },
+  code: "",
+  site: "",
+  desc: true,
   features: [
     {
       title: {
@@ -297,12 +300,15 @@ export const notMessenger: ProjectType = {
     `Firebase: Auth`,
     `Socket.io`,
   ],
-  link: ``,
+  link: `htpps://www.google.com`,
   image: `/images/notMessenger-image.png`,
   state: {
     EN: "In progress",
     FR: "En cours",
   },
+  code: "https://github.com/SebastienBotty/Messenger-clone-Frontend",
+  site: "soon Coming",
+  desc: true,
   features: [
     {
       title: {
@@ -998,6 +1004,9 @@ export const portfolio: ProjectType = {
   stack: [`TypeScript`, `React`, `Sass`],
   link: ``,
   image: `/images/portfolio-image.png`,
+  code: "https://github.com/SebastienBotty/port",
+  site: "",
+  desc: false,
   features: [],
   state: {
     EN: "Done",

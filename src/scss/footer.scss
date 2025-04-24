@@ -19,6 +19,10 @@
     margin-left: 1.5rem;
     color: lightgray;
 
+    @media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
+      font-size: small;
+    }
+
     ul {
       margin-block-start: 0;
       margin-block-end: 0;
