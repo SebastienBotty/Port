@@ -8,7 +8,6 @@
   background-color: #0a0a12;
   color: white;
   flex-direction: column;
-  border: 1px solid red;
   width: 100%;
 }
 .glow-background .light {
