@@ -1,6 +1,6 @@
 export const projectPageText = {
   otherProjects: {
-    EN: "My others projects",
+    EN: "My other projects",
     FR: "Mes autres projets",
   },
   nothingToShow: {
