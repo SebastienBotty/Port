@@ -1006,8 +1006,26 @@ export const portfolio: ProjectType = {
   image: `/images/portfolio-image.png`,
   code: "https://github.com/SebastienBotty/port",
   site: "",
-  desc: false,
-  features: [],
+  desc: true,
+  features: [
+    {
+      title: {
+        EN: `Language selection`,
+        FR: `Choix de langue`,
+      },
+      description: {
+        EN: `Automatic detection of the user's browser language.  
+Sets the site to French if FR is detected, otherwise sets it to English.  
+Allows switching between the two.`,
+
+        FR: `Détection automatique de la langue du navigateur de l'utilisateur.  
+Met le site en français si le FR est détecté. Le met en anglais autrmenet.  
+Possibilité de changer entre les deux.`,
+      },
+      image: ``,
+    },
+  ],
+
   state: {
     EN: "Done",
     FR: "Terminé",

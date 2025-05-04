@@ -11,8 +11,8 @@ export const studiesArr: ExperienceType[] = [
       FR: "",
     },
     description: {
-      EN: "Creating various personal projects to improve my programming skills.",
-      FR: "Création de différents projets personnels pour m'améliorer en programmation.",
+      EN: "Building a variety of personal projects to improve my skills in programming (React, Node.js, MongoDB, etc.)",
+      FR: "Création de projets personnels variés pour développer mes compétences en programmation (React, Node.js, MongoDB, etc.).",
     },
     image: "",
     dates: {
@@ -36,8 +36,10 @@ export const studiesArr: ExperienceType[] = [
       FR: "Bachelier en Technologies de l'Informatique",
     },
     description: {
-      EN: "Dropped out in last year",
-      FR: "Arrêt en dernière année",
+      EN: `Completed coursework up to the final year (not graduated).  
+Studied web development, databases, networking, and embedded systems.`,
+      FR: `Formation suivie jusqu'à la dernière année (non diplômé).  
+Cours axés sur le développement web, les bases de données, les réseaux et l’informatique embarquée.`,
     },
     image: "/images/logo-ephec.png",
 
