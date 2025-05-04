@@ -12,7 +12,6 @@ function ExperiencesContainer() {
   const [datas, setDatas] = useState<ExperienceType[]>(studiesArr);
 
   const changeDatas = (type: "studies" | "work") => {
-    console.log(type);
     if (type === "studies") {
       console.log("ici");
       setShowInfos("studies");
@@ -26,8 +25,8 @@ function ExperiencesContainer() {
 
   return (
     <div className="experiences">
-      <div className="title"> Experience</div>
-      <div className="titles-container">
+      <div className="title"> {experiencesText.titles.studies[language]}</div>
+      {/* <div className="titles-container">
         <div
           className="title"
           onClick={() => changeDatas("work")}
@@ -48,17 +47,19 @@ function ExperiencesContainer() {
               : { backgroundColor: "transparent" }
           }
         >
-          {experiencesText.titles.studies[language]}
         </div>
-      </div>
+      </div> */}
       <div className="content">
-        {datas.length > 0 ? (
+        {datas.map((exp) => (
+          <Experience experienceData={exp} />
+        ))}
+        {/*  {datas.length > 0 ? (
           datas.map((exp) => <Experience experienceData={exp} />)
         ) : (
           <div className="nothing">
             <div>{experiencesText.nothing[language]}</div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
