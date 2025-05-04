@@ -36,12 +36,13 @@ const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
         <div className="title" onClick={() => handleClick("home", homeRef)}>
           {navBarText.home[language]}
         </div>
-        <div className="title" onClick={() => handleClick("perso", personalInfosRef)}>
-          {navBarText.about[language]}
-        </div>
         <div className="title" onClick={() => handleClick("projects", projectsRef)}>
           {navBarText.projects[language]}
         </div>
+        <div className="title" onClick={() => handleClick("perso", personalInfosRef)}>
+          {navBarText.about[language]}
+        </div>
+
         <div className="title" onClick={() => handleClick("contact", contactRef)}>
           {navBarText.contacts[language]}
         </div>

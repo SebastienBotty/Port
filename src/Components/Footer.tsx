@@ -21,23 +21,31 @@ function Footer({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
       <div className="footer">
         <div className="links">
           <ul>
-            <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
-              <li>
-                <a></a>GitHub
-              </li>
-            </a>
-            <li>LinkedIn</li>
-            <li>Instagram</li>
-            <li></li>
+            <li>
+              <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/s%C3%A9bastien-botty-3338b714b/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
           </ul>{" "}
           <ul>
             <li onClick={() => handleClick("home", homeRef)}>{navBarText.home[language]}</li>
-            <li onClick={() => handleClick("perso", personalInfosRef)}>
-              {navBarText.about[language]}
-            </li>
             <li onClick={() => handleClick("projects", projectsRef)}>
               {navBarText.projects[language]}
             </li>
+            <li onClick={() => handleClick("perso", personalInfosRef)}>
+              {navBarText.about[language]}
+            </li>
+
             <li onClick={() => handleClick("contact", contactRef)}>
               {navBarText.contacts[language]}
             </li>

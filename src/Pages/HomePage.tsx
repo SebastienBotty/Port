@@ -168,15 +168,15 @@ function HomePage() {
         {" "}
         <PersonalInfos />
       </div>
-      <div ref={personnalInfosRef} className="class-container">
-        <ExperiencesContainer />
+      <div ref={projectsRef} className="class-container">
+        <ProjectsContainer />
       </div>
       <div className="class-container">
         {" "}
         <TechStack />
       </div>
-      <div ref={projectsRef} className="class-container">
-        <ProjectsContainer />
+      <div ref={personnalInfosRef} className="class-container">
+        <ExperiencesContainer />
       </div>
       <div ref={contactRef} className="class-container">
         <ContactContainer />
