@@ -1015,12 +1015,12 @@ export const portfolio: ProjectType = {
       },
       description: {
         EN: `Automatic detection of the user's browser language.  
-Sets the site to French if FR is detected, otherwise sets it to English.  
-Allows switching between the two.`,
+Sets the site to French if detected, otherwise sets it to English.  
+Ability to switch between the two via the flag in the top-right corner of the site.`,
 
         FR: `Détection automatique de la langue du navigateur de l'utilisateur.  
 Met le site en français si le FR est détecté. Le met en anglais autrmenet.  
-Possibilité de changer entre les deux.`,
+Possibilité de changer entre les deux via le drapeau dans le coin supérieur droit du site.`,
       },
       image: ``,
     },

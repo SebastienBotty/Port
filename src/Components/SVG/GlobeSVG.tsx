@@ -1,5 +1,5 @@
 import React from "react";
-import "../scss/techIcon.scss";
+import "../../scss/techIcon.scss";
 
 function GlobeSVG() {
   return (
@@ -10,6 +10,7 @@ function GlobeSVG() {
       stroke="#000000"
       strokeWidth="0.00024"
       className="svg-icon"
+      height={"100%"}
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>

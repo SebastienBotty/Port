@@ -94,6 +94,13 @@
     transform: translateY(0);
   }
 }
+.contacts a {
+  position: relative;
+  cursor: pointer;
+}
+.contacts a:hover .tooltip {
+  display: block;
+}
 
 .reflect {
   border-radius: 50%;

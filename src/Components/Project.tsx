@@ -7,8 +7,8 @@ import { projectText } from "../translations/project";
 import { Link } from "react-router-dom";
 import { siGithub } from "simple-icons";
 import TechIcon from "./TechIcon";
-import ClipBoardSVG from "./ClipBoardSVG";
-import GlobeSVG from "./GlobeSVG";
+import ClipBoardSVG from "./SVG/ClipBoardSVG";
+import GlobeSVG from "./SVG/GlobeSVG";
 
 import "../scss/project.scss";
 import Tooltip from "./Tooltip";

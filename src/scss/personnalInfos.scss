@@ -60,6 +60,15 @@
 
   opacity: 0;
   @include fadeIn(1s, 2s);
+
+  a {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .tooltip {
+      display: block;
+    }
+  }
 }
 
 .reflect {
