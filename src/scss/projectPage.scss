@@ -88,10 +88,19 @@
         border: 1px white inset;
         border-radius: 0.25rem 0.25rem 0;
 
+        @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+        }
+
         .description {
           width: 70%;
           opacity: 0;
           @include fadeIn(0.5s, 0);
+          @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+            width: 100%;
+          }
 
           p,
           li,
@@ -121,6 +130,12 @@
 
           margin: auto 0;
 
+          @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+            width: 100%;
+            height: 50vh;
+            overflow-y: unset;
+          }
+
           .images-content {
             height: 100%;
             display: flex;
@@ -128,16 +143,36 @@
             align-items: center;
             opacity: 0;
 
+            @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+              flex-direction: row;
+              font-size: small;
+              justify-content: space-around;
+              width: 100%;
+            }
             @include fadeIn(0.5s, 0);
-            img {
-              height: 90%;
-              border-radius: 1.5rem;
-              border: 1px inset white;
-              cursor: zoom-in;
 
-              &.zoomed {
-                cursor: zoom-out;
-                transform: scale(1.8); /* ou ajustable */
+            div {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              img {
+                height: 90%;
+                border-radius: 1.5rem;
+                border: 1px inset white;
+                cursor: zoom-in;
+
+                @media only screen and (max-width: 1024px),
+                  only screen and (max-device-width: 1024px) {
+                  height: 25vh;
+                  border-radius: 0.75rem;
+                }
+
+                &.zoomed {
+                  cursor: zoom-out;
+                  transform: scale(1.8); /* ou ajustable */
+                }
               }
             }
           }

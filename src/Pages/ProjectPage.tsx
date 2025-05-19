@@ -133,15 +133,16 @@ function ProjectPage() {
                           return <div key={index}>Fix in progress...</div>;
                         }
                         return (
-                          <>
+                          <div>
                             <img
                               src={img.src}
                               onClick={() => handleImgClick(img.src)}
                               className={`${isZoomed === img.src ? "zoomed" : ""}`}
                               alt={img.desc[language]}
                             />
+
                             <span style={{ margin: "0.5rem" }}>{img.desc[language]}</span>
-                          </>
+                          </div>
                         );
                       })}
                     </div>
