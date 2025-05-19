@@ -19,6 +19,12 @@ function ProjectPage() {
   const featuresListRef = useRef<HTMLUListElement>(null);
   const featureRefs = useRef<{ [key: string]: React.RefObject<HTMLLIElement> }>({});
 
+  const [isZoomed, setIsZoomed] = useState<string>("");
+
+  const handleImgClick = (img: string) => {
+    isZoomed === img ? setIsZoomed("") : setIsZoomed(img);
+  };
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
 
@@ -119,7 +125,28 @@ function ProjectPage() {
                 <div className="description" key={activeFeat?.title[language]}>
                   <ReactMarkdown>{activeFeat?.description[language]}</ReactMarkdown>
                 </div>
-                <div className="image">{activeFeat?.image}</div>
+                <div className="images-container">
+                  {activeFeat?.image && (
+                    <div className="images-content" key={activeFeat?.title[language]}>
+                      {activeFeat.image.map((img, index) => {
+                        if (activeFeat.title.EN === "Tell users I've arrived to my destination") {
+                          return <div key={index}>Fix in progress...</div>;
+                        }
+                        return (
+                          <>
+                            <img
+                              src={img.src}
+                              onClick={() => handleImgClick(img.src)}
+                              className={`${isZoomed === img.src ? "zoomed" : ""}`}
+                              alt={img.desc[language]}
+                            />
+                            <span style={{ margin: "0.5rem" }}>{img.desc[language]}</span>
+                          </>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </>
             ) : (
               <div
@@ -131,9 +158,9 @@ function ProjectPage() {
                   alignItems: "center",
                 }}
               >
-                <p className="nothing-to-show"> {projectPageText.nothingToShow[language]}</p>
+                <p className="nothing-to-show">{projectPageText.nothingToShow[language]}</p>
               </div>
-            )}{" "}
+            )}
           </div>
         </div>
         <div className="other-projects">

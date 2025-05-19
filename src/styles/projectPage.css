@@ -93,14 +93,14 @@
   filter: brightness(1);
 }
 .project-page .container .content .details {
+  display: flex;
   width: 75%;
   padding: 0.5rem 1rem;
   border: 1px white inset;
-  overflow-y: auto;
   border-radius: 0.25rem 0.25rem 0;
 }
 .project-page .container .content .details .description {
-  width: 100%;
+  width: 70%;
   opacity: 0;
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
@@ -140,8 +140,41 @@
   max-width: 100%;
   white-space: pre-wrap;
 }
-.project-page .container .content .details .image {
-  width: 100%;
+.project-page .container .content .details .images-container {
+  width: 30%;
+  height: 90%;
+  overflow-y: auto;
+  margin: auto 0;
+}
+.project-page .container .content .details .images-container .images-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-page .container .content .details .images-container .images-content img {
+  height: 90%;
+  border-radius: 1.5rem;
+  border: 1px inset white;
+  cursor: zoom-in;
+}
+.project-page .container .content .details .images-container .images-content img.zoomed {
+  cursor: zoom-out;
+  transform: scale(1.8); /* ou ajustable */
 }
 .project-page .container .other-projects {
   width: 80%;

@@ -8,7 +8,14 @@ export type FeatureType = {
   description: {
     [key in LanguageType]: string;
   };
-  image?: string;
+  image?: FeatImgType[];
+};
+
+export type FeatImgType = {
+  src: string;
+  desc: {
+    [key in LanguageType]: string;
+  };
 };
 export type ProjectType = {
   projectName: {

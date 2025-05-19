@@ -39,18 +39,22 @@ export const tOu: ProjectType = {
 
 Once user is connected, he must grant access to his location. Then, he sends his location every 5 meters to all users.   
 His location is updated on everyone's map and, distance between user and him is also recalculated.  
-This feature works in the background, ensuring continuous tracking while minimizing battery usage. 
-
-TO DO ? Add altitude to know if user are on the same floor or not.`,
+This feature works in the background, ensuring continuous tracking while minimizing battery usage.`,
         FR: `**Le partage de position en temps réel** est la fonctionnalité principale de cette application.
 
 Une fois connecté, l'utilisateur doit donner l'accès à sa localisation. Par après, et tous les 5 mètres, elle est envoyée à tous les utilisateurs. 
 Sa position est mise à jour sur la carte de tout le monde, la distance entre lui et l'utilisateur est aussi recalculée.  
-Cette fonctionnalité fonctionne en arrière-plan, assurant un suivi continu tout en minimisant l'utilisation de la batterie
-
-A FAIRE? Rajouter l'altitude pour savoir si les personnes se situent au même étage d'un batiment.`,
+Cette fonctionnalité fonctionne en arrière-plan, assurant un suivi continu tout en minimisant l'utilisation de la batterie`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat1.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -69,7 +73,22 @@ L'utilisateur peut créer un point de repère sur sa position en cliquant sur la
 
 Les utilisateurs ayant l'app ouverte reçoivent un toast les notifiant de la création d'un point de repère, facilitant la coordination en temps réel.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat2-1.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+        {
+          src: "/images/tou-feats/feat2-2.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -88,7 +107,15 @@ Le créateur d'un point de repère ainsi que l'admin (moi) peut supprimer son po
 
 Lorsqu'un marqueur est supprimé, les autres utilisateurs sont notifiés pour éviter toute confusion.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat3.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -107,7 +134,15 @@ L'utilisateur peut cliquer sur le bouton "J'arrive" d'un point de repère. Cela 
 
 Cela crée une ligne de la couleur du point de destination entre l'utilisateur et la destination sur la carte. Impossible à effectuer si l'utilisateur se trouve à moins de 10m du lieu en question.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat4.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -126,7 +161,22 @@ L'utilisateur peut cliquer sur le bouton "J'arrive" d'un utilisateur. Cela lui e
 
 Cette fonctionnalité facilite les rencontres directes entre individus. Impossible à effectuer si l'utilisateur se trouve à moins de 10m de l'utilisateur cible.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat5-1.jpg",
+          desc: {
+            EN: "Sending request",
+            FR: "Envoyer requête",
+          },
+        },
+        {
+          src: "/images/tou-feats/feat5-2.jpg",
+          desc: {
+            EN: "Receiving request",
+            FR: "Recevoir requête",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -153,7 +203,22 @@ Sur cette notification se trouvent 2 boutons :
 
 Si au lieu d'appuyer sur un des boutons, l'utilisateur appuie sur la notification, cela lui ouvre son application et centre la carte sur le point de repère.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat6-1.jpg",
+          desc: {
+            EN: "Sending request",
+            FR: "Envoie de requête",
+          },
+        },
+        {
+          src: "/images/tou-feats/feat6-2.jpg",
+          desc: {
+            EN: "Receiving request",
+            FR: "Réception de requête",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -180,7 +245,22 @@ Sur cette notification se trouvent 2 options interactives :
 
 Si au lieu d'appuyer sur un des boutons, l'utilisateur appuie sur la notification, cela lui ouvre son application et centre la carte sur la position de l'utilisateur expéditeur.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat7-1.jpg",
+          desc: {
+            EN: "Sending request",
+            FR: "Envoyer requête",
+          },
+        },
+        {
+          src: "/images/tou-feats/feat7-2.jpg",
+          desc: {
+            EN: "Receiving request",
+            FR: "Recevoir requête",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -190,16 +270,24 @@ Si au lieu d'appuyer sur un des boutons, l'utilisateur appuie sur la notificatio
       description: {
         EN: `**Arrival notifications** complete the movement tracking cycle.
 
-When a user announces they're heading toward a marker or a person and they arrive at their destination, the people going to the same place — or the person who requested the regroup — are notified via a notification.
+When a user announces he's heading toward a marker or a person and arrives at his destination, the app detectes it and notifies, via a notification, the people going to the same place — or the person who requested the regroup.
 
 This feature helps everyone keep track of who has already arrived at the meeting point.`,
         FR: `**Les notifications d'arrivée** complètent le cycle de suivi des mouvements.
 
-Quand un utilisateur annonce qu'il se dirige vers un point/une personne et qu'il arrive à sa destination, les personnes se dirigeant au même endroit/la personne ayant demandé le regroupement sont averties via une notification.
+Quand un utilisateur annonce qu'il se dirige vers un point/une personne et qu'il arrive à sa destination, l'application le détecte automatiquement et avertit, via une notification, les personnes se dirigeant au même endroit/la personne ayant demandé le regroupement
 
 Cette fonctionnalité aide tout le monde à suivre qui est déjà arrivé au point de rencontre.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -224,7 +312,15 @@ Quand un compte est désactivé :
 - Il ne peut plus rien voir/faire avec l'app
 - Sa position n'est plus partagée avec les autres`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat9.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -238,7 +334,6 @@ An admin panel is accessible only from my account, and it's the only way to crea
 
 This process includes:
 - Creating login credentials
-- Setting initial permissions
 - Adding the user to the system database`,
         FR: `**L'accès utilisateur contrôlé** maintient la nature privée de cette application.
 
@@ -246,10 +341,17 @@ Un panel admin est accessible uniquement pour mon compte, c'est uniquement à pa
 
 Ce processus comprend :
 - La création d'identifiants de connexion
-- La définition des permissions initiales
 - L'ajout de l'utilisateur à la base de données du système`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat10.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
     {
       title: {
@@ -276,7 +378,58 @@ Un historique de tous les évènements jusqu'à 48h en arrière est disponible. 
 
 Cette fonctionnalité aide les utilisateurs à comprendre ce qui s'est passé lorsqu'ils n'utilisaient pas l'application.`,
       },
-      image: ``,
+      image: [
+        {
+          src: "/images/tou-feats/feat11.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
+    },
+    {
+      title: {
+        EN: `Authentification`,
+        FR: `Authentification`,
+      },
+      description: {
+        EN: `User has to auth with credentials i gave him. 
+        
+There is no possibility tu sign up since i don't want random people to use this app unless i authorized them
+        `,
+        FR: `L'utilisateur doit commencer par s'authentifier avec les informations d'identifications que je lui ai donnés au préalable.
+        
+Il n'y a pas moyen de s'inscrire étant donné que je ne veux pas que des iconnus utilisent cette app.`,
+      },
+      image: [
+        {
+          src: "/images/tou-feats/feat12.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
+    },
+    {
+      title: {
+        EN: `List of current users`,
+        FR: `Liste des utilisateurs`,
+      },
+      description: {
+        EN: `A simple list of users currently authorized on the app`,
+        FR: `Une simple liste des utilisateurs actuellement autorisés sur l'app`,
+      },
+      image: [
+        {
+          src: "/images/tou-feats/feat13.jpg",
+          desc: {
+            EN: "",
+            FR: "",
+          },
+        },
+      ],
     },
   ],
 };
@@ -334,7 +487,7 @@ Le message s'affiche sur le côté droit de la fenêtre de conversation.
 Les messages reçus s'affichent sur le côté gauche de la fenêtre.  
 Chaque nouveau message est ajouté à la suite des autres, avec le nom et la photo de profil de l'auteur affichés.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -355,7 +508,7 @@ Chaque nouveau message est ajouté à la suite des autres, avec le nom et la pho
 - Ne peut pas rajouter quelqu'un étant déja dans la liste d'ajout
 - Si l'utilisateur ne rajoute qu'une personne, la conversation est considérée comme "privée", ils auront donc tous les deux les droits admin.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -405,7 +558,7 @@ Each time a message is sent in a conversation, that conversation is updated in t
   
   Chaque fois qu'un message est envoyé dans une conversation, celle-ci est mise à jour dans la liste.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -426,7 +579,7 @@ Dans cette conversation, les messages précédents le blocage seront toujours vi
 De même dans les conversations de groupe dans lesquelles se trouvent la personne bloquée. Une fois la perosnne débloquée, tous les messages seront à nouveai visible.
 `,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -471,7 +624,7 @@ Un modal permet de rechercher les utilisateurs à ajouter
 Un message système sera affiché pour prévenir tous les utilisateurs de la conversation de ce changement
 `,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -491,7 +644,7 @@ A system message will be displayed to inform all users in the conversation of th
 Un message système sera affiché pour prévenir tous les utilisateurs de la conversation de ce changement
 `,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -517,7 +670,7 @@ A system message will be displayed to inform all users in the conversation of th
   Un message système sera affiché pour prévenir tous les utilisateurs de la conversation de ce changement
 `,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -538,7 +691,7 @@ Il peut choisir cet emoji parmi une liste d'emojis.
 
 Un message système sera affiché pour prévenir tous les utilisateurs de la conversation de ce changement.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -551,7 +704,7 @@ Un message système sera affiché pour prévenir tous les utilisateurs de la con
         FR: `Tout utilisateur peut changer le thème couleur de la conversation. Cela change uniquement la couleur des messages envoyés par l'utilisateur.  
 En fonction de si la couleur choisie est claire ou foncée, la couleur de la police passe de blanc à noir.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -566,7 +719,7 @@ their nickname will be shown instead.`,
 Chaque fois que le nom d'un utilisateur sera utilisé dans la conversation (ex: auteur de message, message système...),  
 son pseudo sera affiché à la place.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -599,7 +752,7 @@ Preview des fichiers:
 - Les fichiers sont représentés par une image de fichier avec leur noms en-dessous
 - Les images et vidéos sont directement visibles`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -617,7 +770,7 @@ Clicking on this message redirects directly to the GIF's webpage.`,
 Cela ouvre une boîte dans laquelle il peut rechercher le GIF qu'il souhaite. Lorsqu'il clique dessus, cela envoie un message contenant le GIF choisi.  
 Cliquer sur ce message redirige directement vers la page internet du GIF.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -652,7 +805,7 @@ Si le message est déjà chargé, scroll jusqu'au message, autrement, charge le 
 
 Le message en question est mis en évidence.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -665,7 +818,7 @@ Le message en question est mis en évidence.`,
         FR: `L'utilisateur peut mettre une conversation en sourdine pendant différentes durées ou indéfiniment jusqu'à ce qu'il le change.  
 Mettre la conversation en sourdine empêche de jouer le son de notification lors d'un nouveau message`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -682,7 +835,7 @@ Dès qu'un nouveau message sera envoyé dans cette conversation, elle réapparai
 Les anciens messages, photos et fichiers ne seront plus accessibles par l'utilisateur mais le seront toujours pour les autres participants.  
 Il ne sera plus possible non plus de rechercher des messages précédents ce moment.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -697,7 +850,7 @@ They can also search among their conversations by typing a user's name or the na
 Dans ce modal, ses 5 conversations les plus récentes lui sont directement proposées.  
 Il peut aussi rechercher parmi ses conversations en tapant le nom d'un utilisateur ou bien le nom d'une conversation.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -712,7 +865,7 @@ Clicking on it allows users to view the message's edit history.`,
 Quand un message est modifié, une mention "Modifié" est affichée juste au-dessus du dit message.  
 En cliquant dessus, il est possible de voir les différentes modifications effectuées.`,
       },
-      image: ``,
+      image: undefined,
     },
 
     {
@@ -746,7 +899,7 @@ Si ce message est le dernier de la conversation, dans la liste des conversations
 
 Ces deux actions sont irréversibles.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -769,7 +922,7 @@ En cliquant sur les différentes réactions du message, la liste complète s'aff
 
 Il est possible de retirer sa réaction en recliquant sur l'emoji dans le menu ou dans la liste des personnes ayant réagi.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -780,7 +933,7 @@ Il est possible de retirer sa réaction en recliquant sur l'emoji dans le menu o
         EN: `By going into the conversation details, the user can view and download all files that were sent, except those sent after they left the conversation.`,
         FR: `En allant dans les détails de la conversation, l'utilisateur peut voir et télécharger tous les fichiers envoyés, excepté ceux envoyés après qu'il a quitté la conversation.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -804,7 +957,7 @@ Dans ces deux cas, cela ouvre le visualiseur d'images. Il consiste en un carrous
 Il est possible de naviguer entre les images directement sur le carrousel ou bien via les flèches se trouvant sur les côtés.  
 Le carrousel n'affiche qu'un certain nombre d'images ; en fonction de si l'utilisateur navigue vers les médias les plus anciens ou les plus récents, les éléments suivants sont chargés.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -826,7 +979,7 @@ Le message de l'utilisateur sera précédé d'un extrait du message cité, ce qu
 Si le message est déjà chargé, on scroll jusqu'à celui-ci. Sinon, on charge le message concerné ainsi qu'une dizaine de messages avant et après.  
 Le message en question est mis en évidence.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -840,7 +993,7 @@ The user can scroll up to load more messages.`,
         FR: `Au chargement d'une conversation, seulement une vingtaine de messages est chargée.  
 L'utilisateur peut faire défiler vers le haut pour en charger davantage.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -864,7 +1017,7 @@ L'utilisateur peut donc :
 - Cliquer sur la flèche "Retourner aux messages plus récents" pour charger les derniers messages  
         Si les messages les plus récents sont déjà chargés, ce bouton fait simplement défiler jusqu'en bas`,
       },
-      image: ``,
+      image: undefined,
     },
 
     {
@@ -895,7 +1048,7 @@ I should update this to handle Firebase auth via the backend and then send the t
 Actuellement (mauvaise pratique) : j'utilise Firebase directement dans le frontend. Une fois authentifié avec Firebase, j'envoie une requête au backend pour récupérer mon JWT. Ce n'est pas sécurisé, car n'importe qui peut demander le token de n'importe qui. (Début de mon apprentissage)  
 Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l'instant je laisse comme ça, je changerai peut-être un jour.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -925,7 +1078,7 @@ I should update this to handle Firebase auth via the backend and then send the t
 Actuellement (mauvaise pratique) : j'utilise Firebase directement dans le frontend. Une fois authentifié avec Firebase, j'envoie une requête au backend pour récupérer mon JWT. Ce n'est pas sécurisé, car n'importe qui peut demander le token de n'importe qui. (Début de mon apprentissage)  
 Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoyer le token au frontend une fois la vérification confirmée (comme dans le projet Tou), mais pour l'instant je laisse comme ça, je changerai peut-être un jour.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -936,7 +1089,7 @@ Je devrais modifier cela pour gérer l'auth Firebase via mon backend, puis envoy
         EN: `The user can choose a profile picture that will be visible to everyone.`,
         FR: `L'utilisateur peut choisir une photo de profil qui sera visible par tout le monde`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -957,7 +1110,7 @@ Quitter la conversation l'empêchera de voir tous les messages/médias envoyés 
 S'il rejoint à nouveau la conversation par après, il aura de nouveau accès à l'entiereté de celle-ci.`,
       },
 
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -969,7 +1122,7 @@ S'il rejoint à nouveau la conversation par après, il aura de nouveau accès à
 
         FR: `Dès qu'un utilisateur commence à écrire un message, les autres utilisateurs présents dans la conversation et l'ayant ouverte voient une animation indiquant que la personne est en train d'écrire. Celle-ci s'arrête dès que la personne a terminé.`,
       },
-      image: ``,
+      image: undefined,
     },
     {
       title: {
@@ -987,7 +1140,7 @@ Hovering over the person's picture shows the date they saw the message.`,
 Dès qu'un utilisateur voit un message, sa photo de profil s'affiche juste en dessous du dernier message qu'il a vu dans la conversation.  
 Survoler la photo de la personne permet de voir la date à laquelle elle a vu le message.`,
       },
-      image: ``,
+      image: undefined,
     },
   ],
 };
@@ -1022,7 +1175,7 @@ Ability to switch between the two via the flag in the top-right corner of the si
 Met le site en français si le FR est détecté. Le met en anglais autrmenet.  
 Possibilité de changer entre les deux via le drapeau dans le coin supérieur droit du site.`,
       },
-      image: ``,
+      image: undefined,
     },
   ],
 
