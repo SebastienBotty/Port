@@ -49,6 +49,10 @@ function PersonnalInfos() {
             onMouseEnter={handleMouseEnter} // Gère l'événement de survol
             onMouseLeave={handleMouseLeave}
           >
+            <div className="pic-me">
+              {" "}
+              <img src="/images/moi.png" alt="" />
+            </div>
             <div className="img-flag">
               {" "}
               <Flag countryCode="BE" />

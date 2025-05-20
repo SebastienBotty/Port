@@ -14,10 +14,23 @@
   .img-container {
     position: relative;
     border-radius: 50%;
-    width: 4rem;
+    width: 5rem;
     aspect-ratio: 1/1;
     border: 1px inset white;
     transition: transform 0.3s ease;
+
+    .pic-me {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
 
     .img-flag {
       position: absolute;
