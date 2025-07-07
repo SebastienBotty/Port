@@ -51,7 +51,7 @@ function PersonnalInfos() {
           >
             <div className="pic-me">
               {" "}
-              <img src="/images/moi.png" alt="" />
+              <img src="/images/moi.jpg" alt="" />
             </div>
             <div className="img-flag">
               {" "}
