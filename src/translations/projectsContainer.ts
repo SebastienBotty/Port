@@ -28,6 +28,7 @@ export const tOu: ProjectType = {
   code: "",
   site: "",
   desc: true,
+  projectKind: "Perso",
   features: [
     {
       title: {
@@ -462,6 +463,8 @@ export const notMessenger: ProjectType = {
   code: "https://github.com/SebastienBotty/Messenger-clone-Frontend",
   site: "soon Coming",
   desc: true,
+  projectKind: "Perso",
+
   features: [
     {
       title: {
@@ -1160,6 +1163,8 @@ export const portfolio: ProjectType = {
   code: "https://github.com/SebastienBotty/port",
   site: "",
   desc: true,
+  projectKind: "Perso",
+
   features: [
     {
       title: {
@@ -1185,6 +1190,160 @@ Possibilité de changer entre les deux via le drapeau dans le coin supérieur dr
   },
 };
 
+export const checkCar: ProjectType = {
+  projectName: {
+    EN: `CheckCar`,
+    FR: `CheckCar`,
+  },
+  description: {
+    FR: `CheckCar est une application basée sur l’IA permettant de générer un guide PDF personnalisé pour l’achat d’un véhicule d’occasion`,
+    EN: `CheckCar is an AI-based application that generates a personalized PDF guide for used car purchases.`,
+  },
+  stack: [
+    `TypeScript`,
+    `NextJs`,
+    `Stripe`,
+    "Inngest",
+    "OpenAi",
+    "PostgreSQL",
+    "Prisma",
+    "Supabase",
+    `AWS: S3`,
+  ],
+  link: ``,
+  image: `/images/checkcar.png`,
+  code: "",
+  site: "https://www.checkcar.be/",
+  desc: true,
+  projectKind: "Freelance",
+
+  features: [
+    {
+      title: {
+        EN: `Vehicle data input & PDF generation`,
+        FR: `Saisie des informations & génération de PDF`,
+      },
+      description: {
+        EN: `The user fills in a form with vehicle details, completes a secure payment via Stripe, and receives an automatically generated personalized PDF.`,
+
+        FR: `L’utilisateur remplit un formulaire avec les données du véhicule, effectue un paiement sécurisé via Stripe et reçoit un PDF personnalisé généré automatiquement.`,
+      },
+      image: undefined,
+    },
+    {
+      title: {
+        EN: `PDF pricing management`,
+        FR: `Gestion du prix des PDF`,
+      },
+      description: {
+        EN: "L’administrateur peut modifier dynamiquement le prix des PDF sans intervention technique.",
+        FR: "The administrator can dynamically update the PDF price without technical intervention.",
+      },
+      image: undefined,
+    },
+    {
+      title: {
+        EN: `PDF listing & management`,
+        FR: `Liste et gestion des PDF`,
+      },
+      description: {
+        EN: `View and manage all generated PDFs within the platform.`,
+
+        FR: `Visualisation et gestion de l’ensemble des PDF générés sur la plateforme..`,
+      },
+      image: [
+        {
+          src: "/images/checkcar/list.png",
+          desc: {
+            FR: "Liste des pdf",
+            EN: "List of pdf",
+          },
+        },
+      ],
+    },
+    {
+      title: {
+        EN: `Admin PDF generation`,
+        FR: `Création de PDF depuis l’admin`,
+      },
+      description: {
+        EN: `The administrator can manually generate personalized PDFs from the admin dashboard.`,
+
+        FR: `L’administrateur peut générer manuellement des PDF personnalisés depuis le dashboard.`,
+      },
+      image: [
+        {
+          src: "/images/checkcar/newpdf.png",
+          desc: {
+            FR: "",
+            EN: "",
+          },
+        },
+      ],
+    },
+    {
+      title: {
+        EN: `Sales analytics`,
+        FR: `Suivi des ventes`,
+      },
+      description: {
+        EN: `Track business performance through a clear and interactive sales chart.`,
+
+        FR: `Visualisation des performances commerciales via un diagramme de ventes clair et interactif.`,
+      },
+      image: [
+        {
+          src: "/images/checkcar/analyses.png",
+          desc: {
+            FR: "",
+            EN: "",
+          },
+        },
+      ],
+    },
+    {
+      title: {
+        EN: `Google Analytics integration`,
+        FR: `Intégration Google Analytics`,
+      },
+      description: {
+        EN: `Analyze user behavior and traffic through Google Analytics integration.`,
+        FR: `Analyse du comportement des utilisateurs et du trafic grâce à l’intégration de Google Analytics.`,
+      },
+      image: [
+        {
+          src: "/images/checkcar/google.png",
+          desc: { EN: "", FR: "" },
+        },
+        { src: "/images/checkcar/google2.png", desc: { EN: "", FR: "" } },
+      ],
+    },
+    {
+      title: {
+        EN: `GDPR dashboard`,
+        FR: `Dashboard RGPD`,
+      },
+      description: {
+        EN: `Dedicated dashboard for managing and monitoring GDPR compliance.`,
+
+        FR: `Tableau de bord dédié à la gestion et au suivi de la conformité RGPD.`,
+      },
+      image: [
+        {
+          src: "/images/checkcar/rgpd1.png",
+          desc: { EN: "", FR: "" },
+        },
+        { src: "/images/checkcar/rgpd2.png", desc: { EN: "", FR: "" } },
+      ],
+    },
+  ],
+
+  state: {
+    EN: "Done",
+    FR: "Terminé",
+  },
+};
+
 export const projectsContainerText = {
   title: {
     EN: `Projects`,
@@ -1192,4 +1351,4 @@ export const projectsContainerText = {
   },
 };
 
-export const projectsArr: ProjectType[] = [tOu, notMessenger, portfolio];
+export const projectsArr: ProjectType[] = [tOu, notMessenger, checkCar, portfolio];

@@ -27,6 +27,7 @@ function Project({ projectData }: { projectData: ProjectType }) {
   return (
     <div className="project">
       <div className="image-container">
+        <div className="project-type-tag">{projectData.projectKind}</div>
         <img src={projectData.image} />
       </div>
       <div className="infos">

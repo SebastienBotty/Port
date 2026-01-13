@@ -25,6 +25,30 @@ function ProjectPage() {
     isZoomed === img ? setIsZoomed("") : setIsZoomed(img);
   };
 
+  const getCurrentImageIndex = () => {
+    if (!activeFeat?.image || !isZoomed) return -1;
+    return activeFeat.image.findIndex((img) => img.src === isZoomed);
+  };
+
+  const navigateImage = (direction: "prev" | "next") => {
+    if (!activeFeat?.image) return;
+    const currentIndex = getCurrentImageIndex();
+    if (currentIndex === -1) return;
+
+    let newIndex: number;
+    if (direction === "next") {
+      newIndex = (currentIndex + 1) % activeFeat.image.length;
+    } else {
+      newIndex = currentIndex === 0 ? activeFeat.image.length - 1 : currentIndex - 1;
+    }
+
+    setIsZoomed(activeFeat.image[newIndex].src);
+  };
+
+  const handleThumbnailClick = (imgSrc: string) => {
+    setIsZoomed(imgSrc);
+  };
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
 
@@ -128,20 +152,96 @@ function ProjectPage() {
                 <div className="images-container">
                   {activeFeat?.image && (
                     <div className="images-content" key={activeFeat?.title[language]}>
+                      {isZoomed && activeFeat.image.length > 0 && (
+                        <div className="image-viewer">
+                          <div className="zoom-overlay" onClick={() => setIsZoomed("")} />
+                          <div className="viewer-content">
+                            <button
+                              className="close-button"
+                              onClick={() => setIsZoomed("")}
+                              aria-label="Fermer"
+                            >
+                              ×
+                            </button>
+                            {activeFeat.image.length > 1 && (
+                              <>
+                                <button
+                                  className="nav-button nav-button-prev"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigateImage("prev");
+                                  }}
+                                  aria-label="Image précédente"
+                                >
+                                  ‹
+                                </button>
+                                <button
+                                  className="nav-button nav-button-next"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigateImage("next");
+                                  }}
+                                  aria-label="Image suivante"
+                                >
+                                  ›
+                                </button>
+                              </>
+                            )}
+                            {activeFeat.image.find((img) => img.src === isZoomed) && (
+                              <img
+                                src={isZoomed}
+                                className="zoomed-image"
+                                alt={
+                                  activeFeat.image.find((img) => img.src === isZoomed)?.desc[
+                                    language
+                                  ] || ""
+                                }
+                                onClick={(e) => e.stopPropagation()}
+                              />
+                            )}
+                            {activeFeat.image.find((img) => img.src === isZoomed)?.desc[
+                              language
+                            ] && (
+                              <div className="image-caption">
+                                {
+                                  activeFeat.image.find((img) => img.src === isZoomed)?.desc[
+                                    language
+                                  ]
+                                }
+                              </div>
+                            )}
+                            {activeFeat.image.length > 1 && (
+                              <div className="thumbnails-container">
+                                {activeFeat.image.map((img, index) => (
+                                  <div
+                                    key={index}
+                                    className={`thumbnail ${img.src === isZoomed ? "active" : ""}`}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handleThumbnailClick(img.src);
+                                    }}
+                                  >
+                                    <img src={img.src} alt={img.desc[language]} />
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                       {activeFeat.image.map((img, index) => {
                         if (activeFeat.title.EN === "Tell users I've arrived to my destination") {
                           return <div key={index}>Fix in progress...</div>;
                         }
                         return (
-                          <div>
+                          <div key={index}>
                             <img
                               src={img.src}
                               onClick={() => handleImgClick(img.src)}
-                              className={`${isZoomed === img.src ? "zoomed" : ""}`}
                               alt={img.desc[language]}
                             />
 
-                            <span style={{ margin: "0.5rem" }}>{img.desc[language]}</span>
+                            <span>{img.desc[language]}</span>
                           </div>
                         );
                       })}

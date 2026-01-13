@@ -20,6 +20,11 @@ import {
   siMysql,
   siAmazonwebservices,
   siRaspberrypi,
+  siNextdotjs,
+  siPrisma,
+  siStripe,
+  siSupabase,
+  siOpenai,
 } from "simple-icons";
 import { TechnologyType } from "../Typescript/Types";
 
@@ -28,23 +33,29 @@ export const technologies: TechnologyType[] = [
   { name: "TypeScript", icon: siTypescript, mostUsed: true },
   { name: "React", icon: siReact, mostUsed: true },
   { name: "ReactNative", icon: siReact, mostUsed: true },
+  { name: "NextJs", icon: siNextdotjs, mostUsed: true },
 
   { name: "HTML5", icon: siHtml5, mostUsed: true },
   { name: "CSS3", icon: siCss3, mostUsed: true },
   { name: "Node.js", icon: siNodedotjs, mostUsed: true },
   { name: "MongoDB", icon: siMongodb, mostUsed: true },
   { name: "Mongoose", icon: siMongoose, mostUsed: true },
+  { name: "PostgreSQL", icon: siPostgresql, mostUsed: true },
+  { name: "Prisma", icon: siPrisma, mostUsed: true },
+
   { name: "Express", icon: siExpress, mostUsed: true },
   { name: "Socket.io", icon: siSocketdotio, mostUsed: true },
   { name: "Git", icon: siGit, mostUsed: true },
   { name: "GitHub", icon: siGithub, mostUsed: true },
   { name: "Firebase: Auth", icon: siFirebase, mostUsed: true },
+  { name: "Supabase", icon: siSupabase, mostUsed: false },
   { name: "AWS: S3", icon: siAmazonwebservices, mostUsed: true },
   { name: "Python", icon: siPython, mostUsed: false },
+  { name: "OpenAi", icon: siOpenai, mostUsed: false },
+  { name: "Stripe", icon: siStripe, mostUsed: false },
 
   { name: "Sass", icon: siSass, mostUsed: false },
   { name: "Angular", icon: siAngular, mostUsed: false },
-  { name: "PostgreSQL", icon: siPostgresql, mostUsed: false },
   { name: "MySQL", icon: siMysql, mostUsed: false },
   { name: "SQLite", icon: siSqlite, mostUsed: false },
   { name: "AWS: SNS/SQS", icon: siAmazonwebservices, mostUsed: false },

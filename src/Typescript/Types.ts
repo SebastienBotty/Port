@@ -32,7 +32,10 @@ export type ProjectType = {
   code: string;
   site: string;
   desc: boolean;
+  projectKind: ProjectKindType;
 };
+
+export type ProjectKindType = "Perso" | "Freelance" | "Pro";
 
 export type ProgressType = {
   EN: "Done" | "In progress";
