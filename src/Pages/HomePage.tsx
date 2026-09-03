@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef } from "react";
 import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 import Navbar from "../Components/Navbar";
+import Reveal from "../Components/Reveal";
 
 import PersonalInfos from "../Components/PersonalInfos";
 import TechStack from "../Components/TechStack";
@@ -122,18 +123,24 @@ function HomePage() {
       <div ref={homeRef}>
         <PersonalInfos />
       </div>
-      <div ref={projectsRef} className="class-container">
-        <ProjectsContainer />
-      </div>
-      <div className="class-container">
+      <Reveal className="class-container">
+        <div ref={projectsRef}>
+          <ProjectsContainer />
+        </div>
+      </Reveal>
+      <Reveal className="class-container">
         <TechStack />
-      </div>
-      <div ref={personnalInfosRef} className="class-container">
-        <ExperiencesContainer />
-      </div>
-      <div ref={contactRef} className="class-container">
-        <ContactContainer />
-      </div>
+      </Reveal>
+      <Reveal className="class-container">
+        <div ref={personnalInfosRef}>
+          <ExperiencesContainer />
+        </div>
+      </Reveal>
+      <Reveal className="class-container">
+        <div ref={contactRef}>
+          <ContactContainer />
+        </div>
+      </Reveal>
       <div className="class-container">
         <Footer
           homeRef={homeRef}
