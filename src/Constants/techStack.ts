@@ -25,6 +25,8 @@ import {
   siStripe,
   siSupabase,
   siOpenai,
+  siFramer,
+  siThreedotjs,
 } from "simple-icons";
 import { TechnologyType } from "../Typescript/Types";
 
@@ -34,6 +36,8 @@ export const technologies: TechnologyType[] = [
   { name: "React", icon: siReact, mostUsed: true },
   { name: "ReactNative", icon: siReact, mostUsed: true },
   { name: "NextJs", icon: siNextdotjs, mostUsed: true },
+  { name: "Framer Motion", icon: siFramer, mostUsed: true },
+  { name: "Three.js", icon: siThreedotjs, mostUsed: true },
 
   { name: "HTML5", icon: siHtml5, mostUsed: true },
   { name: "CSS3", icon: siCss3, mostUsed: true },
