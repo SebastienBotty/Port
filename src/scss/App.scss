@@ -29,3 +29,7 @@ body {
   @include fadeIn(1s, 2.5s);
   z-index: 1;
 }
+
+.reveal-section {
+  z-index: 1;
+}

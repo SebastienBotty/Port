@@ -123,20 +123,20 @@ function HomePage() {
       <div ref={homeRef}>
         <PersonalInfos />
       </div>
-      <Reveal className="class-container">
+      <Reveal className="reveal-section">
         <div ref={projectsRef}>
           <ProjectsContainer />
         </div>
       </Reveal>
-      <Reveal className="class-container">
+      <Reveal className="reveal-section">
         <TechStack />
       </Reveal>
-      <Reveal className="class-container">
+      <Reveal className="reveal-section">
         <div ref={personnalInfosRef}>
           <ExperiencesContainer />
         </div>
       </Reveal>
-      <Reveal className="class-container">
+      <Reveal className="reveal-section">
         <div ref={contactRef}>
           <ContactContainer />
         </div>
