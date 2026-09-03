@@ -10,6 +10,7 @@ import MailSVG from "./SVG/MailSVG";
 
 import "../scss/personnalInfos.scss";
 import { LanguageContext, useLanguageContext } from "../Contexts/useLanguage";
+import { personalInfosText } from "../translations/personalInfos";
 
 function PersonnalInfos() {
   const { language, setLanguage } = useLanguageContext();
@@ -65,6 +66,7 @@ function PersonnalInfos() {
         </div>
         <div className="big-title title-1">FULL STACK</div>
         <div className="big-title title-2">DEVELOPPER</div>{" "}
+        <div className="tagline">{personalInfosText.tagline[language]}</div>
         <div className="contacts">
           <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
             <div className="img-container reflect">
