@@ -1,5 +1,9 @@
 # Portfolio Motion/3D Redesign Implementation Plan
 
+> **Superseded 2026-09-03:** The 3D hero accent (Task 5, "3D hero accent") was implemented as written below, then removed in commit `89e3185` after manual browser verification (Task 11) showed it significantly overlapping and obscuring the "FULL STACK DEVELOPPER" title text. `three`, `@react-three/fiber`, and `@react-three/drei` are no longer dependencies of this project, and "Three.js" is no longer listed in the tech stack. Do not use Task 5 or Task 11's 3D-related verification steps as instructions to reinstate this — the Framer Motion layer (Tasks 1-4, 6-10) is unaffected and is the shipped result.
+>
+> **Ruling on staggered list entrances:** this plan's Architecture line and Task 9 originally implied `Project.tsx`/`TechContainer.tsx` cards would animate in with a staggered entrance (in addition to the whileHover/whileTap this plan's Task 9 does implement). That was never built and, on final review, is a deliberate decline rather than an oversight: `Reveal`'s per-section fade/slide-in (Task 7-8) already gives each section a single, clean entrance, and adding a second, nested stagger animation for cards *inside* an already-animating section risks feeling busy rather than polished — consistent with this plan's broader preference (confirmed by the Task 11 decision to cut the 3D accent entirely rather than tune it) for less motion, applied well, over more. No further work is planned here.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Add a cohesive Framer Motion animation layer and a single React Three Fiber 3D hero accent to the portfolio, plus a professional hero tagline and a new freelance work-experience entry (WHM Projects / European Commission).

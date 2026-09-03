@@ -1,5 +1,7 @@
 # Portfolio motion/3D redesign + content update
 
+> **Superseded 2026-09-03:** The 3D hero accent described below was implemented, then removed in commit `89e3185` after manual browser verification showed it significantly overlapping and obscuring the "FULL STACK DEVELOPPER" title text. `three`, `@react-three/fiber`, and `@react-three/drei` are no longer dependencies, and "Three.js" is no longer listed in the tech stack. The Framer Motion layer is unaffected and is the shipped result.
+
 ## Goal
 
 Make the portfolio read as more professional and technically credible by:
