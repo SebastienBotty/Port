@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { TechnologyType } from "../Typescript/Types";
 import TechIcon from "./TechIcon";
 
@@ -6,9 +7,13 @@ import "../scss/techContainer.scss";
 
 function TechContainer({ tech, showIcon = true }: { tech: TechnologyType; showIcon?: boolean }) {
   return (
-    <div className="tech-container">
+    <motion.div
+      className="tech-container"
+      whileHover={{ scale: 1.08 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
       {showIcon && <TechIcon icon={tech.icon} />} {tech.name}{" "}
-    </div>
+    </motion.div>
   );
 }
 

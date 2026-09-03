@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "../scss/navBar.scss";
 
 import { navBarText } from "../translations/navBarText";
@@ -33,19 +34,35 @@ const Navbar = ({ homeRef, personalInfosRef, projectsRef, contactRef }: RefProps
   return (
     <div className="nav-bar">
       <div className="routes-container">
-        <div className="title" onClick={() => handleClick("home", homeRef)}>
+        <motion.div
+          className="title"
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleClick("home", homeRef)}
+        >
           {navBarText.home[language]}
-        </div>
-        <div className="title" onClick={() => handleClick("projects", projectsRef)}>
+        </motion.div>
+        <motion.div
+          className="title"
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleClick("projects", projectsRef)}
+        >
           {navBarText.projects[language]}
-        </div>
-        <div className="title" onClick={() => handleClick("perso", personalInfosRef)}>
+        </motion.div>
+        <motion.div
+          className="title"
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleClick("perso", personalInfosRef)}
+        >
           {navBarText.about[language]}
-        </div>
+        </motion.div>
 
-        <div className="title" onClick={() => handleClick("contact", contactRef)}>
+        <motion.div
+          className="title"
+          whileTap={{ scale: 0.95 }}
+          onClick={() => handleClick("contact", contactRef)}
+        >
           {navBarText.contacts[language]}
-        </div>
+        </motion.div>
       </div>
 
       <div className="select-language selected-language">

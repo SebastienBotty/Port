@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ProjectType, TechnologyType } from "../Typescript/Types";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { technologies } from "../Constants/techStack";
@@ -25,7 +26,12 @@ function Project({ projectData }: { projectData: ProjectType }) {
   };
 
   return (
-    <div className="project">
+    <motion.div
+      className="project"
+      whileHover={{ y: -8, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    >
       <div className="image-container">
         <div className="project-type-tag">{projectData.projectKind}</div>
         <img src={projectData.image} />
@@ -74,7 +80,7 @@ function Project({ projectData }: { projectData: ProjectType }) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
