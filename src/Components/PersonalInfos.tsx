@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { siGithub } from "simple-icons";
 
 import TechIcon from "./TechIcon";
@@ -24,6 +25,10 @@ function PersonnalInfos() {
   };
   const handleMouseLeave = () => {
     setRotation(0);
+  };
+
+  const handleCtaClick = () => {
+    document.querySelector(".contact-container")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleMailClick = () => {
@@ -67,6 +72,17 @@ function PersonnalInfos() {
         <div className="big-title title-1">FULL STACK</div>
         <div className="big-title title-2">DEVELOPPER</div>{" "}
         <div className="tagline">{personalInfosText.tagline[language]}</div>
+        <motion.button
+          type="button"
+          className="cta-button"
+          onClick={handleCtaClick}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        >
+          {personalInfosText.ctaLabel[language]}
+        </motion.button>
+        <div className="trust-line">{personalInfosText.trustLine[language]}</div>
         <div className="contacts">
           <a href="https://github.com/SebastienBotty" target="_blank" rel="noopener noreferrer">
             <div className="img-container reflect">

@@ -8,7 +8,15 @@ export const personalInfosText = {
     FR: "Contactez-moi",
   },
   tagline: {
-    EN: "Building fast, reliable web & mobile products — from freelance and institutional web projects to full-stack apps.",
-    FR: "Je conçois des produits web & mobiles rapides et fiables — des projets web freelance et institutionnels aux applications full-stack.",
+    EN: "From spec to launch: a developer who delivers, communicates clearly, and meets deadlines — for freelance clients and public institutions alike.",
+    FR: "Du cahier des charges à la mise en ligne : un développeur qui livre, communique et tient ses délais — pour des clients freelance comme pour des institutions publiques.",
+  },
+  ctaLabel: {
+    EN: "Let's talk about your project →",
+    FR: "Discutons de votre projet →",
+  },
+  trustLine: {
+    EN: "Already trusted by WHM Projects (for the European Commission) and freelance clients like CheckCar.",
+    FR: "Déjà sollicité par WHM Projects (pour la Commission européenne) et des clients freelance comme CheckCar.",
   },
 };

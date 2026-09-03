@@ -12,6 +12,7 @@ function TechStack() {
   return (
     <div className="tech-stack">
       <div className="title">Tech Stack</div>
+      <div className="subtitle">{techStackText.subtitle[language]}</div>
       <div className="smaller-title">{techStackText.mostUsed[language]}</div>
       <div className="dev-stack-container">
         {technologies

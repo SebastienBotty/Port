@@ -15,6 +15,17 @@
       font-size: xx-large;
     }
   }
+  .subtitle {
+    width: 50vw;
+    color: lightgray;
+    font-size: medium;
+    margin-top: 0.5rem;
+
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+      width: 90vw;
+      font-size: small;
+    }
+  }
   .projects-wrapper {
     display: flex;
     justify-content: center;

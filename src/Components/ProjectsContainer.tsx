@@ -10,6 +10,7 @@ function ProjectsContainer() {
   return (
     <div className="projects-container">
       <div className="title">{projectsContainerText.title[language]}</div>
+      <div className="subtitle">{projectsContainerText.subtitle[language]}</div>
       <div className="projects-wrapper">
         {projectsArr.map((project) => (
           <Project projectData={project} />

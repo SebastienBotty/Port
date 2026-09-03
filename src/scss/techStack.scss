@@ -18,6 +18,15 @@
       font-size: xx-large;
     }
   }
+  .subtitle {
+    color: lightgray;
+    font-size: medium;
+    margin-top: 0.5rem;
+
+    @media only screen and (max-width: 1024px), only screen and (max-device-width: 1024px) {
+      font-size: small;
+    }
+  }
   .smaller-title {
     font-size: large;
     margin: 0.5rem;

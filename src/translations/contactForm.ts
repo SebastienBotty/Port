@@ -8,8 +8,8 @@ export const contactFormText = {
     FR: "Envoyer",
   },
   secondTitle: {
-    EN: "Feel free to contact me!",
-    FR: "N'hésitez pas à me contacter !",
+    EN: "Got a project in mind? Tell me about it in a few lines — I'll get back to you within 24-48h.",
+    FR: "Un projet en tête ? Décrivez-le-moi en quelques lignes — je réponds sous 24 à 48h.",
   },
   confirmMessage: {
     EN: "Thanks for your mail! I'll contact you asap.",

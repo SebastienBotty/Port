@@ -1349,6 +1349,10 @@ export const projectsContainerText = {
     EN: `Projects`,
     FR: `Projets`,
   },
+  subtitle: {
+    EN: `From personal prototypes to production-ready platforms — a look at what I deliver.`,
+    FR: `Du prototype personnel à la plateforme prête pour la production — un aperçu de ce que je livre.`,
+  },
 };
 
 export const projectsArr: ProjectType[] = [tOu, notMessenger, checkCar, portfolio];
