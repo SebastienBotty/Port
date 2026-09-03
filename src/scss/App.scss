@@ -30,6 +30,9 @@ body {
   z-index: 1;
 }
 
+// Currently a no-op (z-index has no effect without a positioning context) —
+// kept as the semantic hook Reveal-wrapped sections use instead of .class-container,
+// whose fadeIn animation would otherwise conflict with Reveal's own entrance animation.
 .reveal-section {
   z-index: 1;
 }

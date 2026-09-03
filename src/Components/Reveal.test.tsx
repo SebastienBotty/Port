@@ -13,9 +13,9 @@ test("renders its children", () => {
 
 test("forwards a custom className to the wrapper", () => {
   const { container } = render(
-    <Reveal className="class-container">
+    <Reveal className="reveal-section">
       <p>Section content</p>
     </Reveal>
   );
-  expect(container.querySelector(".class-container")).not.toBeNull();
+  expect(container.querySelector(".reveal-section")).not.toBeNull();
 });

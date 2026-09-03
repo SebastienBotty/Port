@@ -91,6 +91,9 @@ function HomePage() {
       default:
         window.scrollTo(0, 0);
     }
+    // Mount-only by design: this reacts to the location.state the router handed us
+    // on navigation, not to live changes in refData.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
