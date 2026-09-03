@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLanguageContext } from "../Contexts/useLanguage";
 import { experiencesText } from "../translations/experiences";
 import "../scss/experiencesContainer.scss";
@@ -9,24 +9,25 @@ import Experience from "./Experience";
 function ExperiencesContainer() {
   const { language } = useLanguageContext();
   const [showInfos, setShowInfos] = useState<"studies" | "work">("studies");
-  const [datas, setDatas] = useState<ExperienceType[]>(studiesArr);
 
-  const changeDatas = (type: "studies" | "work") => {
-    if (type === "studies") {
-      console.log("ici");
-      setShowInfos("studies");
-      setDatas(studiesArr);
-    } else {
-      console.log("là");
-      setShowInfos("work");
-      setDatas(workArr);
-    }
-  };
+  const changeDatas = (type: "studies" | "work") => setShowInfos(type);
+
+  const datas: ExperienceType[] = showInfos === "studies" ? studiesArr : workArr;
 
   return (
     <div className="experiences">
-      <div className="title"> {experiencesText.titles.studies[language]}</div>
-      {/* <div className="titles-container">
+      <div className="titles-container">
+        <div
+          className="title"
+          onClick={() => changeDatas("studies")}
+          style={
+            showInfos === "studies"
+              ? { backgroundColor: "white", color: "black" }
+              : { backgroundColor: "transparent" }
+          }
+        >
+          {experiencesText.titles.studies[language]}
+        </div>
         <div
           className="title"
           onClick={() => changeDatas("work")}
@@ -38,28 +39,15 @@ function ExperiencesContainer() {
         >
           {experiencesText.titles.experiences[language]}
         </div>
-        <div
-          className="title"
-          onClick={() => changeDatas("studies")}
-          style={
-            showInfos === "studies"
-              ? { backgroundColor: "white", color: "black" }
-              : { backgroundColor: "transparent" }
-          }
-        >
-        </div>
-      </div> */}
+      </div>
       <div className="content">
-        {datas.map((exp) => (
-          <Experience experienceData={exp} />
-        ))}
-        {/*  {datas.length > 0 ? (
-          datas.map((exp) => <Experience experienceData={exp} />)
+        {datas.length > 0 ? (
+          datas.map((exp) => <Experience key={exp.name.EN} experienceData={exp} />)
         ) : (
           <div className="nothing">
             <div>{experiencesText.nothing[language]}</div>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );
