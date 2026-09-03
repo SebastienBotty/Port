@@ -1,0 +1,20 @@
+.hero-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22rem;
+  height: 22rem;
+  z-index: 0;
+  pointer-events: none;
+
+  @media only screen and (max-width: 728px), only screen and (max-device-width: 728px) {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+.hero-visual-static {
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138, 92, 246, 0.35) 0%, rgba(138, 92, 246, 0) 70%);
+}

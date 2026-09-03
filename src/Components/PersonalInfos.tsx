@@ -7,6 +7,7 @@ import LinkedInSVG from "./SVG/LinkedInSVG";
 import FileSVG from "./SVG/FileSVG";
 import { Flag } from "./Flag";
 import MailSVG from "./SVG/MailSVG";
+import HeroVisual from "./HeroVisual";
 
 import "../scss/personnalInfos.scss";
 import { LanguageContext, useLanguageContext } from "../Contexts/useLanguage";
@@ -44,6 +45,7 @@ function PersonnalInfos() {
     <div className="personal-infos">
       <div className="main-container">
         <div className="me">
+          <HeroVisual />
           <div
             className="img-container"
             style={{ transform: `rotate(${rotation}deg)` }} // Applique la rotation
