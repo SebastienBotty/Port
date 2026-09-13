@@ -435,6 +435,108 @@ Il n'y a pas moyen de s'inscrire étant donné que je ne veux pas que des iconnu
   ],
 };
 
+export const undercoverProject: ProjectType = {
+  projectName: {
+    FR: "Undercover",
+    EN: "Undercover",
+  },
+  description: {
+    FR: "Jeu de déduction sociale multijoueur en temps réel (type Undercover/Mr White), avec une architecture serveur-autoritaire : chaque salon de jeu est une Durable Object Cloudflare (état + SQLite embarqué, sans DB externe) qui pilote une machine à états (lobby → révélation de rôle → indices → vote → élimination) et pousse les mises à jour aux clients en WebSocket. Frontend Next.js/React, logique de jeu testée unitairement des deux côtés.",
+    EN: "Real-time multiplayer social deduction game (Undercover/Mr White style) built around a server-authoritative architecture: each game room is a Cloudflare Durable Object (embedded SQLite state, no external DB) driving a phase state machine (lobby → role reveal → clues → vote → elimination) and pushing updates to clients over WebSocket. Next.js/React frontend, game logic unit-tested on both sides.",
+  },
+  features: [
+    {
+      title: {
+        FR: "Attribution de rôles et paires de mots",
+        EN: "Role assignment and word pairing",
+      },
+      description: {
+        FR: "Rôles civil/undercover/Mr. White distribués selon le nombre de joueurs (2 undercover à partir de 7, Mr. White optionnel à partir de 5), avec garantie mathématique de majorité civile. Le mot de l'undercover est choisi par similarité de tags avec celui du civil (niveaux aucune/proche/très proche), avec relâchement automatique du niveau si le thème choisi n'a pas assez de personnages pour le satisfaire, et une variante où le mot de l'undercover devient un simple attribut du personnage du civil plutôt qu'un personnage entier.",
+        EN: "Civil/undercover/Mr. White roles distributed based on player count (2 undercovers from 7 players up, optional Mr. White from 5 players up), with a mathematical guarantee of a civilian majority. The undercover's word is chosen by tag-similarity with the civil's (none/close/very-close levels), automatically relaxed if the chosen theme doesn't have enough characters to satisfy it, plus a variant where the undercover's word becomes a plain attribute of the civil's character instead of a whole different one.",
+      },
+    },
+    {
+      title: { FR: "Mode note (numérique)", EN: "Note (numeric) mode" },
+      description: {
+        FR: "Variante sans personnages : civil et undercover reçoivent chacun une note aléatoire (0-20) séparées d'un écart configurable par l'hôte, écart toujours garanti réalisable même aux valeurs extrêmes (0 ou 20). Un joueur propose un thème à chaque manche, à tour de rôle.",
+        EN: "Character-free variant: civil and undercover each get a random note (0-20) separated by a host-configurable gap, always guaranteed satisfiable even at extreme values (0 or 20). A player proposes a theme each round, in turn order.",
+      },
+    },
+    {
+      title: { FR: "Tours d'indices et rotation", EN: "Clue rounds and turn rotation" },
+      description: {
+        FR: "Ordre de passage tiré une fois par partie et conservé sur toute la partie. Les joueurs déconnectés sont automatiquement sautés (indice vide) sans bloquer la manche ; un timer d'indice configurable (30-90s) déclenche le même comportement pour un joueur lent, sans l'éliminer. Nombre de manches d'indices avant chaque vote réglable par l'hôte (1 à 5).",
+        EN: "Turn order shuffled once per game and kept for its whole duration. Disconnected players are auto-skipped (empty clue) without stalling the round; a configurable clue timer (30-90s) does the same for a slow player, without eliminating them. Number of clue passes before each vote is host-adjustable (1 to 5).",
+      },
+    },
+    {
+      title: { FR: "Vote à la pluralité avec départage", EN: "Plurality voting with tie-breaking" },
+      description: {
+        FR: "Vote à la pluralité (pas de majorité absolue requise), avec possibilité de s'abstenir ou de changer son vote jusqu'à la fin du délai. Résolution anticipée dès que tout le monde a voté (avec un court délai de grâce pour changer d'avis), ou au bout d'un timer configurable (30-180s) sinon. Une égalité relance un tour de vote restreint aux joueurs à égalité ; une égalité encore rouvre le vote à tout le monde.",
+        EN: "Plurality voting (no absolute majority required), with the ability to abstain or change a vote until the window closes. Early resolution once everyone has voted (with a short grace period to change one's mind), or after a configurable timer (30-180s) otherwise. A tie triggers a runoff restricted to the tied leaders; a tie again reopens the vote to everyone.",
+      },
+    },
+    {
+      title: { FR: "Vote bonus au lieu d'exclusion", EN: "Bonus vote instead of removal" },
+      description: {
+        FR: "Un joueur qui manque son timer d'indice n'est plus éliminé d'office : il reçoit un \"vote accusateur\" fantôme, cumulé à son encontre au prochain dépouillement puis remis à zéro, quel qu'en soit le résultat.",
+        EN: 'A player who misses their clue timer is no longer eliminated outright: they get a phantom "accusation vote" held against them for the next tally, then cleared regardless of the outcome.',
+      },
+    },
+    {
+      title: { FR: "Élimination et fin de partie", EN: "Elimination and end-game" },
+      description: {
+        FR: "Phase de révélation après chaque élimination (rôle/mot optionnellement masqué), vérification de la condition de victoire (civils, undercover ou Mr. White) après chaque élimination et après chaque exclusion. Mr. White dispose d'une fenêtre de 60s pour deviner le mot ou la note du civil et voler la victoire.",
+        EN: "A reveal phase after every elimination (role/word optionally hidden), win condition checked (civilians, undercover, or Mr. White) after every elimination and every kick. Mr. White gets a 60s window to guess the civil's word or note and steal the win.",
+      },
+    },
+    {
+      title: { FR: "Réglages hôte", EN: "Host settings" },
+      description: {
+        FR: "Choix des thèmes et filtrage par sous-catégorie (franchise/série), niveau de similarité des mots, activation de Mr. White, mode classique/note, écart des notes, timers d'indice et de vote (activables ou non, durée réglable), nombre de manches par vote, révélation du rôle à l'élimination — tous modifiables uniquement dans le salon, avant le lancement.",
+        EN: "Theme selection with sub-category (franchise/series) filtering, word similarity level, Mr. White toggle, classic/note mode, note gap, clue and vote timers (toggleable, adjustable duration), clue passes per vote, reveal-on-elimination toggle — all editable only in the lobby, before the game starts.",
+      },
+    },
+    {
+      title: { FR: "Reconnexion et gestion des joueurs", EN: "Reconnection and player management" },
+      description: {
+        FR: "Reconnexion dans le même siège après une coupure réseau, sans perte de progression ; transfert automatique du rôle d'hôte si celui-ci se déconnecte. Exclusion par l'hôte à tout moment de la partie (bannissement du client, distinct d'une simple perte de connexion), avec résolution immédiate de la conséquence (passage de tour, recalcul du vote, victoire).",
+        EN: "Reconnecting into the same seat after a dropped connection, with no lost progress; host role auto-transfers if the host disconnects. Host-side kick at any point in the game (client ban, distinct from a plain disconnect), with the consequence resolved immediately (turn passed on, vote recomputed, win checked).",
+      },
+    },
+    {
+      title: { FR: "Architecture temps réel", EN: "Real-time architecture" },
+      description: {
+        FR: "Un salon = une Durable Object Cloudflare (état persisté en SQLite embarqué, survit aux redéploiements), pilotée par une seule machine à états (lobby → révélation → indices/thème → vote → élimination → fin) et un unique minuteur d'alarme multiplexé selon la phase. Diffusion en WebSocket d'un état personnalisé par joueur (les infos secrètes des autres restent cachées côté serveur).",
+        EN: "One room = one Cloudflare Durable Object (state persisted in embedded SQLite, survives redeploys), driven by a single state machine (lobby → reveal → clues/theme → vote → elimination → end) and one alarm-based timer multiplexed across phases. Broadcasts a per-player state snapshot over WebSocket (other players' secret info stays server-side).",
+      },
+    },
+    {
+      title: { FR: "Interface et contenu", EN: "UI and content" },
+      description: {
+        FR: "Écrans dédiés par phase (lobby, révélation de rôle, indices, vote, élimination, fin), tableau récapitulatif des manches, bouton \"Règles\" expliquant l'ensemble du jeu, plusieurs franchises de personnages (films, animes...) avec dizaines d'entrées chacune.",
+        EN: 'Dedicated screen per phase (lobby, role reveal, clues, vote, elimination, end), a round recap table, a "Rules" button explaining the whole game, several character franchises (movies, anime...) with dozens of entries each.',
+      },
+    },
+  ],
+  stack: [
+    "TypeScript",
+    "Next.js",
+    "React",
+    "Cloudflare Workers",
+    "Durable Objects",
+    "WebSocket",
+    "Vitest",
+  ],
+  link: "",
+  image: `/images/undercover.png`,
+  state: { EN: "In progress", FR: "En cours" },
+  code: "https://github.com/SebastienBotty/Undercover",
+  site: "https://undercover-gray.vercel.app/",
+  desc: true,
+  projectKind: "Perso",
+};
+
 export const notMessenger: ProjectType = {
   projectName: {
     EN: `Not-messenger`,
@@ -1355,4 +1457,10 @@ export const projectsContainerText = {
   },
 };
 
-export const projectsArr: ProjectType[] = [tOu, notMessenger, checkCar, portfolio];
+export const projectsArr: ProjectType[] = [
+  tOu,
+  notMessenger,
+  checkCar,
+  undercoverProject,
+  portfolio,
+];
