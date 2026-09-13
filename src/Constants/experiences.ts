@@ -90,6 +90,31 @@ Théoriquement applicable à un dispositif physique.`,
 export const workArr: ExperienceType[] = [
   {
     name: {
+      EN: "CheckCar",
+      FR: "CheckCar",
+    },
+    secondTitle: {
+      EN: "Freelance Developer",
+      FR: "Développeur freelance",
+    },
+    description: {
+      EN: "Built an AI-based web application generating personalized PDF guides for used car purchases (Next.js, Stripe, OpenAI, PostgreSQL).",
+      FR: "Développement d'une application web basée sur l'IA générant des guides PDF personnalisés pour l'achat de véhicules d'occasion (Next.js, Stripe, OpenAI, PostgreSQL).",
+    },
+    image: "/images/checkcar.png",
+    dates: {
+      start: {
+        EN: "Sep 2025",
+        FR: "Sep 2025",
+      },
+      end: {
+        EN: "Sep 2025",
+        FR: "Sep 2025",
+      },
+    },
+  },
+  {
+    name: {
       EN: "WHM Projects",
       FR: "WHM Projects",
     },

@@ -3,6 +3,7 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 
 import Navbar from "../Components/Navbar";
 import Reveal from "../Components/Reveal";
+import SEO from "../Components/SEO";
 
 import PersonalInfos from "../Components/PersonalInfos";
 import TechStack from "../Components/TechStack";
@@ -12,6 +13,7 @@ import ContactContainer from "../Components/ContactContainer";
 import Footer from "../Components/Footer";
 import { useLocation } from "react-router-dom";
 import { scrollToRef } from "../Functions/Utils";
+import { useLanguageContext } from "../Contexts/useLanguage";
 
 import "../scss/homePage.scss";
 
@@ -68,7 +70,19 @@ function useLightPosition(scrollYProgress: MotionValue<number>, trajectory: Traj
   return { top, left };
 }
 
+const HOME_TEXT = {
+  title: {
+    EN: "Sébastien Botty - Full Stack Developer",
+    FR: "Sébastien Botty - Développeur Full Stack",
+  },
+  description: {
+    EN: "Sébastien Botty, full stack developer based in Belgium. TypeScript, React, Node.js projects — from personal prototypes to production-ready platforms.",
+    FR: "Sébastien Botty, développeur full stack basé en Belgique. Projets TypeScript, React, Node.js — du prototype personnel à la plateforme prête pour la production.",
+  },
+};
+
 function HomePage() {
+  const { language } = useLanguageContext();
   const homeRef = useRef<HTMLDivElement>(null);
   const personnalInfosRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -96,10 +110,6 @@ function HomePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    document.title = "Sébastien Botty";
-  }, []);
-
   const trajectories = useMemo(() => buildLightTrajectories(), []);
   const { scrollYProgress } = useScroll();
 
@@ -117,6 +127,24 @@ function HomePage() {
 
   return (
     <div className="App glow-background">
+      <SEO
+        title={HOME_TEXT.title[language]}
+        description={HOME_TEXT.description[language]}
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Sébastien Botty",
+          jobTitle: "Full Stack Developer",
+          url: "https://sebastienbotty.com",
+          image: "https://sebastienbotty.com/images/moi.jpg",
+          address: { "@type": "PostalAddress", addressCountry: "BE" },
+          sameAs: [
+            "https://github.com/SebastienBotty",
+            "https://www.linkedin.com/in/s%C3%A9bastien-botty-3338b714b/",
+          ],
+        }}
+      />
       <Navbar
         homeRef={homeRef}
         personalInfosRef={personnalInfosRef}

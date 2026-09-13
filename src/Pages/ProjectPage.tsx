@@ -1,8 +1,9 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import SEO from "../Components/SEO";
 import { projectsArr } from "../translations/projectsContainer";
 import PageNotFound from "./PageNotFound";
 import { useLanguageContext } from "../Contexts/useLanguage";
@@ -91,17 +92,29 @@ function ProjectPage() {
 
   const lights = [{ id: "light-1" }, { id: "light-2" }, { id: "light-3" }, { id: "light-4" }];
 
-  useEffect(() => {
-    document.title = "Sébastien Botty - " + projectName;
-    return () => {};
-  }, []);
-
   if (!project) {
     return <PageNotFound />;
   }
 
   return (
     <div className="project-page">
+      <SEO
+        title={`Sébastien Botty - ${project.projectName[language]}`}
+        description={project.description[language]}
+        path={`/project/${encodeURIComponent(project.projectName.EN)}`}
+        image={project.image}
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.projectName[language],
+          description: project.description[language],
+          creator: { "@type": "Person", name: "Sébastien Botty" },
+          image: `https://sebastienbotty.com${project.image}`,
+          ...(project.site && { url: project.site }),
+          ...(project.code && { codeRepository: project.code }),
+          keywords: project.stack.join(", "),
+        }}
+      />
       <Navbar />
       <div className="container">
         <div className="title">

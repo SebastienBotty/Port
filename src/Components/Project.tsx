@@ -34,7 +34,7 @@ function Project({ projectData }: { projectData: ProjectType }) {
     >
       <div className="image-container">
         <div className="project-type-tag">{projectData.projectKind}</div>
-        <img src={projectData.image} />
+        <img src={projectData.image} alt={projectData.projectName[language]} />
       </div>
       <div className="infos">
         <div className="first-line">

@@ -9,7 +9,11 @@ function Experience({ experienceData }: { experienceData: ExperienceType }) {
     <div className="experience">
       <div className="left-side-img">
         {experienceData.image && (
-          <img className="img-container" src={experienceData.image} alt="" />
+          <img
+            className="img-container"
+            src={experienceData.image}
+            alt={experienceData.name[language]}
+          />
         )}
       </div>
       <div className="text">

@@ -45,6 +45,10 @@ function App() {
     pingNotMessenger();
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = language.toLowerCase();
+  }, [language]);
+
   return (
     <BrowserRouter>
       <LanguageContext.Provider value={{ language, setLanguage }}>

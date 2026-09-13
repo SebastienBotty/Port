@@ -52,7 +52,7 @@ function PersonnalInfos() {
           >
             <div className="pic-me">
               {" "}
-              <img src="/images/moi.jpg" alt="" />
+              <img src="/images/moi.jpg" alt="Sébastien Botty" />
             </div>
             <div className="img-flag">
               {" "}
