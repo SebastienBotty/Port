@@ -26,6 +26,8 @@ import {
   siSupabase,
   siOpenai,
   siFramer,
+  siCloudflareworkers,
+  siVitest,
 } from "simple-icons";
 import { TechnologyType } from "../Typescript/Types";
 
@@ -55,6 +57,8 @@ export const technologies: TechnologyType[] = [
   { name: "Python", icon: siPython, mostUsed: false },
   { name: "OpenAi", icon: siOpenai, mostUsed: false },
   { name: "Stripe", icon: siStripe, mostUsed: false },
+  { name: "Cloudflare Workers", icon: siCloudflareworkers, mostUsed: false },
+  { name: "Vitest", icon: siVitest, mostUsed: false },
 
   { name: "Sass", icon: siSass, mostUsed: false },
   { name: "Angular", icon: siAngular, mostUsed: false },

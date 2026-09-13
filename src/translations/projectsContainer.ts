@@ -441,8 +441,8 @@ export const undercoverProject: ProjectType = {
     EN: "Undercover",
   },
   description: {
-    FR: "Jeu de déduction sociale multijoueur en temps réel (type Undercover/Mr White), avec une architecture serveur-autoritaire : chaque salon de jeu est une Durable Object Cloudflare (état + SQLite embarqué, sans DB externe) qui pilote une machine à états (lobby → révélation de rôle → indices → vote → élimination) et pousse les mises à jour aux clients en WebSocket. Frontend Next.js/React, logique de jeu testée unitairement des deux côtés.",
-    EN: "Real-time multiplayer social deduction game (Undercover/Mr White style) built around a server-authoritative architecture: each game room is a Cloudflare Durable Object (embedded SQLite state, no external DB) driving a phase state machine (lobby → role reveal → clues → vote → elimination) and pushing updates to clients over WebSocket. Next.js/React frontend, game logic unit-tested on both sides.",
+    FR: "Jeu de déduction sociale multijoueur en temps réel",
+    EN: "Real-time multiplayer social deduction game",
   },
   features: [
     {
@@ -521,14 +521,14 @@ export const undercoverProject: ProjectType = {
   ],
   stack: [
     "TypeScript",
-    "Next.js",
+    "NextJs",
     "React",
     "Cloudflare Workers",
     "Durable Objects",
     "WebSocket",
     "Vitest",
   ],
-  link: "",
+  link: "https://undercover-gray.vercel.app/",
   image: `/images/undercover.png`,
   state: { EN: "In progress", FR: "En cours" },
   code: "https://github.com/SebastienBotty/Undercover",
@@ -1312,7 +1312,7 @@ export const checkCar: ProjectType = {
     "Supabase",
     `AWS: S3`,
   ],
-  link: ``,
+  link: `https://www.checkcar.be/`,
   image: `/images/checkcar.png`,
   code: "",
   site: "https://www.checkcar.be/",
