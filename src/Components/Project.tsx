@@ -28,12 +28,18 @@ function Project({ projectData }: { projectData: ProjectType }) {
   return (
     <motion.div
       className="project"
+      data-kind={projectData.projectKind}
       whileHover={{ y: -8, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <div className="image-container">
-        <div className="project-type-tag">{projectData.projectKind}</div>
+        <div className="project-type-tag" title={projectData.state[language]}>
+          <span
+            className={`status-dot ${projectData.state.EN === "Done" ? "done" : "progress"}`}
+          />
+          {projectData.projectKind}
+        </div>
         <img src={projectData.image} alt={projectData.projectName[language]} />
       </div>
       <div className="infos">

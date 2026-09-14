@@ -126,7 +126,7 @@ export const workArr: ExperienceType[] = [
       EN: "Built multilingual web pages (HTML, CSS, JavaScript) for a European Commission platform, strictly following the Commission's content, accessibility, and localization guidelines.",
       FR: "Développement de pages web multilingues (HTML, CSS, JavaScript) pour une plateforme de la Commission européenne, dans le respect strict des directives de contenu, d'accessibilité et de localisation imposées par la Commission.",
     },
-    image: "",
+    image: "/images/wmh.png",
     dates: {
       start: {
         EN: "Jun 2026",

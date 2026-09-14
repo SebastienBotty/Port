@@ -1250,48 +1250,6 @@ Survoler la photo de la personne permet de voir la date à laquelle elle a vu le
   ],
 };
 
-export const portfolio: ProjectType = {
-  projectName: {
-    EN: `Portfolio`,
-    FR: `Portfolio`,
-  },
-  description: {
-    EN: `The portfolio you're currently viewing - a showcase of my projects`,
-    FR: `Le portfolio que vous regardez actuellement - vitrine de mes projets`,
-  },
-  stack: [`TypeScript`, `React`, `Sass`],
-  link: ``,
-  image: `/images/portfolio-image.png`,
-  code: "https://github.com/SebastienBotty/port",
-  site: "",
-  desc: true,
-  projectKind: "Perso",
-
-  features: [
-    {
-      title: {
-        EN: `Language selection`,
-        FR: `Choix de langue`,
-      },
-      description: {
-        EN: `Automatic detection of the user's browser language.  
-Sets the site to French if detected, otherwise sets it to English.  
-Ability to switch between the two via the flag in the top-right corner of the site.`,
-
-        FR: `Détection automatique de la langue du navigateur de l'utilisateur.  
-Met le site en français si le FR est détecté. Le met en anglais autrmenet.  
-Possibilité de changer entre les deux via le drapeau dans le coin supérieur droit du site.`,
-      },
-      image: undefined,
-    },
-  ],
-
-  state: {
-    EN: "Done",
-    FR: "Terminé",
-  },
-};
-
 export const checkCar: ProjectType = {
   projectName: {
     EN: `CheckCar`,
@@ -1446,6 +1404,54 @@ export const checkCar: ProjectType = {
   },
 };
 
+export const gestionFreelance: ProjectType = {
+  projectName: {
+    EN: `Freelance Prospecting Dashboard`,
+    FR: `Carnet de démarchage`,
+  },
+  description: {
+    EN: `Personal CRM to manage freelance prospects, with AI-powered search for new leads and automatic outreach emails.`,
+    FR: `CRM personnel pour gérer mes prospects freelance, avec recherche IA de nouveaux prospects et envoi automatique d'emails de démarchage.`,
+  },
+  stack: [`TypeScript`, `React`, `Node.js`, `Express`, `PostgreSQL`, `Gemini`, `Google Places API`],
+  link: ``,
+  image: `/images/prospect.png`,
+  code: "",
+  site: "",
+  desc: true,
+  projectKind: "Perso",
+
+  features: [
+    {
+      title: {
+        EN: `Prospect search powered by AI`,
+        FR: `Recherche de prospects assistée par IA`,
+      },
+      description: {
+        EN: `Finds new prospects by scraping and cross-referencing public sources (Tavily search, Google Places) and uses Gemini to extract and qualify company info, including a missing-website detection mode.`,
+        FR: `Trouve de nouveaux prospects en croisant plusieurs sources publiques (recherche Tavily, Google Places) et utilise Gemini pour extraire et qualifier les informations d'entreprise, avec un mode de détection des entreprises sans site web.`,
+      },
+      image: undefined,
+    },
+    {
+      title: {
+        EN: `Prospect tracking & outreach`,
+        FR: `Suivi des prospects & démarchage`,
+      },
+      description: {
+        EN: `CRUD dashboard to track prospect status, notes and dates, backed by PostgreSQL (Neon), with automatic outreach emails sent via Gmail.`,
+        FR: `Dashboard CRUD pour suivre le statut, les notes et les dates des prospects, backé par PostgreSQL (Neon), avec envoi automatique d'emails de démarchage via Gmail.`,
+      },
+      image: undefined,
+    },
+  ],
+
+  state: {
+    EN: "Done",
+    FR: "Terminé",
+  },
+};
+
 export const projectsContainerText = {
   title: {
     EN: `Projects`,
@@ -1462,5 +1468,5 @@ export const projectsArr: ProjectType[] = [
   notMessenger,
   checkCar,
   undercoverProject,
-  portfolio,
+  gestionFreelance,
 ];

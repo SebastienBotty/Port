@@ -5,5 +5,5 @@ test("technologies list includes Framer Motion", () => {
   expect(names).toContain("Framer Motion");
 
   const framerMotion = technologies.find((tech) => tech.name === "Framer Motion");
-  expect(framerMotion?.icon.path).toBeTruthy();
+  expect(framerMotion?.icon?.path).toBeTruthy();
 });

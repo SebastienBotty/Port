@@ -44,7 +44,7 @@ export type ProgressType = {
 
 export type TechnologyType = {
   name: string;
-  icon: typeof siJavascript;
+  icon?: typeof siJavascript;
   mostUsed: boolean;
 };
 

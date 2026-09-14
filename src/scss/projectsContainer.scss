@@ -28,10 +28,10 @@
   }
   .projects-wrapper {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    row-gap: 2rem;
     padding: 2rem 0;
+    max-width: 64rem; // 3 cards (20rem) + 2 gaps (2rem) per row, max
   }
 }

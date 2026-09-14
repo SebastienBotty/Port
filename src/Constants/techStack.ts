@@ -28,6 +28,8 @@ import {
   siFramer,
   siCloudflareworkers,
   siVitest,
+  siGooglegemini,
+  siGooglemaps,
 } from "simple-icons";
 import { TechnologyType } from "../Typescript/Types";
 
@@ -37,7 +39,7 @@ export const technologies: TechnologyType[] = [
   { name: "React", icon: siReact, mostUsed: true },
   { name: "ReactNative", icon: siReact, mostUsed: true },
   { name: "NextJs", icon: siNextdotjs, mostUsed: true },
-  { name: "Framer Motion", icon: siFramer, mostUsed: true },
+  { name: "Framer Motion", icon: siFramer, mostUsed: false },
 
   { name: "HTML5", icon: siHtml5, mostUsed: true },
   { name: "CSS3", icon: siCss3, mostUsed: true },
@@ -59,6 +61,9 @@ export const technologies: TechnologyType[] = [
   { name: "Stripe", icon: siStripe, mostUsed: false },
   { name: "Cloudflare Workers", icon: siCloudflareworkers, mostUsed: false },
   { name: "Vitest", icon: siVitest, mostUsed: false },
+  { name: "Inngest", mostUsed: false },
+  { name: "Gemini", icon: siGooglegemini, mostUsed: false },
+  { name: "Google Places API", icon: siGooglemaps, mostUsed: false },
 
   { name: "Sass", icon: siSass, mostUsed: false },
   { name: "Angular", icon: siAngular, mostUsed: false },
