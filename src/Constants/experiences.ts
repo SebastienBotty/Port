@@ -108,8 +108,8 @@ export const workArr: ExperienceType[] = [
         FR: "Sep 2025",
       },
       end: {
-        EN: "Sep 2025",
-        FR: "Sep 2025",
+        EN: "Oct 2025",
+        FR: "Oct 2025",
       },
     },
   },
@@ -133,8 +133,8 @@ export const workArr: ExperienceType[] = [
         FR: "Juin 2026",
       },
       end: {
-        EN: "Jun 2026",
-        FR: "Juin 2026",
+        EN: "July 2026",
+        FR: "Juillet 2026",
       },
     },
   },
