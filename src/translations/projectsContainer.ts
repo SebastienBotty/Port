@@ -556,7 +556,7 @@ export const notMessenger: ProjectType = {
     `Firebase: Auth`,
     `Socket.io`,
   ],
-  link: `https://messenger-clone-frontend.onrender.com`,
+  link: ``,
   image: `/images/notMessenger-image.png`,
   state: {
     EN: "In progress",
