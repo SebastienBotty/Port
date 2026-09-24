@@ -90,18 +90,18 @@ Théoriquement applicable à un dispositif physique.`,
 export const workArr: ExperienceType[] = [
   {
     name: {
-      EN: "WHM Projects",
-      FR: "WHM Projects",
+      EN: "European Commission — WMH Project",
+      FR: "Commission européenne — WLH Project",
     },
     secondTitle: {
-      EN: "Freelance Developer — Client: European Commission",
-      FR: "Développeur freelance — Client : Commission européenne",
+      EN: "Freelance Frontend Developer ",
+      FR: "Développeur Frontend Freelance",
     },
     description: {
       EN: "Built multilingual web pages (HTML, CSS, JavaScript) for a European Commission platform, strictly following the Commission's content, accessibility, and localization guidelines.",
       FR: "Développement de pages web multilingues (HTML, CSS, JavaScript) pour une plateforme de la Commission européenne, dans le respect strict des directives de contenu, d'accessibilité et de localisation imposées par la Commission.",
     },
-    image: "/images/wmh.png",
+    image: "/images/EU.jpg",
     dates: {
       start: {
         EN: "March 2026",
