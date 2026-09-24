@@ -119,8 +119,8 @@ export const workArr: ExperienceType[] = [
       FR: "CheckCar",
     },
     secondTitle: {
-      EN: "Freelance Developer",
-      FR: "Développeur freelance",
+      EN: "Freelance Full-stack Developer",
+      FR: "Développeur Full-stack freelance",
     },
     description: {
       EN: "Built an AI-based web application generating personalized PDF guides for used car purchases (Next.js, Stripe, OpenAI, PostgreSQL).",
@@ -130,7 +130,7 @@ export const workArr: ExperienceType[] = [
     dates: {
       start: {
         EN: "Sep 2025",
-        FR: " 2025",
+        FR: "Sep 2025",
       },
       end: {
         EN: "Oct 2025",
