@@ -91,7 +91,7 @@ export const workArr: ExperienceType[] = [
   {
     name: {
       EN: "European Commission — WMH Project",
-      FR: "Commission européenne — WLH Project",
+      FR: "Commission européenne — WMH Project",
     },
     secondTitle: {
       EN: "Freelance Frontend Developer ",
