@@ -90,6 +90,31 @@ Théoriquement applicable à un dispositif physique.`,
 export const workArr: ExperienceType[] = [
   {
     name: {
+      EN: "WHM Projects",
+      FR: "WHM Projects",
+    },
+    secondTitle: {
+      EN: "Freelance Developer — Client: European Commission",
+      FR: "Développeur freelance — Client : Commission européenne",
+    },
+    description: {
+      EN: "Built multilingual web pages (HTML, CSS, JavaScript) for a European Commission platform, strictly following the Commission's content, accessibility, and localization guidelines.",
+      FR: "Développement de pages web multilingues (HTML, CSS, JavaScript) pour une plateforme de la Commission européenne, dans le respect strict des directives de contenu, d'accessibilité et de localisation imposées par la Commission.",
+    },
+    image: "/images/wmh.png",
+    dates: {
+      start: {
+        EN: "March 2026",
+        FR: "Mars 2026",
+      },
+      end: {
+        EN: "July 2026",
+        FR: "Juillet 2026",
+      },
+    },
+  },
+  {
+    name: {
       EN: "CheckCar",
       FR: "CheckCar",
     },
@@ -105,36 +130,11 @@ export const workArr: ExperienceType[] = [
     dates: {
       start: {
         EN: "Sep 2025",
-        FR: "Sep 2025",
+        FR: " 2025",
       },
       end: {
         EN: "Oct 2025",
         FR: "Oct 2025",
-      },
-    },
-  },
-  {
-    name: {
-      EN: "WHM Projects",
-      FR: "WHM Projects",
-    },
-    secondTitle: {
-      EN: "Freelance Developer — Client: European Commission",
-      FR: "Développeur freelance — Client : Commission européenne",
-    },
-    description: {
-      EN: "Built multilingual web pages (HTML, CSS, JavaScript) for a European Commission platform, strictly following the Commission's content, accessibility, and localization guidelines.",
-      FR: "Développement de pages web multilingues (HTML, CSS, JavaScript) pour une plateforme de la Commission européenne, dans le respect strict des directives de contenu, d'accessibilité et de localisation imposées par la Commission.",
-    },
-    image: "/images/wmh.png",
-    dates: {
-      start: {
-        EN: "Jun 2026",
-        FR: "Juin 2026",
-      },
-      end: {
-        EN: "July 2026",
-        FR: "Juillet 2026",
       },
     },
   },
