@@ -8,7 +8,7 @@ import Experience from "./Experience";
 
 function ExperiencesContainer() {
   const { language } = useLanguageContext();
-  const [showInfos, setShowInfos] = useState<"studies" | "work">("studies");
+  const [showInfos, setShowInfos] = useState<"studies" | "work">("work");
 
   const changeDatas = (type: "studies" | "work") => setShowInfos(type);
 
