@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
+
 import { LanguageType } from "./Typescript/Types";
 import { getBrowserLanguage } from "./Functions/language";
 import { LanguageContext } from "./Contexts/useLanguage";
@@ -54,6 +56,7 @@ function App() {
       <LanguageContext.Provider value={{ language, setLanguage }}>
         <AnimatedRoutes />
       </LanguageContext.Provider>
+      <Analytics />
     </BrowserRouter>
   );
 }
