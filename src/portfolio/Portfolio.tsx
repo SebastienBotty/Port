@@ -1,5 +1,6 @@
 "use client";
 
+import Arrow from "./Arrow";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
@@ -7,7 +8,7 @@ import type { ProjectPreview } from "./projects";
 import { type Locale, languageKey, projectPath } from "./routing";
 import { SiteFooter, SiteHeader } from "./SiteChrome";
 import { captions, text } from "./text";
-import { EMAIL, github } from "./seo";
+import { EMAIL, github, linkedin } from "./seo";
 import ContactForm from "./ContactForm";
 
 const selectedSlugs = ["checkcar", "undercover", "commission-europeenne", "tou"] as const;
@@ -78,19 +79,24 @@ export default function Portfolio({ locale, projects }: { locale: Locale; projec
         <p className="mono hero-top"><span className="cross" aria-hidden="true">✳</span>{t.role}</p>
         <h1 className="display" id="name"><span className="name-line"><span>SÉBASTIEN</span></span><span className="name-line name-last"><span>BOTTY.</span></span></h1>
         <p className="hero-description">{t.intro1}<br /><b>{t.intro2}</b><br />{t.intro3}</p>
-        <a className="work-link" href="#projets">{t.workLink} ↘</a>
+        <nav className="hero-profiles" aria-label={locale === "fr" ? "Mes profils et mon CV" : "My profiles and CV"}>
+          <a href={github} target="_blank" rel="noopener noreferrer">GitHub <Arrow /></a>
+          <a className="profile-cv" href={`/files/Botty_Sebastien_CV-${key}.pdf`} type="application/pdf" target="_blank" rel="noopener noreferrer">{locale === "fr" ? "Mon CV" : "My CV"} <Arrow /></a>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <Arrow /></a>
+        </nav>
+        <a className="work-link" href="#projets">{t.workLink} <Arrow direction="down-right" /></a>
         <div ref={scene} className="scene" aria-label={t.projects}>
-          <div className="scene-label" aria-hidden="true">{t.homemade}<span>↙</span></div>
+          <div className="scene-label" aria-hidden="true">{t.homemade}</div>
           <div className="scene-orbit">{deck.map((project, index) => {
             const slot = (index - active + deck.length) % deck.length;
             return <Link className="object" key={project.slug} href={projectPath(locale, project.slug)} data-project={project.slug} data-slot={slot} aria-label={`${slot === 0 ? t.open : t.front} ${project.projectName[key]}`} onClick={event => {
               if (slot === 0) preview(event, project);
               else if (!(event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) { event.preventDefault(); setActive(index); }
-            }}><span className="object-bar"><span><i className="object-dot" aria-hidden="true" />{project.projectName[key]}</span><span>{project.slug === "tou" ? "MOBILE" : "WEB APP"} ↗</span></span><Image src={project.image} alt={project.projectName[key]} width={1200} height={650} sizes="(max-width: 800px) 80vw, 600px" priority={index === 0} /></Link>;
+            }}><span className="object-bar"><span><i className="object-dot" aria-hidden="true" />{project.projectName[key]}</span><span>{project.slug === "tou" ? "MOBILE" : "WEB APP"} <Arrow /></span></span><Image src={project.image} alt={project.projectName[key]} width={1200} height={650} sizes="(max-width: 800px) 80vw, 600px" priority={index === 0} /></Link>;
           })}</div>
-          <div className="scene-controls"><button onClick={() => cycle(-1)} aria-label={t.previous}>←</button><button onClick={() => cycle(1)} aria-label={t.next}>→</button><p aria-live="polite"><strong>{deck[active].projectName[key]}</strong><small>{t.explore}</small></p><span className="scene-count">{String(active + 1).padStart(2, "0")} / 03</span></div>
+          <div className="scene-controls"><button onClick={() => cycle(-1)} aria-label={t.previous}><Arrow direction="left" /></button><button onClick={() => cycle(1)} aria-label={t.next}><Arrow direction="right" /></button><p aria-live="polite"><strong>{deck[active].projectName[key]}</strong><small>{t.explore}</small></p><span className="scene-count">{String(active + 1).padStart(2, "0")} / 03</span></div>
         </div>
-        <div className="hero-bottom"><a className="scroll-link" href="#projets"><span className="circle-arrow" aria-hidden="true">↓</span>{t.tour}</a><span className="mono">{t.signature}<br />FR / EN · Belgium</span></div>
+        <div className="hero-bottom"><a className="scroll-link" href="#projets"><span className="circle-arrow" aria-hidden="true"><Arrow direction="down" /></span>{t.tour}</a><span className="mono">{t.signature}<br />FR / EN · Belgium</span></div>
       </section>
       <section className="wrap work-section" id="projets" aria-labelledby="work-title">
         <div className="section-heading reveal"><h2 className="display" id="work-title">{t.workTitle}<br /><span>{t.workTitle2}</span></h2><p>{t.workIntro}</p></div>
@@ -102,19 +108,19 @@ export default function Portfolio({ locale, projects }: { locale: Locale; projec
               <div className={`project-cover cover-${institutional ? "europe" : slug}`}>
                 <span className="cover-word" aria-hidden="true">{slug === "checkcar" ? "CHECKCAR." : slug === "undercover" ? "TRUST NO ONE." : slug === "tou" ? (locale === "fr" ? "T’ES OÙ ?" : "WHERE ARE YOU?") : (locale === "fr" ? <>À PLUSIEURS<br />LANGUES.</> : <>MANY<br />LANGUAGES.</>)}</span>
                 {institutional ? <div className="eu-document"><span className="mono">Frontend / WMH Project</span><strong>{project.projectName[key]}</strong><span>{locale === "fr" ? "Contenu · Accessibilité · Localisation" : "Content · Accessibility · Localisation"}</span><p>HTML / CSS / JAVASCRIPT<br />2026</p></div> : <Image src={project.image} width={1200} height={650} sizes="(max-width: 480px) 100vw, 50vw" alt={project.projectName[key]} />}
-                <span className="cover-action" aria-hidden="true">↗</span>
+                <span className="cover-action" aria-hidden="true"><Arrow /></span>
               </div>
             </Link>
             <div className="project-info"><div><h3><Link href={projectPath(locale, slug)}>{project.projectName[key]}</Link></h3><p>{captions[slug][locale]}</p></div><span className="mono">{project.projectKind === "Perso" ? t.personal : institutional ? "WMH Project" : t.client}<br />{slug === "tou" ? "Mobile" : institutional ? "Frontend · 2026" : "Full stack"}</span></div>
           </article>;
         })}</div>
-        <div className="work-tail reveal"><p>{t.other}</p><div className="extra-projects">{projects.filter(project => !(selectedSlugs as readonly string[]).includes(project.slug)).map(project => <Link className="work-link" key={project.slug} href={projectPath(locale, project.slug)}>{project.projectName[key]} ↗</Link>)}</div><a href={github} target="_blank" rel="noopener noreferrer">{t.github} ↗</a></div>
+        <div className="work-tail reveal"><p>{t.other}</p><div className="extra-projects">{projects.filter(project => !(selectedSlugs as readonly string[]).includes(project.slug)).map(project => <Link className="work-link" key={project.slug} href={projectPath(locale, project.slug)}>{project.projectName[key]} <Arrow /></Link>)}</div><a href={github} target="_blank" rel="noopener noreferrer">{t.github} <Arrow /></a></div>
       </section>
       <section className="about-section" id="apropos" aria-labelledby="about-title"><div className="wrap about-layout">
         <div className="portrait-scene reveal"><Image src="/images/moi.jpg" alt="Sébastien Botty" width={370} height={446} sizes="(max-width: 800px) 240px, 370px" /><span className="portrait-caption">{t.portrait}</span></div>
-        <div className="about-copy reveal"><p className="mono">{t.about}</p><h2 className="display" id="about-title">{t.curious}<br /><span>{t.concrete}</span></h2><p>{t.bio1}</p><p>{t.bio2}</p><div className="stack" aria-label={t.technologies}><span>TypeScript</span><span>React / React Native</span><span>Node.js</span><span>PostgreSQL</span><span>Next.js</span></div><a href={`/files/Botty_Sebastien_CV-${key}.pdf`}>{t.cv} ↗</a></div>
+        <div className="about-copy reveal"><p className="mono">{t.about}</p><h2 className="display" id="about-title">{t.curious}<br /><span>{t.concrete}</span></h2><p>{t.bio1}</p><p>{t.bio2}</p><div className="stack" aria-label={t.technologies}><span>TypeScript</span><span>React / React Native</span><span>Node.js</span><span>PostgreSQL</span><span>Next.js</span></div><a href={`/files/Botty_Sebastien_CV-${key}.pdf`}>{t.cv} <Arrow /></a></div>
       </div></section>
-      <section className="wrap contact" id="contact" aria-labelledby="contact-title"><div className="contact-top"><span className="mono">{t.contactIntro}</span><p>{t.contactCopy}</p></div><a className="contact-title" href={`mailto:${EMAIL}`}><h2 className="display" id="contact-title">{t.contact1}<br /><span>{t.contact2}</span></h2><span className="contact-arrow" aria-hidden="true">↗</span></a><a className="contact-email" href={`mailto:${EMAIL}`}>{EMAIL} ↗</a><ContactForm locale={locale} /></section>
+      <section className="wrap contact" id="contact" aria-labelledby="contact-title"><div className="contact-top"><span className="mono">{t.contactIntro}</span><p>{t.contactCopy}</p></div><a className="contact-title" href={`mailto:${EMAIL}`}><h2 className="display" id="contact-title">{t.contact1}<br /><span>{t.contact2}</span></h2><span className="contact-arrow" aria-hidden="true"><Arrow /></span></a><a className="contact-email" href={`mailto:${EMAIL}`}>{EMAIL} <Arrow /></a><ContactForm locale={locale} /></section>
     </main>
     <SiteFooter locale={locale} />
     <dialog ref={dialog} className="dialog" aria-labelledby="dialog-title" onClose={closePreview} onClick={event => {
@@ -123,7 +129,7 @@ export default function Portfolio({ locale, projects }: { locale: Locale; projec
       if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) event.currentTarget.close();
     }}>
       <div className="dialog-bar"><span className="mono">{selected?.projectKind === "Perso" ? t.personal : t.client}</span><button className="dialog-close" onClick={() => dialog.current?.close()} autoFocus>{t.close} ×</button></div>
-      {selected && <div className="dialog-body"><h2 className="display" id="dialog-title">{selected.projectName[key]}</h2><p className="dialog-description">{selected.description[key]}</p>{selected.image && <Image className="dialog-image" src={selected.image} alt={selected.projectName[key]} width={1200} height={800} sizes="(max-width: 800px) 100vw, 800px" />}<div className="stack project-stack" aria-label={t.technologies}>{selected.stack.map(tech => <span key={tech}>{tech}</span>)}</div><Link className="dialog-link" href={projectPath(locale, selected.slug)}>{t.fullProject} ↗</Link></div>}
+      {selected && <div className="dialog-body"><h2 className="display" id="dialog-title">{selected.projectName[key]}</h2><p className="dialog-description">{selected.description[key]}</p>{selected.image && <Image className="dialog-image" src={selected.image} alt={selected.projectName[key]} width={1200} height={800} sizes="(max-width: 800px) 100vw, 800px" />}<div className="stack project-stack" aria-label={t.technologies}>{selected.stack.map(tech => <span key={tech}>{tech}</span>)}</div><Link className="dialog-link" href={projectPath(locale, selected.slug)}>{t.fullProject} <Arrow /></Link></div>}
     </dialog>
   </>;
 }

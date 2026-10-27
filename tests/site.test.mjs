@@ -46,7 +46,14 @@ for (const locale of ["fr", "en"]) {
     assert.ok(html.includes('hrefLang="fr"') || html.includes('hrefLang="fr"'.toLowerCase()));
     assert.ok(html.includes('hrefLang="en"') || html.includes('hrefLang="en"'.toLowerCase()));
     assert.match(html, /name="twitter:card" content="summary_large_image"/);
+    assert.match(html, /<svg[^>]*class="arrow-icon arrow-up-right"/);
+    assert.doesNotMatch(html, /[↗↘↙←→↓]/u);
     assert.doesNotMatch(html, /name="robots" content="noindex/);
+    const profiles = html.match(/<nav class="hero-profiles"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
+    assert.ok(profiles, "Profile links are present in the hero without JavaScript");
+    assert.ok(profiles.includes('href="https://github.com/SebastienBotty"'));
+    assert.ok(profiles.includes('href="https://www.linkedin.com/in/s%C3%A9bastien-botty-3338b714b/"'));
+    assert.ok(profiles.includes(`href="/files/Botty_Sebastien_CV-${locale.toUpperCase()}.pdf"`));
     for (const slug of slugs) assert.ok(html.includes(`href="/${locale}/projects/${slug}"`), slug);
     const graph = structuredData(html)[0]["@graph"];
     assert.ok(graph.some(item => item["@type"] === "Person"));
@@ -67,6 +74,15 @@ for (const locale of ["fr", "en"]) {
     }
   });
 }
+
+test("both localized CV links serve a PDF", async () => {
+  for (const locale of ["FR", "EN"]) {
+    const response = await fetch(`${origin}/files/Botty_Sebastien_CV-${locale}.pdf`);
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get("content-type"), /application\/pdf/);
+    assert.equal(Buffer.from(await response.arrayBuffer()).subarray(0, 5).toString(), "%PDF-");
+  }
+});
 
 test("legacy links permanently redirect to their corresponding projects", async () => {
   const redirects = { Tou: "tou", "Not-messenger": "not-messenger", CheckCar: "checkcar", Undercover: "undercover", "Freelance Prospecting Dashboard": "carnet-demarchage" };

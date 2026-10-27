@@ -1,3 +1,4 @@
+import Arrow from "../../../../portfolio/Arrow";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -38,13 +39,13 @@ export default async function ProjectPage({ params }: Props) {
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }} />
     <SiteHeader locale={lang} slug={slug} />
     <main className="wrap project-page" id="contenu">
-      <Link className="work-link" href={`/${lang}#projets`}>← {t.back}</Link>
+      <Link className="work-link" href={`/${lang}#projets`}><Arrow direction="left" /> {t.back}</Link>
       <p className="mono project-kind">{project.projectKind === "Perso" ? t.personal : t.client} / {project.state[key]}</p>
       <h1 className="display project-title">{project.projectName[key]}</h1>
       <p className="project-description">{project.description[key]}</p>
       {slug === "commission-europeenne" && <p className="project-assignment">{t.assignment}</p>}
       <div className="stack project-stack" aria-label={t.technologies}>{project.stack.map(tech => <span key={tech}>{tech}</span>)}</div>
-      <div className="project-links">{publicLink(project.site) && <a className="nav-contact" href={project.site} target="_blank" rel="noopener noreferrer">{lang === "fr" ? "Voir le site" : "Visit website"} ↗</a>}{publicLink(project.code) && <a className="work-link" href={project.code} target="_blank" rel="noopener noreferrer">Code ↗</a>}</div>
+      <div className="project-links">{publicLink(project.site) && <a className="nav-contact" href={project.site} target="_blank" rel="noopener noreferrer">{lang === "fr" ? "Voir le site" : "Visit website"} <Arrow /></a>}{publicLink(project.code) && <a className="work-link" href={project.code} target="_blank" rel="noopener noreferrer">Code <Arrow /></a>}</div>
       {project.image && <div className={`project-main-image ${slug === "tou" ? "portrait-image" : ""}`}><Image src={project.image} alt={project.projectName[key]} width={1600} height={900} sizes="(max-width: 800px) 100vw, 1440px" priority /></div>}
       <section className="project-features" aria-labelledby="features-title"><h2 className="display" id="features-title">{t.features}</h2>
         {project.features.length ? project.features.map((feature, index) => <details className="feature" key={feature.title.EN} open={index === 0}>
@@ -54,7 +55,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </details>) : <p>{t.noFeatures}</p>}
       </section>
-      <aside className="other-projects"><h2 className="display">{t.nextProjects}</h2><div>{projects.filter(other => other.slug !== slug).map(other => <Link className="work-link" key={other.slug} href={projectPath(lang, other.slug)}>{other.projectName[key]} ↗</Link>)}</div></aside>
+      <aside className="other-projects"><h2 className="display">{t.nextProjects}</h2><div>{projects.filter(other => other.slug !== slug).map(other => <Link className="work-link" key={other.slug} href={projectPath(lang, other.slug)}>{other.projectName[key]} <Arrow /></Link>)}</div></aside>
     </main><SiteFooter locale={lang} />
   </>;
 }

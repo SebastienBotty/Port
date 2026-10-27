@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   icons: { icon: "/icon.svg" },
 };
-export const viewport: Viewport = { themeColor: "#ebe7f2" };
+export const viewport: Viewport = { themeColor: "#edf0f2" };
 
 export function generateStaticParams() {
   return locales.map(lang => ({ lang }));

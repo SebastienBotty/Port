@@ -1,5 +1,6 @@
 "use client";
 
+import Arrow from "./Arrow";
 import { useForm, ValidationError } from "@formspree/react";
 import type { Locale } from "./routing";
 import { text } from "./text";
@@ -20,6 +21,6 @@ function ConfiguredForm({ locale, endpoint }: { locale: Locale; endpoint: string
     <label htmlFor="contact-message">{t.message}</label><textarea id="contact-message" name="message" rows={5} required maxLength={10000} />
     <ValidationError prefix={t.message} field="message" errors={state.errors} />
     {state.errors && <p role="alert">{t.formError}</p>}
-    <button className="nav-contact" type="submit" disabled={state.submitting}>{state.submitting ? t.sending : t.send} ↗</button>
+    <button className="nav-contact" type="submit" disabled={state.submitting}>{state.submitting ? t.sending : t.send} <Arrow /></button>
   </form></details>;
 }
